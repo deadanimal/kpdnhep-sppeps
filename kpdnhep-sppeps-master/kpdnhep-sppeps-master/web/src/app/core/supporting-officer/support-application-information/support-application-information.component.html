@@ -1,0 +1,417 @@
+<div class="wrapper">
+
+    <div class="p-2 text-uppercase"
+        style="text-align: center; background-color: #e0bbfe; width: 90%; max-width: 1000px;">
+        <h3>Sokongan Permohonan</h3>
+    </div>
+
+    <div class="container-fluid mt-4 mb-4 p-0" style="width: 90%; max-width: 1500px;">
+        <div class="card">
+            <div class="card-body d-flex align-items-center justify-content-center p-3 pt-0" style="height: 180px;">
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+                <div class="progress pb-2" style="background-color: white; box-shadow:none; height:100%; width:100%; justify-content:center; align-items:center;">
+                    <div class="circle done"> <span class="label">1</span>
+                        <span class="title pl-4" style="width: fit-content;">Penerimaan Permohonan</span>
+
+                    </div> <span class="bar done"></span>
+
+                    <div class="circle done"> <span class="label">2</span>
+                        <span class="title pl-4" style="width: fit-content;">Pengesahan Permohonan</span>
+
+                    </div> <span class="bar done"></span>
+
+                    <div class="circle done"> <span class="label">3</span>
+                        <span class="title pl-4" style="width: fit-content;">Tapisan PDRM</span>
+
+                    </div> <span class="bar done"></span>
+                    <div class="circle done"> <span class="label">4</span>
+                        <span class="title pl-5" style="width: fit-content;"> Syor </span>
+                    </div> 
+                    
+                    <span class="bar active"></span>
+
+                    <div class="circle "> 
+                        <span class="label">5</span>
+                        <span class="title" style="width: fit-content; padding-left:35px;">Kelulusan</span>
+                    </div>
+
+                    <span class="bar "></span>
+
+                    <div class="circle "> 
+                        <span class="label">6</span>
+                        <span class="title" style="width: fit-content; padding-left:40px;">Bayaran</span>
+                    </div>
+
+                    <span class="bar "></span>
+
+                    <div class="circle "> 
+                        <span class="label">7</span>
+                        <span class="title pl-4" style="width: fit-content;">Kutipan Permit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="formContent">
+
+        <form class="d-flex justify-content-center font-black" style="width: 100%;">
+            <div class="d-flex justify-content-center flex-wrap" fxLayout="column" fxLayoutAlign="space-evenly stretch"
+                style="width: 100%;">
+
+                <div class="p-3 text-uppercase"
+                    style="width: 100%; background-color:#f5e7f2; border-radius: 10px 10px 0px 0px;">
+                    <h5 class="h5 text-dark m-0">maklumat permohonan</h5>
+                </div>
+
+                <div class="p-3" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 90%;" *ngFor="let info of infos">
+
+                    <div class="row form-group p-3 d-flex justify-content-center">
+
+
+                        <!-- <label for="file-input" class="d-flex justify-content-center">
+                            <img class="user-profile" src="assets/img/icons/user-profile.jpg" id="user-profile"
+                                alt="user-profile" />
+                        </label> -->
+
+                        <img class="user-profile" src="assets/img/icons/user-profile.jpg" id="user-profile"
+                            alt="user-profile" />
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="name">
+                                <strong>Nama</strong>
+                            </label>
+                            <div class="d-flex flex-nowrap align-items-center">
+                                <input type="text" class="form-control col-9" id="name" aria-describedby="name"
+                                    [value]="info.nama" disabled>
+                            </div>
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="ic"><strong> No. Kad Pengenalan</strong></label>
+                            <input type="text" class="form-control" id="ic" aria-describedby="ic"
+                                [value]="info.no_kp" disabled>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="age"><strong> Umur</strong></label>
+                            <input type="text" class="form-control col-9" id="age" aria-describedby="age" placeholder=""
+                                [value]="info.umur" disabled>
+
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="gender"><strong> Jantina</strong></label>
+                            <input type="text" class="form-control" id="age" aria-describedby="age" placeholder=""
+                                [value]="info.jantina" disabled>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+
+                            <label for="address"><strong> Alamat</strong></label>
+                            <input type="text" class="col-9 form-control" id="address1" aria-describedby="address"
+                                placeholder="" disabled [value]="info.alamat">
+                            <input type="text" class="col-9 form-control" id="address2" aria-describedby="address"
+                                placeholder="" disabled [value]="info.alamat2">
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="email"><strong> E-mel</strong></label>
+                            <input type="email" class="form-control" id="email" aria-describedby="email" placeholder=""
+                                disabled [value]="info.emel">
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="state"><strong>Negeri</strong></label>
+                            <input type="text" class="form-control col-9" id="state" aria-describedby="state"
+                                placeholder=""  disabled [value]="info.negeri">
+
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="phoneNumber"><strong>No. Telefon</strong></label>
+                            <input type="text" class="form-control" id="phoneNumber" aria-describedby="phoneNumber"
+                                placeholder=""  disabled [value]="info.notelbimbit">
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="occupation"><strong>Pekerjaan Sekarang</strong></label>
+                            <input type="text" class="form-control col-9" id="occupation" aria-describedby="occupation"
+                                placeholder="" disabled [value]="info.pekerjaan_skrg">
+
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="licence"><strong>Lesen Memandu yang Sah</strong></label>
+                            <input type="text" class="form-control" id="licence" aria-describedby="licence"
+                                placeholder=""disabled [value]="info.lesen_sah">
+                        </div>
+                    </div>
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="education"><strong>Tahap Pendidikan Tertinggi</strong></label>
+                            <input type="text" class="form-control col-9" id="education" aria-describedby="education"
+                                placeholder=""  disabled [value]="info.pendidikan_tinggi">
+
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="question1"><strong>Adakah anda akan bekerja sebagai panel <br> bank/syarikat sewa
+                                    beli?</strong></label>
+                            <input type="text" class="form-control col-9" id="question1" aria-describedby="question1"
+                                placeholder="" value="Ya" disabled [value]="info.bank_or_sewa">
+
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for=""><strong>Adakah anda tahu tentang aktviti pemilikan semula barangan di bawah
+                                    Akta Sewa Beli 1967?</strong></label>
+                            <!-- <input type="text" class="form-control" id="question2" aria-describedby="question2" placeholder=""
+                                value="Ya" disabled> -->
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="panelBank"><strong>Nama Panel Bank</strong></label>
+                            <input type="text" class="form-control col-9" id="panelBank" aria-describedby="panelBank"
+                                placeholder="" disabled [value]="info.panel_bank">
+
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="jobScope"><strong>Skop Tugas EPS</strong></label>
+                            <input type="text" class="form-control" id="jobScope" aria-describedby="jobScope"
+                                placeholder="" value="Ya" disabled [value]="info.akta_tugas">
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="bankPhoneNumber"><strong>No. Telefon Bank</strong></label>
+                            <input type="text" class="form-control col-9" id="bankPhoneNumber"
+                                aria-describedby="bankPhoneNumber" placeholder="" disabled [value]="info.notel_bank">
+
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="procedure"><strong>Prosedur dan Peraturan EPS</strong></label>
+                            <input type="text" class="form-control" id="procedure" aria-describedby="procedure"
+                                placeholder="" value="Tidak" disabled [value]="info.akta_eps">
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <div class="col form-group p-0">
+                                <label for="panelName"><strong>Nama Panel</strong></label>
+                                <input type="text" class="form-control col-9" id="panelName"
+                                    aria-describedby="panelName" placeholder="" disabled [value]="info.panel_name">
+
+                            </div>
+
+                            <div class="col form-group p-0">
+                                <label for="panelIcNumber"><strong>No. Kad Pengenalan</strong></label>
+                                <input type="text" class="form-control col-9" id="panelIcNumber"
+                                    aria-describedby="panelIcNumber" placeholder="" [value]="info.ic_panel" disabled nric_panel>
+
+                            </div>
+
+                            <div class="col form-group p-0">
+                                <label for="permitNumber"><strong>No. Permit</strong></label>
+                                <input type="text" class="form-control col-9" id="permitNumber"
+                                    aria-describedby="permitNumber" placeholder="" [value]="info.nopermit_panel" disabled noPermit>
+
+                            </div>
+
+                        </div>
+                        <div class="col form-group pr-0">
+                            <span><strong>Lampiran Dokumen</strong></span>
+
+                            <ol>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <li>Salinan Lesen Memandu</li>
+                                    </div>
+                                    <div class="col">
+                                        <button class="btn btn-sm text-white" style="background-color: #1d1da1;"><i
+                                                class="fas fa-file-alt"></i> Lihat
+                                            Lampiran</button>
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <li> Salinan Kad Pengenalan</li>
+                                    </div>
+                                    <div class="col">
+                                        <button class="btn btn-sm text-white" style="background-color: #1d1da1;"><i
+                                                class="fas fa-file-alt"></i> Lihat
+                                            Lampiran</button>
+                                    </div>
+                                </div>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3 d-flex justify-content-center">
+                    <input type="button" class="btn text-uppercase"
+                        style="background-color: #1d1da1; border-radius:25px" value="Semak" (click)="toggle()">
+
+                    <!-- <input type="button" class="btn" style="background-color: #47bc83;" value="tiada rekod jenayah"
+                        (click)="NoRecord(noRecord)"> -->
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="formContent" style="margin-top: 50px;" *ngIf="show">
+        <form class="d-flex justify-content-center font-black" style="width: 100%;" (ngSubmit)="onSubmit(support,notSupport)">
+            <div class="d-flex justify-content-center flex-wrap" fxLayout="column" fxLayoutAlign="space-evenly stretch"
+                style="width: 100%;">
+
+                <div class="p-3 text-uppercase"
+                    style="width: 100%; background-color:#f5e7f2; border-radius: 10px 10px 0px 0px;">
+                    <h5 class="h5 text-dark m-0 text-uppercase">sokongan permohonan</h5>
+                </div>
+
+                <div class="p-3" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 90%;">
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="form-group row d-flex flex-nowrap" style="width: 100%;">
+                            <label for="" class="col-sm-3 col-form-label">Keputusan Tapisan PDRM</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" placeholder="" value="Tiada Rekod Jenayah" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-nowrap">
+                        <div class="form-group row d-flex flex-nowrap" style="width: 100%;">
+                            <label for="action" class="col-sm-3 col-form-label">Tindakan</label>
+                            <div class="col-sm-5">
+                                <select id="action" class="form-control" name="tindakan" [(ngModel)]="this.tindakan">
+                                    <option selected>Sila Pilih</option>
+                                    <option  value="support">Disokong</option>
+                                    <option  value="notSupport">Tidak Disokong</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-nowrap">
+                        <div class="form-group row d-flex flex-nowrap" style="width: 100%;">
+                            <label for="action" class="col-sm-3 col-form-label">Tempoh Kelulusan</label>
+                            <div class="col-sm-5">
+                                <select id="action" class="form-control" name="tempoh" [(ngModel)]="this.tempoh">
+                                    <option selected>Sila Pilih</option>
+                                    <option value="1 tahun">1 Tahun</option>
+                                    <option value="2 tahun">2 Tahun</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-nowrap">
+                        <div class="form-group row d-flex flex-nowrap" style="width: 100%;">
+                            <label for="comment" class="col-sm-3 col-form-label">Catatan</label>
+                            <div class="col-sm-5">
+                                <textarea class="form-control" id="catatan" name="catatan" [(ngModel)]="this.catatan"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-3 d-flex justify-content-center">
+                        <input type="button" class="btn text-uppercase"
+                            style="background-color: #1d1da1; border-radius:25px" value="BATAL" (click)="toggle()">
+
+                        <button type="submit" class="btn text-uppercase"
+                            style="background-color: #ec1a22; border-radius:25px" value="HANTAR">HANTAR</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<ng-template #support>
+    <div class="modal-header" style="background-color: #1d1da1; justify-content:center !important;">
+        <h4 class="modal-title pull-left text-white">Notifikasi</h4>
+    </div>
+    <div class="modal-body font-black">
+        <div class="row p-2" style="justify-content:center;">
+            <p class="text-dark" style="text-align: center;">
+                Permohonan akan disokong.<br>
+                Adakah anda pasti?
+            </p>
+        </div>
+        <div class="row p-3 d-flex justify-content-center" style="text-align: center;">
+            <button type="button" class="btn btn-default font-white m-2" (click)="modalRef.hide()"
+                style="background-color: #ec1a22;">Batal</button>
+            <button type="submit" class="btn btn-primary font-white m-2" style="background-color: #2dce89;"
+                (click)="ConfirmSupport(confirmSupport)">Ya</button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #notSupport>
+    <div class="modal-header" style="background-color: #1d1da1; justify-content:center !important;">
+        <h4 class="modal-title pull-left text-white">Notifikasi</h4>
+    </div>
+    <div class="modal-body font-black">
+        <div class="row p-2" style="justify-content:center;">
+            <p class="text-dark" style="text-align: center;">
+                Permohonan tidak disokong.<br>
+                Adakah anda pasti?
+            </p>
+        </div>
+        <div class="row p-3 d-flex justify-content-center" style="text-align: center;">
+            <button type="button" class="btn btn-default font-white m-2" (click)="modalRef.hide()"
+                style="background-color: #ec1a22;">Batal</button>
+            <button type="submit" class="btn btn-primary font-white m-2" style="background-color: #2dce89;"
+                (click)="ConfirmNotSupport(confirmNotSupport)">Ya</button>
+        </div>
+    </div>
+</ng-template>
+
+
+<ng-template #confirmSupport>
+    <div class="modal-body">
+        <div class="container">
+            <div class="row d-flex justify-content-center p-3">
+                <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+            </div>
+            <div class="row d-flex justify-content-center p-3" style="text-align: center;">
+                <p>Permohonan telah berjaya disokong.</p>
+            </div>
+            <div class="row d-flex justify-content-around" style="text-align: center;">
+                <!-- <button type="button" class="btn btn-default font-white" (click)="modalRef.hide()"
+                    style="background-color: #ec1a22;">Batal</button> -->
+                <button type="submit" class="btn btn-primary font-white" style="background-color: #2dce89;"
+                    (click)="closeModal2()">Ya</button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #confirmNotSupport>
+    <div class="modal-body">
+        <div class="container">
+            <div class="row d-flex justify-content-center p-3">
+                <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+            </div>
+            <div class="row d-flex justify-content-center p-3" style="text-align: center;">
+                <p>Permohonan telah berjaya tidak disokong.</p>
+            </div>
+            <div class="row d-flex justify-content-around" style="text-align: center;">
+                <!-- <button type="button" class="btn btn-default font-white" (click)="modalRef.hide()"
+                    style="background-color: #ec1a22;">Batal</button> -->
+                <button type="submit" class="btn btn-primary font-white" style="background-color: #2dce89;"
+                    (click)="closeModal2()">Ya</button>
+            </div>
+        </div>
+    </div>
+</ng-template>

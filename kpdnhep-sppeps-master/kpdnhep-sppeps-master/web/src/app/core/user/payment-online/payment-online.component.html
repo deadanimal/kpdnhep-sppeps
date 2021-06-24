@@ -1,0 +1,220 @@
+<div class="wrapper" [ngClass]="fontSize">
+
+    <div class="" style="text-align: center; max-width:1500px; width:80%">
+        <div class="container-fluid mt-1 p-0">
+            <div class="card">
+                <div class="card-body d-flex align-items-center justify-content-center pt-0" style="height: 180px;">
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+                    <div class="progress pb-2"
+                        style="background-color: white; box-shadow:none; height:100%; width:100%; justify-content:center; align-items:center;">
+
+                        <div class="circle done"> <span class="label">1</span>
+                            <span class="title pl-4" style="width: fit-content;">Isi Maklumat Permohonan</span>
+                        </div>
+
+                        <span class="bar done"></span>
+
+                        <div class="circle done"> <span class="label">2</span>
+                            <span class="title pl-4" style="width: fit-content;">Hantar Permohonan</span>
+                        </div>
+
+                        <span class="bar done"></span>
+
+                        <div class="circle done"> <span class="label">3</span>
+                            <span class="title pl-4" style="width: fit-content;">Pembayaran</span>
+                        </div>
+
+                        <span class="bar active"></span>
+
+                        <div class="circle"> <span class="label">4</span>
+                            <span class="title pl-4" style="width: fit-content;">Kutipan Permit</span>
+                        </div>
+
+                        <span class="bar"></span>
+
+                        <div class="circle"> <span class="label">5</span>
+                            <span class="title" style="width: fit-content; padding-left:43px;">Selesai</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="formContent" [ngClass]="fontColor"> -->
+
+    <div class="card mt-4" style="width: 80%;">
+        <div class="card-header bg-secondary">
+            <div class="row">
+                <div class="col d-flex align-items-center">
+                    <h5 class="text-uppercase ls-1 mb-1">Maklumat Pembayaran</h5>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-2">
+                    <span>Order ID </span>
+                </div>
+                <div class="col-1">
+                    <span>:</span>
+                </div>
+                <div class="col">
+                    <span>21321</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <span>Payment ID </span>
+                </div>
+                <div class="col-1">
+                    <span>:</span>
+                </div>
+                <div class="col">
+                    <span>21321</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <span>Payment For </span>
+                </div>
+                <div class="col-1">
+                    <span>:</span>
+                </div>
+                <div class="col">
+                    <span></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <span>Total </span>
+                </div>
+                <div class="col-1">
+                    <span>:</span>
+                </div>
+                <div class="col">
+                    <span>RM 20</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card mt-4" style="width: 80%;">
+        <div class="card-header bg-secondary">
+            <div class="row">
+                <div class="col-2 d-flex justify-content-center">
+                    <img src="assets/img/logo/Logo-FPX.png" style="height: 40px;" />
+                </div>
+                <div class="col d-flex align-items-center">
+                    <h5 class="text-uppercase ls-1 mb-1">Online Banking</h5>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <form class="d-flex justify-content-center flex-wrap font-black" style="width: 100%;"
+                (ngSubmit)="onSubmit(confirmPayment)">
+                <div class="form-group p-4" style="width: 100%;">
+                    <!-- <label for="bank"><i class="fas fa-graduation-cap"></i><strong> TAHAP PENDIDIKAN
+                                TERTINGGI</strong></label> -->
+                    <!-- <input type="text" class="form-control" id="bank" aria-describedby="bank" placeholder=""> -->
+                    <br>
+                    <div class="row p-3">
+                        <div class="col">
+                            <div class="form-check p-3 d-flex align-items-center">
+                                <input class="form-check-input" type="radio" id="maybank" name="bank" value="maybank">
+                                <label class="form-check-label" for="maybank"><img
+                                        src="assets/img/logo/maybank-logo.png" style="height: 50px;" /></label>
+                            </div>
+                            <div class="form-check p-3 d-flex align-items-center">
+                                <input class="form-check-input" type="radio" id="cimb" name="bank" value="cimb">
+                                <label class="form-check-label" for="cimb"><img src="assets/img/logo/cimb-logo.svg"
+                                        style="height: 40px;" /></label>
+                            </div>
+                            <div class="form-check p-3 d-flex align-items-center">
+                                <input class="form-check-input" type="radio" id="publicBank" name="bank"
+                                    value="PublicBank">
+                                <label class="form-check-label" for="publicBank"><img
+                                        src="assets/img/logo/public-bank-logo.png" style="height: 40px;" /></label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check p-3 d-flex align-items-center">
+                                <input class="form-check-input" type="radio" id="rhb" name="bank" value="rhb">
+                                <label class="form-check-label" for="rhb"><img src="assets/img/logo/rhb-bank-logo.png"
+                                        style="height: 40px;" /></label>
+                            </div>
+                            <div class="form-check p-3 d-flex align-items-center">
+                                <input class="form-check-input" type="radio" id="ambank" name="bank" value="ambank">
+                                <label class="form-check-label" for="cimb"><img src="assets/img/logo/ambank-logo.png"
+                                        style="height: 40px;" /></label>
+                            </div>
+                            <div class="form-check p-3 d-flex align-items-center">
+                                <input class="form-check-input" type="radio" id="bsn" name="bank" value="bsn">
+                                <label class="form-check-label" for="bsn"><img src="assets/img/logo/bsn-logo.png"
+                                        style="height: 40px;" /></label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check p-3 d-flex align-items-center">
+                                <input class="form-check-input" type="radio" id="bank-rakyat" name="bank"
+                                    value="bank-rakyat">
+                                <label class="form-check-label" for="bank-rakyat"><img
+                                        src="assets/img/logo/bank-rakyat-logo.png" style="height: 40px;" /></label>
+                            </div>
+                            <div class="form-check p-3 d-flex align-items-center">
+                                <input class="form-check-input" type="radio" id="affin-bank" name="bank"
+                                    value="affin-bank">
+                                <label class="form-check-label" for="affin-bank"><img
+                                        src="assets/img/logo/affin-bank-logo.png" style="height: 40px;" /></label>
+                            </div>
+                            <div class="form-check p-3 d-flex align-items-center">
+                                <input class="form-check-input" type="radio" id="bank-islam" name="bank"
+                                    value="bank-islam">
+                                <label class="form-check-label" for="bank-islam"><img
+                                        src="assets/img/logo/bank-islam-logo.png" style="height: 40px;" /></label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check p-3 d-flex align-items-center">
+                                <input class="form-check-input" type="radio" id="bank-muamalat" name="bank"
+                                    value="bank-muamalat">
+                                <label class="form-check-label" for="bank-muamalat"><img
+                                        src="assets/img/logo/bank-muamalat-logo.jpg" style="height: 40px;" /></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group d-flex justify-content-center" style="width: 100%;">
+                    <button class="btn btn-success" type="submit">Teruskan Bayaran</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- </div> -->
+</div>
+
+<ng-template #confirmPayment>
+    <div class="modal-body font-black" [ngClass]="fontColor">
+        <div class="container">
+            <div class="row d-flex justify-content-center p-3">
+                <!-- <div class="col"> -->
+                <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+                <!-- </div> -->
+            </div>
+            <div class="row d-flex justify-content-center p-3">
+                <!-- <div class="col"> -->
+                <p style="text-align: center;">Pembayaran anda telah berjaya.
+                    Sila semak emel anda dan bawa bersama notifikasi kelulusan permohonan ketika
+                    melakukan kutipan permit di cawangan.</p>
+                <!-- </div> -->
+            </div>
+        </div>
+        <div class="row p-3 d-flex justify-content-around" style="text-align: center;">
+            <button type="button" class="btn btn-default font-white" (click)="closeModal()"
+                style="background-color: #2e095f;">OK!</button>
+        </div>
+    </div>
+</ng-template>

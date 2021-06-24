@@ -1,0 +1,31 @@
+<div class="wrapper">
+
+    <div class="p-2 text-capitalize" style="text-align: center; width: 75%; height:80px;">
+        <h3 class="h1 text-dark pt-4"><strong>Arkib Bergambar</strong></h3>
+    </div>
+
+    <div class="container-fluid mt-3" style="padding-left: 50px; padding-right:50px;">
+        <div class="row m-2 p-0" style="justify-content: center;">
+            <div class="card card-stats m-3" *ngFor="let i of arkib" style="background-color: #f3effd;">
+                <a class="nav-link p-0" [routerLink]="['/global/pictorial-archive-list']">
+                    <div class="card-image" style="height: 150px; overflow:hidden">
+                        <img class="img rounded image-display" [src]="i.imageLink">
+                    </div>
+                    <div class="card-body d-flex justify-content-center p-3">
+                        <div class="row d-flex justify-content-center">
+                            <!-- <div class="col-auto d-flex justify-content-center mt-2"> -->
+                                <!-- <i class='{{i.icon}} fa-3x' style="color: #1d1da1"></i> -->
+                                <!-- <img class="image-display" src="{{i.imageLink}}"> -->
+                            <!-- </div> -->
+                            <div class="col d-flex align-items-center pl-0">
+                                <h5 class="h4 card-title text-capitalize mb-0">
+                                    {{i.name}}
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

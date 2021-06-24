@@ -1,0 +1,49 @@
+<div class="wrapper" [ngClass]="fontSize" [ngClass]="themeColor" [ngClass]="fontColor">
+    <div class="container-fluid" style="background-color:white; opacity: 0.3;">
+        <div class="row" style="height: 100px;">
+            <div class="col" style="text-align: center;">
+
+                <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+
+                Slide Content
+
+                <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-center">
+        <div class="row" style="height: 200px;">
+            <div class="col">
+                <div class="transbox" style="width: 80%; height:60%">
+
+                    <p>
+                        <strong><span style="font-weight: bold;">{{ 'frontPage.annoucement' | translate}}</span></strong>
+                        <br>
+
+                        Sistem Percubaan
+                    </p>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="transbox">
+                    <p>
+                        Sistem Permohonan Percetakan Permit Ejen Pemilikan Semula
+                        (SPPEPS) ialah suatu sistem yang memudahkan Ejen Pemilikan
+                        Kereta Semula untuk membuat permohonan dari segi
+                        Permohonan baru, Pembaharuan Permit, Permohonan Cetakan
+                        Semula dan Permohonan Rayuan.
+                        <br>
+                        <br>
+                        <button type="button" class="btn btn-primary btn-sm" style="background: rgb(42,55,125);
+                    background: linear-gradient(90deg, rgba(42,55,125,1) 0%, rgba(108,40,183,1) 50%);">Mohon
+                            Sekarang</button>
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

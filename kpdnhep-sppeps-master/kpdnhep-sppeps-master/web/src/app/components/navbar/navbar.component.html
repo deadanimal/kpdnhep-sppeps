@@ -1,0 +1,97 @@
+<div class="wrapper" [ngClass]="themeColor">
+    <div class="container-fluid" [ngClass]="fontColor">
+        
+        <!-- rgb(83, 0, 116); height:80px; text-align:center" -->
+        <div class="row p-0 mt-0 mb-0" style="background: rgb(42,55,125);
+        background: linear-gradient(90deg, rgba(42,55,125,1) 41%, rgba(108,40,183,1) 68%);">
+            <nav class="navbar navbar-expand-lg navbar-light pt-0 pb-0" style="width: 100%;">
+
+                <div class="col-1">
+                    <!-- <img src="" id="kpdn-logo" alt="kpdn-logo" /> -->
+                </div>
+                <div class="col-3">
+                    <a class="navbar-brand" [routerLink]="['/global/front-page']">
+                        <h3 class="h2 text-white"><strong>Sistem Percetakan Permit <br> Ejen Pemilikan Semula</strong>
+                        </h3>
+                    </a>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <div class="collapse navbar-collapse d-flex justify-content-start" id="navbarSupportedContent">
+                        <ul class="navbar-nav d-flex justify-content-end">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" [routerLink]="['/global/front-page']">
+                                    <span class="font-white text-capitalize">{{ 'navigationBar.home' | translate }}</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item dropdown" dropdown>
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" dropdownToggle
+                                    id="navbarDropdownMenuLink" style="color: white;">
+                                    <span class="font-white">{{ "navigationBar.archive" | translate }}</span>
+                                </a>
+                                <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu dropdown-menu-right"
+                                    *dropdownMenu>
+                                    <a class="dropdown-item" [ngClass]="isCollapsed ? 'text-dark' : 'text-white'"
+                                        [routerLink]="['/global/document-archive']">
+                                        {{ "navigationBar.ArkibDokumen" | translate }}
+                                    </a>
+                                    <a class="dropdown-item" [ngClass]="isCollapsed ? 'text-dark' : 'text-white'"
+                                        [routerLink]="['/global/pictorial-archive']">
+                                        {{ "navigationBar.ArkibBergambar" | translate }}
+                                    </a>
+
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-white" [routerLink]="['/global/eps-status-check']">
+                                    <span class="font-white">{{ 'navigationBar.EpsStatusCheck' | translate }}</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" [routerLink]="['/global/faq']">
+                                    <span class="font-white">FAQ</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-1 d-flex justify-content-end">
+                    <ul class="navbar-nav d-flex justify-content-end">
+                        <li class="nav-item dropdown" dropdown>
+                            <a class="nav-link" data-toggle="dropdown" dropdownToggle id="navbarDropdownMenuLink">
+                                <span class="d-flex text-white" style="width: min-content"
+                                    *ngIf="languageSwitcher == 'my'">
+                                    <img class="pr-1" src="../../../assets/img/logo/malaysia.svg" />
+                                    <span class="font-white">MY</span>
+                                </span>
+                                <span class="d-flex text-white" style="width: min-content"
+                                    *ngIf="languageSwitcher == 'en'">
+                                    <img class="pr-1" src="../../../assets/img/logo/united-kingdom.svg" />
+                                    <span class="font-white">EN</span>
+                                </span>
+                            </a>
+                            <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu dropdown-menu-right"
+                                *dropdownMenu>
+                                <a class="dropdown-item font-weight-bold"
+                                    [ngClass]="isCollapsed ? 'text-dark' : 'text-white'"
+                                    (click)="changeLanguageSwitcher('my')">
+                                    <img class="pr-3" src="../../../assets/img/logo/malaysia.svg" style="width: 30%" />
+                                    MY
+                                </a>
+                                <a class="dropdown-item font-weight-bold"
+                                    [ngClass]="isCollapsed ? 'text-dark' : 'text-white'"
+                                    (click)="changeLanguageSwitcher('en')">
+                                    <img class="pr-3" src="../../../assets/img/logo/united-kingdom.svg"
+                                        style="width: 30%" />
+                                    EN
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>

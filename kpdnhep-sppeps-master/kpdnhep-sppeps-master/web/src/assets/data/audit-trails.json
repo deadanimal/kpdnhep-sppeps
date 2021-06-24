@@ -1,0 +1,102 @@
+[
+    {
+        "name": "Zuraidah Binti Ahmad",
+        "category":"Pegawai Pemproses Negeri",
+        "date":"15/02/2021",
+        "email":"awam@gmail.com",
+        "ip":"123.456.789.115",
+        "status":"Aktif",
+        "state":"Selangor",
+        "position":"Pembantu Tadbir"
+    },
+    {
+        "name": "Kassim Bin Abdullah",
+        "category":"Pegawai Pemproses Negeri",
+        "date":"17/02/2021",
+        "email":"example@gmail.com",
+        "ip":"169.254.71.412",
+        "status":"Tak Aktif",
+        "state":"Pahang",
+        "position":"Pembantu Tadbir"
+    },
+    {
+        "name": "Zaini Ahmad",
+        "category":"Pegawai Pemproses HQ",
+        "date":"23/12/2020",
+        "email":"nora@kpdnhep.gov.my",
+        "ip":"10.19.1.172",
+        "status":"Aktif",
+        "state":"Pahang",
+        "position":"Pembantu Tadbir"
+    },
+    {
+        "name": "Siti Rohaya",
+        "category":"Pegawai Pemproses Negeri",
+        "date":"23/12/2020",
+        "email":"aliya@kpdnhep.gov.my",
+        "ip":"10.19.1.233",
+        "status":"Aktif",
+        "state":"Perak",
+        "position":"Pembantu Tadbir"
+    },
+    {
+        "name":"Zainoor Binti Zainol Abidin",
+        "category":"Pentadbir Sistem HQ",
+        "date":"23/12/2020",
+        "email":"amin@kpdnhep.gov.my",
+        "ip":"10.19.1.233",
+        "status":"Tak Aktif",
+        "state":"W. P. Putrajaya",
+        "position":"Penolong Pegawai Tadbir"
+    },
+    {
+        "name": "Amiruldin Amri",
+        "category":"Pegawai Pemproses Negeri",
+        "date":"23/12/2020",
+        "email":"fahmi@yahoo.com.my",
+        "ip":"169.254.63.568",
+        "status":"Tak Aktif",
+        "state":"Johor",
+        "position":"Penolong Pengarah"
+    },
+    {
+        "name": "Azri Yahya",
+        "category":"Pegawai Pemproses Negeri",
+        "date":"24/12/2020",
+        "email":"yusuf@yahoo.com.my",
+        "ip":"169.254.63.568",
+        "status":"Aktif",
+        "state":"Perlis",
+        "position":"Pembantu Tadbir"
+    },
+    {
+        "name": "Razlin Ahmad",
+        "category":"Pegawai Pemproses HQ",
+        "date":"23/12/2020",
+        "email":"nora@kpdnhep.gov.my",
+        "ip":"10.19.1.172",
+        "status":"Aktif",
+        "state":"Perlis",
+        "position":"Penolong Pengarah"
+    },
+    {
+        "name": "Nurtasha",
+        "category":"Pegawai Pemproses Negeri",
+        "date":"23/12/2020",
+        "email":"abu@kpdnhep.gov.my",
+        "ip":"10.19.1.196",
+        "status":"Tak Aktif",
+        "state":"Kedah",
+        "position":"Pengarah Negeri"
+    },
+    {
+        "name": "Amin Redzuan",
+        "category":"Pentadbir Pengurusan Maklumat",
+        "date":"22/11/2020",
+        "email":"hafiz@kpdnhep.gov.my",
+        "ip":"10.19.1.180",
+        "status":"Aktif",
+        "state":"Melaka",
+        "position":"Pembantu Tadbir"
+    }
+]

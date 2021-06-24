@@ -1,0 +1,8 @@
+<!-- <p>global-layout works!</p> -->
+
+<app-header-global></app-header-global>
+<app-navbar></app-navbar>
+<app-w3c></app-w3c>
+<router-outlet></router-outlet>
+
+<app-footer *ngIf="router.url != '/examples/error' && router.url != '/examples/500-error'"></app-footer>

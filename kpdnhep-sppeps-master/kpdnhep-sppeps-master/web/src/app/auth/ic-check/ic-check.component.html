@@ -1,0 +1,116 @@
+<div class="wrapper" [ngClass]="fontSize" [ngClass]="fontColor" [hidden]="icpassed==1 || icpassed==3">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="">
+            <h4 class="font-black">{{ "icCheck.SemakanNoKadPengenalan" | translate }}</h4>
+        </div>
+
+        <!-- Register Form -->
+        <form class="font-black" (ngSubmit)="onSubmit(template,template1)">
+            <label>{{ "icCheck.NoKadPengenalan" | translate }}</label>
+            <br>
+            <input type="text" id="ic" class="fadeIn second" name="IC" placeholder="">
+            <br>
+            <small style="color:red" [hidden]="icError == 0">{{ "icCheck.ErrorIC" | translate }}</small>
+            <br>
+            <!-- <label>CAPTCHA</label> -->
+            <canvas id="thekepcha" width="200" height="50" style="border:1px solid #d3d3d3; background: url('/assets/img/background/grayish.jpg');">Your Browser Doesn't Support HTML Canvas Tag</canvas>
+            <br>
+            <input type="text" id="captchaAns" class="fadeIn third" name="captcha" placeholder="" style="text-transform:uppercase">
+            <br>
+            <small style="color:red" [hidden]="captchaError == 0">{{ "icCheck.ErrorCaptcha" | translate }}</small>
+            <br>
+            <button type="submit" class="">{{ "icCheck.SEMAK" | translate }}</button>
+            <!-- <button class="btn btn-outline-primary mb-2 mr-2" (click)="openVerticallyCentered(content)">Modal vertically centered</button> -->
+            <!-- <button type="button" class="btn btn-primary p-2"
+            [routerLink]="['/auth/register']">SEMAK</button> -->
+
+        </form>
+        <!-- <button type="button" class="btn btn-primary" (click)="openModal(template,template1)">SEMAK</button> -->
+    </div>
+
+    <ng-template #template>
+        <div class="modal-header" style="background-color: #1d1da1;" [ngClass]="fontColor">
+            <h4 class="modal-title text-white"><span class="font-white">{{ "icCheck.notifikasi" | translate }}</span>
+            </h4>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body" [ngClass]="fontColor">
+            <span class="font-black">{{ "icCheck.HarapMaafNoKadPengenalanTiadaDiDalamRekod" | translate }}</span>
+        </div>
+        <div class="row p-3 d-flex justify-content-around" style="text-align: center;">
+            <button type="button" class="btn btn-default" (click)="modalRef.hide()">{{ "icCheck.KEMBALI" | translate
+                }}</button>
+        </div>
+    </ng-template>
+
+    <ng-template #template1>
+        <div class="modal-header" style="background-color: #1d1da1;" [ngClass]="fontColor">
+            <div class="d-flex justify-content-center" style="text-align: center;">
+                <h4 class="modal-title font-white" style="text-align: center;">{{ "icCheck.pemakluman" | translate }}
+                </h4>
+            </div>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body font-black" [ngClass]="fontColor">
+            <div class="row p-2">
+                <p class="font-black">
+                    {{ "icCheck.HarapMaafWarganegaraBerumur21TahunKeBawah" | translate }}
+                </p>
+            </div>
+            <div class="row p-3 d-flex justify-content-around" style="text-align: center;">
+                <button type="button" class="btn btn-default font-white" (click)="modalRef.hide()">{{ "icCheck.KEMBALI"
+                    | translate }}</button>
+                <!-- <button type="button" class="btn btn-primary font-white"
+                    (click)="modalRef.hide();showDaftar();">{{ "icCheck.DaftarAkaun" | translate }}</button> -->
+            </div>
+        </div>
+    </ng-template>
+</div>
+<div class="wrapper fadeInDown" [ngClass]="fontSize" [ngClass]="fontColor" [hidden]="icpassed!=1">
+    <div id="formContent" style="align-items: center;">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first p-3 text-dark">
+            <i class="fas fa-user-circle fa-5x"></i>
+        </div>
+
+        <!-- register Form -->
+        <!-- email and password -->
+        <form class="font-black" (ngSubmit)="onSubmit2()">
+            <input type="email" id="emailfirst" class="fadeIn second" name="email" placeholder="{{ 'register.Emel' | translate }}" required>
+            <br>
+            <small style="color:red" [hidden]="emailError == 0">{{ "icCheck.form2email" | translate }}</small>
+            <br>
+            <input type="password" id="password1" class="fadeIn third" name="login" placeholder="{{ 'register.KataLaluan' | translate }}" required>
+            <br>
+            <small style="color:red" [hidden]="pass1Error == 0">{{ "icCheck.form2pass1" | translate }}</small>
+            <br>
+            <input type="password" id="password2" class="fadeIn third" name="login" placeholder="{{ 'register.PengesahanKataLaluan' | translate }}" required>
+            <br>
+            <small style="color:red" [hidden]="pass2Error == 0">{{ "icCheck.form2pass2" | translate }}</small>
+            <small style="color:red" [hidden]="pass2ErrorS == 0">{{ "icCheck.form2passnotsame" | translate }}</small>            
+            <br>
+            <!-- An element to toggle between password visibility -->
+            <!-- <input type="checkbox" onclick="myFunction()">Show Password -->
+            <!-- <input type="submit" class="fadeIn fourth" value="Seterusnya"> -->
+            <button type="submit" class="btn btn-primary p-2">{{ 'register.DaftarAkaun' | translate }}</button>
+        </form>
+    </div>
+</div>
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-fussion"
+  [fullScreen]="true"
+>
+  <p style="color: white">Loading...</p>
+</ngx-spinner>

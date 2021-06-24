@@ -1,0 +1,100 @@
+{
+    "navigationBar":{
+        "selamatDatang":"Selamat Datang",
+        "Kemaskini":"Kemaskini",
+        "home": "Laman Utama",
+        "archive": "Arkib",
+        "EpsStatusCheck": "Semakan Status EPS",
+        "applicationStatus": "SEMAKAN STATUS PERMOHONAN",
+        "faq":"Soalan Lazim (FAQ)",
+        "registerAccount":"Daftar Akaun",
+        "login": "Log Masuk",
+        "logout": "Log Keluar",
+        "SemakanStatusPermohonan":"SEMAKAN STATUS PERMOHONAN",
+        "ArkibDokumen":"Arkib Dokumen",
+        "ArkibBergambar":"Arkib Bergambar"
+    },
+
+    "footer":{
+        "Aduan&Maklumbalas": "Aduan & Maklumbalas",
+        "HubungiKami": "Hubungi Kami"
+    },
+
+    "frontPage":{
+        "annoucement":"PENGUMUMAN"
+    },
+
+    "w3cs":{
+        "Tutup":"Tutup",
+        "SaizTulisan":"Saiz Tulisan",
+        "TemaWarna":"Tema Warna",
+        "WarnaTulisan": "Warna Tulisan",
+        "Fontyangbolehdibaca":"Font yang boleh dibaca",
+        "GambarSkalaKelabu":"Gambar Skala Kelabu",
+        "WarnaTerbalik":"Warna Terbalik"
+    },
+
+    "icCheck":{
+        "SemakanNoKadPengenalan": "SEMAKAN NO. KAD PENGENALAN",
+        "NoKadPengenalan": "NO KAD PENGENALAN",
+        "SEMAK":"SEMAK",
+        "ErrorCaptcha": "Captcha Tidak Sah, Sila Cuba Lagi!",
+        "ErrorIC": "IC Tidak Sah, Sila Cuba Lagi!",
+        "form2email": "Emel Tidak Sah, Sila Cuba Lagi!",
+        "form2pass1": "Kata Laluan Tidak Sah, Sila Cuba Lagi!",
+        "form2pass2": "Pengesahan Kata Laluan Tidak Sah, Sila Cuba Lagi!",
+        "form2passnotsame": "Kata Laluan Dan Pengesahan Tidak Sama!",
+        "notifikasi":"Notifikasi",
+        "HarapMaafNoKadPengenalanTiadaDiDalamRekod":"Harap Maaf! No. Kad Pengenalan anda tiada dalam rekod.",
+        "KEMBALI":"KEMBALI",
+        "pemakluman":"PEMAKLUMAN",
+        "HarapMaafWarganegaraBerumur21TahunKeBawah":"Harap Maaf! Warganegara Malaysia yang berumur 21 tahun ke bawah tidak boleh memohon permit ejen pemilikan sah.",
+        "DaftarAkaun":"DAFTAR AKAUN"
+    },
+
+    "login":{
+        "KataLaluan":"Kata Laluan",
+        "OrangAwam": "Orang Awam",
+        "IngatSaya": "Ingat Saya",
+        "LupaKataLaluan": "Lupa Kata Laluan?",
+        "LogMasuk": "Log Masuk",
+
+        "Pegawai&Admin":"Pegawai & Admin"
+    },
+
+    "register":{
+        "Emel":"Emel",
+        "KataLaluan":"Kata Laluan",
+        "PengesahanKataLaluan": "Pengesahan Kata Laluan",
+        "DaftarAkaun":"Daftar Akaun"
+    },
+    "validation":{
+        "File":"Sila Muat Naik",
+        "Field": "Tidak Sah",
+        "Radio": "Sila Pilih"
+    },
+    "register2":{
+        "DaftarAkaun":"DAFTAR AKAUN",
+        "NamaPenuh":"NAMA PENUH",
+        "NoKadPengenalan":"NO KAD PENGENALAN",
+        "emel": "EMEL",
+        "jantina":"JANTINA",
+        "lelaki":"Lelaki",
+        "perempuan":"Perempuan",
+        "alamat":"ALAMAT",
+        "alamat1":"Alamat Baris 1",
+        "alamat2":"Alamat Baris 2",
+        "poskod":"POSKOD",
+        "negeri":"NEGERI",
+        "noTelefon":"NO TELEFON",
+        "NegeriKutipanPermit":"CAWANGAN KUTIPAN PERMIT",
+        "SalinanKadPengenalan":"SALINAN KAD PENGENALAN",
+        "GambarProfil":"GAMBAR PROFIL",
+        "hantar":"HANTAR",
+
+        "Notifikasi": "Notifikasi",
+        "akaunAndaTelahBerjayaDicipta":"Akaun anda telah berjaya dicipta. Klik butang log masuk untuk memohon permit ejen pemilikan sah.",
+        "logMasuk": "LOG MASUK"
+
+    }
+}

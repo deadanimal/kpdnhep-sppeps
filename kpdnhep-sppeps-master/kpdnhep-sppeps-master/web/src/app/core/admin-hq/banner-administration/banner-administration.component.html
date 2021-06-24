@@ -1,0 +1,369 @@
+
+<div class="wrapper">
+    <div id="formContent">
+
+        <div class="p-3">
+
+            <div>
+                <h4>Konfigurasi Banner</h4>
+            </div>
+
+            <div class="container-fluid mt-4">
+                <div class="card m-2">
+
+                    <div class="card-header" style="background-color: #f7e8ff;">
+                        <h5> Senarai Banner</h5>
+                    </div>
+
+                    <div class="card-body p-3">
+                        <div class="row p-3 mb-0 justify-content-end">
+                            <!-- <div class="col form-group d-flex  mb-0 p-0" id="datatable_search">
+                                <label class="col-form-label pr-2" for="search">Cari Rekod: </label>
+                                <input class="col-6 form-control" type="text" name="search"
+                                    placeholder="Type to filter the name column..." (keyup)="updateFilter($event)" />
+                            </div> -->
+                            <button type="button" class="btn text-white" style="background-color: #1d1da1;"
+                                (click)="addBanner(AddBanner)"><i class="fas fa-plus-circle"></i> Tambah</button>
+                        </div>
+                        <div class="row p-3 mb-0">
+                            <div class="col form-group d-flex justify-content-start align-items-center p-0 mb-0">
+                                <label class="d-flex flex-nowrap mb-0">
+                                    <span class="pl-0 pt-2 pr-2">papar</span>
+                                    <select name="datatable_length" aria-controls="datatable" class="col form-control"
+                                        (change)="entriesChange($event)">
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="-1">All</option>
+                                    </select>
+                                    <span class="p-2">rekod</span>
+                                </label>
+                            </div>
+                            <div class="col form-group d-flex justify-content-end mb-0 p-0" id="datatable_search">
+                                <label class="col-form-label pr-2" for="search">Cari Rekod: </label>
+                                <input class="col-6 form-control" type="text" name="search" placeholder=""
+                                    (keyup)="updateFilter($event)" />
+                            </div>
+                        </div>
+
+                        <ngx-datatable #mydatatable class="material selection-cell" [headerHeight]="50" [limit]="5"
+                            [columnMode]="ColumnMode.force" [footerHeight]="50" rowHeight="auto" [rows]="banner"
+                            [limit]="tableEntries != -1 ? tableEntries : undefined" (activate)="onActivate($event)">
+
+                            <ngx-datatable-column name="No" [sortable]="false" [width]="100">
+                                <ng-template let-rowIndex="rowIndex" let-row="row" ngx-datatable-cell-template>
+                                    <strong>{{ rowIndex + 1 }}</strong>
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                            <ngx-datatable-column name="title">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>TAJUK</span>
+                                </ng-template>
+                                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row"
+                                    let-value="value">
+                                    {{ value }}
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                            <ngx-datatable-column name="content">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>KETERANGAN</span>
+                                </ng-template>
+                                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value"
+                                    let-row="row">
+                                    {{ value }}
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                            <ngx-datatable-column name="imgLink">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>GAMBAR</span>
+                                </ng-template>
+                                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value"
+                                    let-row="row">
+                                    <img class="imgDisplay" src='{{value}}' style="width: 100px;">
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                            <ngx-datatable-column name="date">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>TARIKH CIPTA</span>
+                                </ng-template>
+                                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value"
+                                    let-row="row">
+                                    {{ value }}
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                            <ngx-datatable-column name="Status">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>STATUS</span>
+                                </ng-template>
+                                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row"
+                                    let-value="value">
+                                    <span *ngIf="row.status == 'Aktif'" class="badge badge-success">{{ value }}</span>
+                                    <span *ngIf="row.status == 'Tidak Aktif'" class="badge badge-danger">{{ value
+                                        }}</span>
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                            <ngx-datatable-column>
+                                <ng-template ngx-datatable-header-template>
+                                    <span>Tindakan</span>
+                                </ng-template>
+                                <ng-template ngx-datatable-cell-template>
+
+                                    <button class="btn btn-default btn-sm" (click)="editBanner(EditBanner)">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn btn-danger btn-sm"  (click)="deleteBanner(DeleteBanner)">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                        </ngx-datatable>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #AddBanner>
+    <div class="modal-header" style="background-color: #1d1da1; height:70px">
+        <h4 class="modal-title text-white">Tambah</h4>
+    </div>
+    <div class="modal-body">
+        <form class="p-3 d-flex justify-content-center font-black" style="width: 100%;"
+            (ngSubmit)="AddBannerSuccess(addBannerSuccess)">
+            <div class="" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 100%;">
+
+                <div class="form-group">
+                    <label for="title">Tajuk MS</label>
+                    <input type="text" class="form-control" id="title" aria-describedby="title" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="title">Tajuk EN</label>
+                    <input type="text" class="form-control" id="title" aria-describedby="title" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="content">Keterangan MS</label>
+                    <!-- <input type="text" class="form-control" id="content" aria-describedby="content" placeholder=""> -->
+                    <!-- <form> -->
+                    <quill-editor [modules]="modules" id="quill" data-toggle="quill"></quill-editor>
+                    <!-- </form> -->
+                </div>
+                <div class="form-group">
+                    <label for="content">Keterangan EN</label>
+                    <!-- <input type="text" class="form-control" id="content" aria-describedby="content" placeholder=""> -->
+                    <!-- <form> -->
+                    <quill-editor [modules]="modules" id="quill" data-toggle="quill"></quill-editor>
+                    <!-- </form> -->
+                </div>
+                <div class="form-group">
+                    <label for="image">Gambar</label>
+                    <br>
+                    <label class="btn btn-primary form-control col-6" (change)="updateName($event)">
+                        <i class="fa fa-image"></i> Pilih Gambar<input type="file" style="display: none;"
+                            name="image">
+                    </label>
+
+                    <div id="fileList">Tiada Gambar Dipilih</div>
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="active">
+                        <label class="form-check-label pl-1 pr-2" for="inlineRadio1">Aktif</label>
+
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="notActive">
+                        <label class="form-check-label pl-1 pr-2" for="inlineRadio1">Tidak Aktif</label>
+                    </div>
+                </div>
+
+                <div class="form-group d-flex justify-content-end">
+                    <button type="button" class="btn btn-light text-white" (click)="closeModal()"
+                        style="background-color: #ec1a22;">Batal</button>
+                    <button type="submit" class="btn btn-light text-white"
+                        style="background-color: #2dce89;">Simpan</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+<ng-template #addBannerSuccess>
+    <!-- <div class="modal-header" style="background-color: #1d1da1;">
+        <h5 class="text-white">Cipta Kategori Baru</h5>
+    </div> -->
+    <div class="modal-body">
+        <div class="container">
+            <div class="row d-flex justify-content-center p-3">
+
+                <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+
+            </div>
+            <div class="row d-flex justify-content-center p-3" style="text-align: center;">
+
+                <p>Data anda telah berjaya disimpan.</p>
+
+            </div>
+            <div class="row d-flex justify-content-around" style="text-align: center;">
+                <!-- <button type="button" class="btn btn-default font-white" (click)="modalRef.hide()"
+                    style="background-color: #ec1a22;">Batal</button> -->
+                <button type="submit" class="btn btn-primary font-white" style="background-color: #2e0a5f;"
+                    (click)="closeModal2()">OK!</button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #EditBanner>
+    <div class="modal-header" style="background-color: #1d1da1; height:70px">
+        <h4 class="modal-title text-white">Kemaskini</h4>
+    </div>
+    <div class="modal-body">
+        <form class="p-3 d-flex justify-content-center font-black" style="width: 100%;"
+            (ngSubmit)="editBannerSuccess(EditBannerSuccess)">
+            <div class="" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 100%;">
+
+                <div class="form-group">
+                    <label for="title">Tajuk MS</label>
+                    <input type="text" class="form-control" id="title" aria-describedby="title" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="title">Tajuk EN</label>
+                    <input type="text" class="form-control" id="title" aria-describedby="title" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="content">Keterangan MS</label>
+                    <!-- <input type="text" class="form-control" id="content" aria-describedby="content" placeholder=""> -->
+                    <!-- <form> -->
+                    <quill-editor [modules]="modules" id="quill" data-toggle="quill"></quill-editor>
+                    <!-- </form> -->
+                </div>
+                <div class="form-group">
+                    <label for="content">Keterangan EN</label>
+                    <!-- <input type="text" class="form-control" id="content" aria-describedby="content" placeholder=""> -->
+                    <!-- <form> -->
+                    <quill-editor [modules]="modules" id="quill" data-toggle="quill"></quill-editor>
+                    <!-- </form> -->
+                </div>
+                <div class="form-group">
+                    <label for="image">Gambar</label>
+                    <br>
+                    <label class="btn btn-primary form-control col-6" (change)="updateName($event)">
+                        <i class="fa fa-image"></i> Pilih Gambar<input type="file" style="display: none;"
+                            name="image">
+                    </label>
+
+                    <div id="fileList">Tiada Gambar Dipilih</div>
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="active">
+                        <label class="form-check-label pl-1 pr-2" for="inlineRadio1">Aktif</label>
+
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="notActive">
+                        <label class="form-check-label pl-1 pr-2" for="inlineRadio1">Tidak Aktif</label>
+                    </div>
+                </div>
+
+                <div class="form-group d-flex justify-content-end">
+                    <button type="button" class="btn btn-light text-white" (click)="closeModal()"
+                        style="background-color: #ec1a22;">Batal</button>
+                    <button type="submit" class="btn btn-light text-white"
+                        style="background-color: #2dce89;">Simpan</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+<ng-template #EditBannerSuccess>
+    <!-- <div class="modal-header" style="background-color: #1d1da1;">
+        <h5 class="text-white">Cipta Kategori Baru</h5>
+    </div> -->
+    <div class="modal-body">
+        <div class="container">
+            <div class="row d-flex justify-content-center p-3">
+
+                <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+
+            </div>
+            <div class="row d-flex justify-content-center p-3" style="text-align: center;">
+
+                <p>Data anda telah berjaya dikemaskini.</p>
+
+            </div>
+            <div class="row d-flex justify-content-around" style="text-align: center;">
+                <!-- <button type="button" class="btn btn-default font-white" (click)="modalRef.hide()"
+                    style="background-color: #ec1a22;">Batal</button> -->
+                <button type="submit" class="btn btn-primary font-white" style="background-color: #2e0a5f;"
+                    (click)="closeModal2()">OK!</button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+
+
+<ng-template #DeleteBanner>
+    <div class="modal-body d-flex justify-content-center">
+        <div class="container">
+            <div class="row d-flex justify-content-center p-3">
+                <i class="fas fa-exclamation-circle fa-5x" style="color: #ec1a22;"></i>
+            </div>
+            <div class="row d-flex justify-content-center p-3">
+                <h5>Hapus Data</h5>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <p>Adakah anda ingin menghapuskan data ini?</p>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <input type="button" class="btn btn-light text-white" (click)="confirmDelete(DeleteBannerSuccess)"
+                    style="background-color: #2dce89;" value="YA">
+                <input type="button" class="btn btn-light text-white" (click)="closeModal()"
+                    style="background-color: #ec1a22;" value="BATAL">
+            </div>
+        </div>
+
+    </div>
+</ng-template>
+
+<ng-template #DeleteBannerSuccess>
+    <!-- <div class="modal-header" style="background-color: #1d1da1;">
+        <h5 class="text-white">Cipta Kategori Baru</h5>
+    </div> -->
+    <div class="modal-body">
+        <div class="container">
+            <div class="row d-flex justify-content-center p-3">
+
+                <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+
+            </div>
+            <div class="row d-flex justify-content-center p-3" style="text-align: center;">
+
+                <p>Data anda telah berjaya dihapus.</p>
+
+            </div>
+            <div class="row d-flex justify-content-around" style="text-align: center;">
+                <!-- <button type="button" class="btn btn-default font-white" (click)="modalRef.hide()"
+                    style="background-color: #ec1a22;">Batal</button> -->
+                <button type="submit" class="btn btn-primary font-white" style="background-color: #2e0a5f;"
+                    (click)="closeModal2()">OK!</button>
+            </div>
+        </div>
+    </div>
+</ng-template>

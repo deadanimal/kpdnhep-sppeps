@@ -1,0 +1,72 @@
+[
+    {
+        "category":"Orang Awam",
+        "date":"15/02/2021 10:39:12",
+        "email":"awam@gmail.com",
+        "ip":"123.456.789.115",
+        "status":"Log Keluar"
+    },
+    {
+        "category":"Orang Awam",
+        "date":"17/02/2021 12:37:12",
+        "email":"example@gmail.com",
+        "ip":"169.254.71.412",
+        "status":"Log Keluar"
+    },
+    {
+        "category":"Pegawai Pemproses HQ",
+        "date":"23/12/2020 15:41:02",
+        "email":"nora@kpdnhep.gov.my",
+        "ip":"10.19.1.172",
+        "status":"Log Keluar"
+    },
+    {
+        "category":"Pegawai Pemproses Negeri",
+        "date":"23/12/2020 18:21:13",
+        "email":"aliya@kpdnhep.gov.my",
+        "ip":"10.19.1.233",
+        "status":"Log Keluar"
+    },
+    {
+        "category":"Pentadbir Sistem HQ",
+        "date":"23/12/2020 11:11:11",
+        "email":"amin@kpdnhep.gov.my",
+        "ip":"10.19.1.233",
+        "status":"Log Keluar"
+    },
+    {
+        "category":"Orang Awam",
+        "date":"23/12/2020 08:24:59",
+        "email":"fahmi@yahoo.com.my",
+        "ip":"169.254.63.568",
+        "status":"Log Keluar"
+    },
+    {
+        "category":"Orang Awam",
+        "date":"24/12/2020 08:24:59",
+        "email":"yusuf@yahoo.com.my",
+        "ip":"169.254.63.568",
+        "status":"Log Keluar"
+    },
+    {
+        "category":"Pegawai Pemproses HQ",
+        "date":"23/12/2020 15:01:48",
+        "email":"nora@kpdnhep.gov.my",
+        "ip":"10.19.1.172",
+        "status":"Log Keluar"
+    },
+    {
+        "category":"Pegawai Pemproses Negeri",
+        "date":"23/12/2020 15:01:48",
+        "email":"abu@kpdnhep.gov.my",
+        "ip":"10.19.1.196",
+        "status":"Log Keluar"
+    },
+    {
+        "category":"Pentadbir Pengurusan Maklumat",
+        "date":"22/11/2020 11:39:52",
+        "email":"hafiz@kpdnhep.gov.my",
+        "ip":"10.19.1.180",
+        "status":"Log Keluar"
+    }
+]

@@ -1,0 +1,53 @@
+<div class="wrapper">
+
+    <div class="p-2 text-capitalize" style="text-align: center; width: 75%; height:80px;">
+        <h3 class="h1 text-dark pt-4"><strong>Arkib Bergambar</strong></h3>
+    </div>
+
+    <div class="text-capitalize mt-4" style="text-align: center;">
+        <h5 class="h3"><strong>Arkib Bergambar 1</strong></h5>
+    </div>
+
+    <div class="container-fluid mt-3" style="padding-left: 50px; padding-right:50px;">
+        <!-- <span>Nama Program: </span> -->
+
+        <div class="row">
+            <div class="col">
+                <carousel [showIndicators]="showIndicator">
+                    <slide *ngFor="let slide of slides; let index=index">
+                        <img [src]="slide.image" alt="image slide" style=" width: 100%;">
+
+                        <div class="carousel-caption">
+                            <h4 class="text-white">Slide {{index}}</h4>
+                            <p>{{slide.text}}</p>
+                        </div>
+                    </slide>
+                </carousel>
+                <!-- <br />
+                <div>
+                    <button type="button" class="btn btn-info" (click)="switchIndicator()">Enable/Disable Indicator
+                    </button>
+                </div> -->
+            </div>
+            <div class="col">
+                <p>nama program: jkasjd</p>
+                <p>tempat: jkasjd</p>
+                <p>tarikh : jkasjd</p>
+                <p>keterangan</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae pariatur minus deleniti velit cumque
+                    dolore tempora commodi. Maxime vero quis repudiandae beatae perferendis est culpa officia explicabo!
+                    Voluptates, officiis non!</p>
+
+                <!-- <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false"
+                    [indicatorsByChunk]="true">
+                    <slide *ngFor="let slide of slides; let index=index">
+                        <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+                        <div class="carousel-caption">
+                            <h4>Slide {{index}}</h4>
+                        </div>
+                    </slide>
+                </carousel> -->
+            </div>
+        </div>
+    </div>
+</div>

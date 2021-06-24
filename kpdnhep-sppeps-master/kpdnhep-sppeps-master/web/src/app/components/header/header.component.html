@@ -1,0 +1,86 @@
+<div class="wrapper" [ngClass]="themeColor">
+    <div class="container-fluid" [ngClass]="fontColor" style="padding-left: 0px !important; padding-right:0px !">
+        <div class="row head1">
+
+            <!-- <div class="col">
+                <ul class="navbar-nav align-items-center ml-md-auto">
+                    <li class="nav-item d-xl-none">
+                        <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin"
+                            data-target="#sidenav-main" (click)="openSidebar()">
+                            <div class="sidenav-toggler-inner">
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item d-sm-none">
+                        <a class="nav-link" (click)="openSearch()">
+                            <i class="ni ni-zoom-split-in"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div> -->
+            <div class="col">
+                <p class="text-white mt-1 pl-2"><small><span class="font-white">{{ 'Kemaskini' | translate }}:
+                            {{today |
+                            date:'mediumDate'}} </span></small></p>
+            </div>
+            <div class="col">
+                <div class="d-flex justify-content-end">
+                    <div *ngIf="usrname != '', else default">
+                        <div class="row">
+                            <p class="p-2">
+                                <span class="font-white">{{ 'Selamat Datang' | translate }}, {{ usrname }}
+                                </span>
+                            </p>
+                            <!-- <span class="d-flex align-items-center"><i class="fas fa-user-circle text-white"></i></span> -->
+                            <div class="dropdown d-flex align-items-center pr-2" dropdown>
+                                <a class="" data-toggle="dropdown" dropdownToggle id="navbarDropdownMenuLink">
+                                    <span class="d-flex align-items-center"><i
+                                            class="fas fa-user-circle text-white"></i></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
+                                    <a class="nav-link font-black" [routerLink]="['/global-officer/admin-profile']">
+                                        <i class="fas fa-user"></i> Profil
+                                    </a>
+                                    <a class="nav-link font-black" (click)="logout()"
+                                        [routerLink]="['/core/user/user-profile']">
+                                        <i class="fas fa-power-off"></i> Log Keluar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="p-2"><button type="button" class="btn btn-sm text-white"
+                      [routerLink]="['/auth/ic-check']" style="background: rgb(42,55,125);
+                      background: linear-gradient(90deg, rgba(42,55,125,1) 0%, rgba(108,40,183,1) 50%);">Daftar Akaun</button></div>
+              <div class="p-2"><button type="button" class="btn btn-sm text-white"
+                      [routerLink]="['/auth/login']" style="background: rgb(42,55,125);
+                      background: linear-gradient(90deg, rgba(42,55,125,1) 0%, rgba(108,40,183,1) 50%);">Log Masuk</button></div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #default>
+    <div class="p-2">
+        <button type="button" class="btn btn-sm text-white" [routerLink]="['/auth/ic-check']" style="background: rgb(42,55,125);
+        background: linear-gradient(90deg, rgba(42,55,125,1) 0%, rgba(108,40,183,1) 50%);">
+            <span class="font-white">{{ 'navigationBar.registerAccount' | translate }}</span>
+        </button>
+    </div>
+    <div class="p-2">
+        <button type="button" class="btn btn-sm text-white" [routerLink]="['/auth/login']" style="background: rgb(42,55,125);
+        background: linear-gradient(90deg, rgba(42,55,125,1) 0%, rgba(108,40,183,1) 50%);">
+            <span class="font-white">{{ 'navigationBar.login' | translate }}</span>
+        </button>
+    </div>
+    <!-- <div class="p-2">
+        <button type="button" class="btn btn-sm text-white" [routerLink]="['/core/admin-hq/archive']" style="background: rgb(42,55,125);
+        background: linear-gradient(90deg, rgba(42,55,125,1) 0%, rgba(108,40,183,1) 50%);">
+        <span class="font-white">arkib</span>
+        </button>
+    </div> -->
+</ng-template>

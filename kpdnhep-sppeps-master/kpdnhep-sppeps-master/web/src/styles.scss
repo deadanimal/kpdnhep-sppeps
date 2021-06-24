@@ -1,0 +1,245 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/*!
+=========================================================
+* BLK Design System PRO Angular - v1.0.0
+=========================================================
+* Product Page: https://www.creative-tim.com/product/blk-design-system-pro-angular
+* Copyright 2019 Creative Tim (https://www.creative-tim.com)
+* Coded by Creative Tim
+=========================================================
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+*/
+
+
+
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.scss';
+@import '~@swimlane/ngx-datatable/themes/dark.scss';
+@import '~@swimlane/ngx-datatable/themes/bootstrap.scss';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+//@import '../node_modules/filepond/dist/filepond.min.css';
+
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.bubble.css';
+@import '~quill/dist/quill.snow.css';
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.fs-09rem {
+  p,
+  span,
+  label {
+    font-size: 0.9rem;
+  }
+
+}
+
+.fs-1rem {
+  p,
+  span,
+  label {
+    font-size: 1rem;
+  }
+
+}
+
+.fs-11rem {
+  p,
+  span,
+  label {
+    font-size: 1.1rem;
+  }
+
+}
+
+.fs-12rem {
+  p,
+  span,
+  label {
+    font-size: 1.2rem;
+  }
+}
+
+.fs-13rem {
+  p,
+  span,
+  label {
+    font-size: 1.2rem;
+  }
+}
+
+.theme-default {
+  .foot 
+  {
+    background: #2E095F;
+    // 1d1da1
+    // 2E095F
+  }
+
+  .head1{
+    background: #1d1da1;
+  }
+}
+
+.theme-info {
+  .head1,
+  .foot
+  {
+    background: #1926da;
+  }
+}
+
+.theme-primary {
+  .head1,
+  .foot 
+  {
+    background: #0a0a0a;
+  }
+}
+
+.theme-success {
+  .head1,
+  .foot 
+  {
+    background: #c96130;
+  }
+}
+
+
+//font Color
+.font-default {
+  .font-white
+  {
+    color: white;
+  }
+
+  .font-black
+  {
+    color: black;
+  }
+
+}
+
+.font-info {
+  // li,
+  // p,
+  // a,
+  .font-white,
+  .font-black
+  {
+    color: #384fa2;
+  }
+  
+}
+
+.font-primary {
+  // li,
+  // p,
+  // a,
+  .font-white,
+  .font-black
+  {
+    color: #ca612f;
+  }
+  
+}
+
+.font-success {
+  // li,
+  // p,
+  // a,
+  .font-white,
+  .font-black
+  {
+    color: #3fb548;
+  }
+}
+
+
+
+//check point
+/* Form Progress */
+
+.progress {
+
+  margin: 20px auto;
+  text-align: center;
+  padding-bottom: 80px;
+}
+.progress .circle,
+.progress .bar {
+  display: inline-block;
+  background: #fff;
+  width: 70px;
+  height: 70px;
+  border-radius: 40px;
+  border: 1px solid #d5d5da;
+  vertical-align:top;
+}
+.progress .bar {
+  position: relative;
+  // min-width: 70px;
+  width: 80px;
+  // max-width: 150px;
+  height: 6px;
+  margin: 0 -5px 17px -5px;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  top:16px;
+  vertical-align:top
+}
+.progress .circle .label {
+  display: inline-block;
+  width: 62px;
+  height: 62px;
+  line-height: 60px;
+  border-radius: 32px;
+  margin-top: 3px;
+  color: #b5b5ba;
+  font-size: 25px;
+}
+.progress .circle .title {
+  color: #b5b5ba;
+  font-size: 13px;
+  line-height: 18px;
+  margin-left: -30px;
+  display: block;
+  width: 100px;
+  margin-top: 5px;
+}
+/* Done / Active */
+
+.progress .bar.done,
+.progress .circle.done {
+  background: red;
+}
+.progress .bar.active {
+  background: linear-gradient(to right, red 40%, #FFF 60%);
+}
+.progress .circle.done .label {
+  color: black;
+  background: white;
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, .2);
+}
+.progress .circle.done .title {
+  color: #444;
+}
+.progress .circle.active .label {
+  color: black;
+  background: white;
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, .2);
+}
+.progress .circle.active .title {
+  color: black;
+}
+
+

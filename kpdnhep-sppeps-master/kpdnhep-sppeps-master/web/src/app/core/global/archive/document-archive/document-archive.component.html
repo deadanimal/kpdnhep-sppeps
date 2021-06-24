@@ -1,0 +1,29 @@
+<div class="wrapper">
+
+    <div class="p-2 text-capitalize" style="text-align: center; width: 75%; height:80px;">
+        <h3 class="h1 text-dark pt-4"><strong>Arkib Dokumen</strong></h3>
+    </div>
+
+    <div class="container-fluid mt-3" style="padding-left: 50px; padding-right:50px; ">
+        <div class="row m-2" style="justify-content: center;">
+            <!-- <div> -->
+                <div class="card card-stats p-3 m-2" *ngFor="let i of arkib" style="background-color: #f3effd;">
+                    <a class="nav-link" [routerLink]="['/global/document-archive-list']">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto d-flex justify-content-center mt-2">
+                                    <i class='{{i.icon}} fa-3x' style="color: #1d1da1"></i>
+                                </div>
+                                <div class="col d-flex align-items-center pl-0">
+                                    <h5 class="h4 card-title text-capitalize mb-0">
+                                        {{i.name}}
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <!-- </div> -->
+        </div>
+    </div>
+</div>

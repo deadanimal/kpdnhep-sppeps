@@ -1,0 +1,68 @@
+<div class="wrapper" [ngClass]="themeColor">
+    <div class="container-fluid" [ngClass]="fontColor">
+        <div class="row head1">
+            <!-- style="background-color: #1d1da1;" -->
+            <div class="col">
+                <p class="text-white mt-1"><small><span class="font-white">{{ 'navigationBar.Kemaskini' | translate }}:
+                            {{today |
+                            date:'mediumDate'}} </span></small></p>
+            </div>
+            <div class="col">
+                <div class="d-flex justify-content-end">
+                    <div *ngIf="token !== null, else default">
+                        <div class="row">
+                            <div class="col">
+                                <h6 class="h6 p-2">
+                                    <span class="font-white" style="font-size: 12px;">{{ 'navigationBar.selamatDatang' | translate }}, {{ usrname }}
+                                    </span>
+                                </h6>
+                            </div>
+                            <div class="col-2">
+                                <!-- <span class="d-flex align-items-center"><i class="fas fa-user-circle text-white"></i></span> -->
+                                <div class="dropdown d-flex align-items-center pr-2" dropdown>
+                                    <a class="" data-toggle="dropdown" dropdownToggle id="navbarDropdownMenuLink">
+                                        <span class="d-flex align-items-center"><i
+                                                class="fas fa-user-circle text-white" style="font-size: 20px; margin-top: 10px"></i></span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
+                                        <a class="nav-link font-black" [routerLink]="['/user/user-profile']">
+                                            <i class="fas fa-user"></i> Profil
+                                        </a>
+                                        <a class="nav-link font-black"  (click)="logout()"><i class="fas fa-power-off"></i>Log Keluar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="p-2"><button type="button" class="btn btn-sm text-white"
+                      [routerLink]="['/auth/ic-check']" style="background: rgb(42,55,125);
+                      background: linear-gradient(90deg, rgba(42,55,125,1) 0%, rgba(108,40,183,1) 50%);">Daftar Akaun</button></div>
+              <div class="p-2"><button type="button" class="btn btn-sm text-white"
+                      [routerLink]="['/auth/login']" style="background: rgb(42,55,125);
+                      background: linear-gradient(90deg, rgba(42,55,125,1) 0%, rgba(108,40,183,1) 50%);">Log Masuk</button></div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #default>
+    <div class="p-2">
+        <button type="button" class="btn btn-sm text-white" [routerLink]="['/auth/ic-check']" style="background: rgb(42,55,125);
+        background: linear-gradient(90deg, rgba(42,55,125,1) 0%, rgba(108,40,183,1) 50%);">
+            <span class="font-white">{{ 'navigationBar.registerAccount' | translate }}</span>
+        </button>
+    </div>
+    <div class="p-2">
+        <button type="button" class="btn btn-sm text-white" [routerLink]="['/auth/login']" style="background: rgb(42,55,125);
+        background: linear-gradient(90deg, rgba(42,55,125,1) 0%, rgba(108,40,183,1) 50%);">
+            <span class="font-white">{{ 'navigationBar.login' | translate }}</span>
+        </button>
+    </div>
+    <!-- <div class="p-2">
+        <button type="button" class="btn btn-sm text-white" [routerLink]="['/core/admin-hq/archive']" style="background: rgb(42,55,125);
+        background: linear-gradient(90deg, rgba(42,55,125,1) 0%, rgba(108,40,183,1) 50%);">
+        <span class="font-white">arkib</span>
+        </button>
+    </div> -->
+</ng-template>

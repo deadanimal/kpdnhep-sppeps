@@ -1,0 +1,2073 @@
+<div class="wrapper pt-0" [ngClass]="fontSize" *ngIf="type == p1">
+
+    <div class="p-2"
+        style="text-align: center; background-color: #e0bbfe; width: 90%; max-width: 1000px; height:100px;">
+        <h3 class="h1 text-white mt-3"><strong>PERMOHONAN BAHARU</strong></h3>
+    </div>
+
+    <div class="p-2 m-2" style="text-align: center; max-width:1000px; width:90%">
+        <div class="container-fluid mt-1">
+            <div class="card m-2">
+                <div class="card-body d-flex align-items-center justify-content-center p-3 pt-0" style="height: 180px;">
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+                    <div class="progress pb-2"
+                        style="background-color: white; box-shadow:none; height:100%; width:100%; justify-content:center; align-items:center;">
+
+                        <div class="circle done"> <span class="label">1</span>
+                            <span class="title pl-4" style="width: fit-content;">Isi Maklumat Permohonan</span>
+                        </div>
+
+                        <span class="bar active"></span>
+
+                        <div class="circle"> <span class="label">2</span>
+                            <span class="title pl-4" style="width: fit-content;">Hantar Permohonan</span>
+                        </div>
+
+                        <span class="bar"></span>
+
+                        <div class="circle"> <span class="label">3</span>
+                            <span class="title pl-4" style="width: fit-content;">Pembayaran</span>
+                        </div>
+
+                        <span class="bar"></span>
+
+                        <div class="circle"> <span class="label">4</span>
+                            <span class="title pl-4" style="width: fit-content;">Kutipan Permit</span>
+                        </div>
+
+                        <span class="bar"></span>
+
+                        <div class="circle"> <span class="label">5</span>
+                            <span class="title" style="width: fit-content; padding-left:43px;">Selesai</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="formContent" [ngClass]="fontColor">
+
+        <form class="d-flex justify-content-center font-black" style="width: 100%;"
+            (ngSubmit)="confirmSubmit(confirmSubmit)">
+            <div class="d-flex justify-content-center flex-wrap" fxLayout="column" fxLayoutAlign="space-evenly stretch"
+                style="width: 100%;">
+
+                <div class="p-2 " style="width: 100%; background-color:#2e095f; border-radius: 10px 10px 0px 0px;">
+                    <h3 class="text-white m-0">Bahagian I : Maklumat Pemohon</h3>
+                </div>
+
+                <div class="p-3" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 90%;">
+
+
+
+                    <div class="row form-group p-3 d-flex justify-content-center">
+
+                        <div class="image-upload">
+                            <label for="file-input" class="d-flex justify-content-center">
+                                <img class="user-profile"
+                                    src="http://yogesh.hikayatmelayu.com/api/downloadPhoto?token={{token}}"
+                                    id="user-profile" alt="user-profile" />
+                            </label>
+
+                            <input id="file-input" type="file" />
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap pb-2">
+                        <div class="col-7 form-group p-0">
+                            <label for="name">
+                                <i class="fas fa-user"></i><strong> Nama</strong>
+                            </label>
+                            <div class="d-flex flex-nowrap align-items-center">
+                                <input type="text" class="form-control col-9" id="name" aria-describedby="name"
+                                    [value]="userdata.nama" disabled>
+                            </div>
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="ic"><i class="fas fa-id-card"></i><strong> No Kad Pengenalan</strong></label>
+                            <input type="text" class="form-control" id="ic" aria-describedby="ic"
+                                [value]="userdata.no_kp" disabled>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap pb-2">
+                        <fieldset class="col-7 form-group p-0">
+                            <label for="gender"> <i class="fas fa-venus-mars"></i><strong> Jantina</strong></label>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="gender" id="male"
+                                        [checked]="userdata.jantina == 0" value="male" disabled>
+                                    Lelaki
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input disabled type="radio" class="form-check-input"
+                                        [checked]="userdata.jantina == 1" name="gender" id="female" value="female">
+                                    Perempuan
+                                </label>
+                            </div>
+                        </fieldset>
+                        <div class="col form-group pr-0">
+                            <label for="age"><i class="fas fa-calendar-alt"></i><strong> Umur</strong></label>
+                            <input type="text" class="form-control" id="age" aria-describedby="age"
+                                [value]="userdata.umur" disabled>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap pb-2">
+                        <div class="col-7 form-group p-0">
+                            <label for="phone">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                                </svg>
+                                <strong> No. Telefon</strong>
+                            </label>
+                            <div class="d-flex flex-nowrap align-items-center">
+                                <input type="number" class="form-control col-2 " id="phone1" name="notelefonori"
+                                    aria-describedby="phone" [(ngModel)]=" this.notelefonori">
+                                <p class="mt-0 mb-0 p-2"> - </p>
+                                <input type="number" class="form-control col-6" id="phone2" name="notelefonori2"
+                                    [(ngModel)]=" this.notelefonori2" aria-describedby="phone" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="email"><i class="fas fa-envelope"></i><strong> E-mel</strong></label>
+                            <input type="email" name="emelori" class="form-control" id="email" aria-describedby="email"
+                                [(ngModel)]="this.emelori">
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap pb-2">
+                        <div class="col-7 form-group p-0">
+                            <label for="address"><i class="fas fa-map-marker-alt"></i><strong> Alamat</strong></label>
+                            <input type="text" class="col-9 form-control" name="alamat1ori" id="address1"
+                                aria-describedby="address" [(ngModel)]="this.alamat1ori">
+                            <input type="text" class="col-9 form-control" name="alamat2ori" id="address2"
+                                aria-describedby="address" [(ngModel)]="this.alamat2ori">
+                        </div>
+                        <div class="col pr-0">
+                            <div class="form-group">
+                                <label for="email">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-signpost-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M7.293.707A1 1 0 0 0 7 1.414V4H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v6h2v-6h3.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H9V1.414A1 1 0 0 0 7.293.707z" />
+                                    </svg>
+                                    <strong> Poskod</strong></label>
+                                <input type="number" class="form-control" id="poskod" aria-describedby="poskod"
+                                    name="poskod" [(ngModel)]="poskodori">
+                            </div>
+                            <div class="form-group">
+                                <label for="state"><i class="fas fa-map"></i><strong> Negeri</strong></label>
+                                <select class="form-control" aria-label="Default select example" name="negeri"
+                                    [(ngModel)]="negeriori">
+                                    <option selected>--Pilih Negeri--</option>
+                                    <option value="Perlis">Perlis</option>
+                                    <option value="Kedah">Kedah</option>
+                                    <option value="Pulau Pinang">Pulau Pinang</option>
+                                    <option value="Perak">Perak</option>
+                                    <option value="Selangor">Selangor</option>
+                                    <option value="WP Kuala Lumpur">W. P. Kuala Lumpur</option>
+                                    <option value="WP Putrajaya">W. P. Putrajaya</option>
+                                    <option value="Melaka">Melaka</option>
+                                    <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                    <option value="Johor">Johor</option>
+                                    <option value="Pahang">Pahang</option>
+                                    <option value="Terengganu">Terengganu</option>
+                                    <option value="Kelantan">Kelantan</option>
+                                    <option value="Sabah">Sabah</option>
+                                    <option value="Sarawak">Sarawak</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group pb-2">
+                        <label for="occupation"><i class="fas fa-briefcase"></i><strong> Pekerjaan
+                                Sekarang</strong></label>
+                        <input type="text" class="col-5 form-control" id="occupation" aria-describedby="occupation"
+                            name="pk_sek" [(ngModel)]="pk_sek">
+                    </div>
+
+                    <div class="form-group pb-2">
+                        <label for="education"><i class="fas fa-graduation-cap"></i><strong> Tahap Pendidikan
+                                Tertinggi</strong></label>
+                        <br>
+                        <div class="row">
+                            <div class="col-3" *ngFor="let edu of education">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="tahap_pen"
+                                    id="inlineCheckbox{{edu.id}}" value={{edu.name}} (change)="radioCheck(edu.name)">
+                                    <label class="form-check-label" for={{edu.id}}>{{edu.name}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group pb-2">
+                        <label for="education"><i class="fas fa-car"></i><strong> Lesen Memandu Yang
+                                Sah</strong></label>
+                        <br>
+                        <div class="row">
+                            <div class="col-3" *ngFor="let ticket of tickets">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="lesen"
+                                        id="inlineCheckbox{{ticket.id}}" value={{ticket.name}} (change)="onCheck(ticket.name)">
+                                    <label class="form-check-label" for={{ticket.id}} >{{ticket.name}}</label>
+                                </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for=""><strong>Adakah anda bekerja sebagai panel bank/syarikat sewa beli</strong></label>
+                       
+                        <div>
+                            <input type="radio" name="panelInfo" id="yes" [(ngModel)]="bank_or_sewa" (click)="formActive()"
+                            name="education" [value]="1">
+                            <label class="pl-2" for="panelInfo">Ya</label>
+                            <br>
+
+                            <div *ngIf="showPanel">
+                                <label class="pl-4"><strong>Sila nyatakan panel yang anda ikuti dan isi maklumat panel
+                                        seperti
+                                        berikut</strong>
+                                    :</label>
+                                <div class="row pl-4">
+                                    <div class="col-5">
+                                        <div class="form-group row">
+                                            <label for="bank" class="col-sm-2 col-form-label">Bank: </label>
+                                            <div class="col-sm-10">
+                                                <!-- <input type="text" class="form-control" id="staticEmail" value="email@example.com"> -->
+                                                <select name="panelBank" class="col-7 form-control"
+                                                    aria-label="Default select example" [disabled]="formCheck"
+                                                    [(ngModel)]="panel_bank">
+                                                    <option selected>--Sila Pilih--</option>
+                                                    <option value="1">Maybank</option>
+                                                    <option value="2">Bank Rakyat</option>
+                                                    <option value="3">RHB Bank</option>
+                                                    <option value="4">HSBC Bank Malaysia</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label for="phoneNumber" class="col-sm-3 col-form-label pt-0">No. Telefon
+                                                (bank):</label>
+                                            <div class="col-sm-8">
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <input type="text" name="phoneNumber" id="phoneNumber"
+                                                            class="form-control" placeholder="" [disabled]="formCheck"
+                                                            [(ngModel)]="left_bank_num">
+                                                    </div>
+                                                    <span class="col-form-label">-</span>
+                                                    <div class="col-8">
+                                                        <input type="text" name="phoneNumber2" id="phoneNumber2"
+                                                            class="form-control col-9" placeholder=""
+                                                            [disabled]="formCheck" [(ngModel)]="right_bank_num">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row pl-4">
+                                    <label for="panelName" class="col-sm-2 col-form-label"><span
+                                            style="color: red;">*</span>Nama Panel: </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="namapanel" [(ngModel)]="panel_name"
+                                            class="form-control col-10" id="panelName" [disabled]="formCheck" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row pl-4">
+                                    <label for="icNumber" class="col-sm-2 col-form-label"><span
+                                            style="color: red;">*</span>No Kad Pengenalan: </label>
+                                    <div class="col-sm-10">
+                                        <div class="row">
+                                            <div class="col col-3">
+                                                <input type="text" id="icNumber" class="form-control " placeholder=""
+                                                    [disabled]="formCheck" name="icNumber1" [(ngModel)]="icNumber1">
+                                            </div>
+                                            <span class="col-form-label">-</span>
+                                            <div class="col col-2">
+                                                <input type="text" id="icNumber" class="form-control " placeholder=""
+                                                    [disabled]="formCheck" name="icNumber2" [(ngModel)]="icNumber2">
+                                            </div>
+                                            <span class="col-form-label ">-</span>
+                                            <div class="col col-3">
+                                                <input type="text" id="icNumber" class="form-control " placeholder=""
+                                                    [disabled]="formCheck" name="icNumber3" [(ngModel)]="icNumber3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- </div> -->
+                                </div>
+
+                                <div class="form-group row pl-4">
+                                    <label for="permitNumber" class="col-sm-2 col-form-label"><span
+                                            style="color: red;">*</span>No Permit: </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control col-10" id="permitNumber"
+                                            [disabled]="formCheck" name="no_permit" [(ngModel)]="no_permit">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row pl-4">
+                                    <label for="phoneNumber" class="col-sm-2 col-form-label"><span
+                                            style="color: red;">*</span>No. Telefon: </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control col-10" id="phoneNumber"
+                                            [disabled]="formCheck" name="no_telPanel" [(ngModel)]="no_telPanel">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <input type="radio" name="panelInfo" id="no" [(ngModel)]="bank_or_sewa"
+                            name="education" [value]="0">
+                            <label class="pl-2" for="panelInfo">Tidak</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activityInfo"><strong> Adakah anda tahu tentang aktiviti pemilikan semula barangan
+                                di bawah
+                                Akta
+                                Sewa Beli 1967?</strong></label>
+                        <div class="row">
+                            <div class="col">
+                                <label>Skop Tugas</label>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="jobScope" [value]="1"
+                                            [(ngModel)]="skop_tugas">
+                                        <label class="form-check-label" for="inlineCheckbox1">Ya</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="jobScope" [value]="0"
+                                            [(ngModel)]="skop_tugas">
+                                        <label class="form-check-label" for="jobScope">Tidak</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <label>Prosedur dan Peraturan EPS:</label>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="yes" name="procedure" [value]="1"
+                                            [(ngModel)]="pp_eps">
+                                        <label class="form-check-label" for="procedure">Ya</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="no" name="procedure" [value]="0"
+                                            [(ngModel)]="pp_eps">
+                                        <label class="form-check-label" for="procedure">Tidak</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <div class="row form-group">
+                            <label class="pb-2"><strong> Muat Naik Dokumen</strong></label>
+                        </div>
+
+                        <div class="form-group d-flex flex-nowrap">
+                            <label class="col-2 p-2" for="image">Lesen Memandu</label>
+                            <div class="form-control col-6" id="fileList">Pilih Fail (format jpeg, png dan
+                                pdf
+                                sahaja)</div>
+                            <label class="btn form-control col-2" style="background-color: #1d1da1; color:white;">
+                                <i class="fa fa-upload" aria-hidden="true"></i> Muat Naik<input type="file"
+                                    style="display: none;" (change)="handleFileInput($event.target.files)" name="image">
+                            </label>
+                        </div>
+                    </div>
+
+                    <span><span style="color: red;">*</span>WAJIB diisi</span>
+                </div>
+
+                <div class="p-2" style="width: 100%; background-color:#2e095f;">
+                    <h6 class="h3 text-white m-0">Bahagian II : Akuan Permohonan</h6>
+                </div>
+
+                <div class="p-3" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 90%;">
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" (click)="toggleAg()" id="applicationStatement"
+                            name="applicationStatement" value="Agree" required>
+                        <label class="form-check-label" for="applicationStatement">Dengan ini saya mengaku dan
+                            mengesahkan bahawa semua maklumat dan butir-butir yang dicatatkan dalam
+                            borang permohonan adalah benar.
+                            Saya juga faham bahawa, jika mana-mana maklumat yang berkaitan permohonan ini didapati tidak
+                            benar
+                            akan menyebabkan permohonan ini
+                            ditolak.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="p-3 d-flex justify-content-center">
+                    <input type="button" class="fadeIn fourth btn btn-outline-primary" value="BATAL"
+                        [routerLink]="['/user/user-portal']">
+                    <input type="button" class="fadeIn fourth btn btn-outline-primary"
+                        style="background-color: #2dce89;" value="SIMPAN" (click)="onSave(save)">
+                    <input type="button" class="fadeIn fourth btn btn-outline-primary"
+                        style="background-color: #ec1a22;" [disabled]="agreeTick === false" value="HANTAR"
+                        (click)="onSubmit(submit)">
+                </div>
+
+            </div>
+
+            <ng-template #save>
+                <div class="modal-header" style="background-color: #1d1da1; justify-content:center !important;"
+                    [ngClass]="fontColor">
+                    <h4 class="modal-title pull-left font-white">Notifikasi</h4>
+                </div>
+                <div class="modal-body font-black" [ngClass]="fontColor">
+                    <div class="row p-2" style="text-align: center; justify-content:center">
+                        <p class="font-black">
+                            Permohonan baharu anda akan disimpan.<br>
+                            Adakah anda pasti mahu menyimpan?
+                        </p>
+                    </div>
+                    <div class="row p-3 d-flex justify-content-center" style="text-align: center;">
+                        <button type="button" class="btn font-white" (click)="modalRef.hide()"
+                            style="background-color: #ec1a22;">Batal</button>
+                        <button type="button" class="btn font-white" style="background-color: #2dce89;" [(ngModel)]="status_id"
+                            (click)="simpan(confirmSave)">Ya</button>
+                    </div>
+                </div>
+            </ng-template>
+
+            <ng-template #confirmSave>
+                <div class="modal-body font-black" [ngClass]="fontColor">
+                    <div class="container">
+                        <div class="row d-flex justify-content-center p-3">
+                            <!-- <div class="col"> -->
+                            <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+                            <!-- </div> -->
+                        </div>
+                        <div class="row d-flex justify-content-center p-3">
+                            <!-- <div class="col"> -->
+                            <p style="text-align: center;">Permohonan baharu anda telah berjaya disimpan.</p>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    <div class="row p-3 d-flex justify-content-around" style="text-align: center;">
+                        <button type="button" class="btn btn-default font-white" (click)="closeModal2()"
+                            style="background-color: #2e095f;">OK!</button>
+                    </div>
+                </div>
+            </ng-template>
+
+            <ng-template #submit>
+                <div class="modal-header" style="background-color: #1d1da1; justify-content:center !important;"
+                    [ngClass]="fontColor">
+                    <h4 class="modal-title pull-left font-white">Notifikasi</h4>
+                </div>
+                <div class="modal-body font-black" [ngClass]="fontColor">
+                    <div class="row p-2 d-flex justify-content-center">
+                        <p class="font-black text-center">
+                            Permohonan baharu anda akan dihantar. <br>
+                            Adakah anda pasti mahu menghantar?
+                        </p>
+                    </div>
+                    <div class="row p-3 d-flex justify-content-center" style="text-align: center;">
+                        <button type="button" class="btn font-white" (click)="modalRef.hide()"
+                            style="background-color: #ec1a22;">Batal</button>
+                        <button type="button" class="btn font-white" style="background-color: #2dce89;"
+                            (click)="ConfirmSubmit2(confirmSubmit)">Ya</button>
+                    </div>
+                </div>
+            </ng-template>
+
+            <ng-template #confirmSubmit>
+                <div class="modal-body font-black" [ngClass]="fontColor">
+                    <div class="container">
+                        <div class="row d-flex justify-content-center p-3">
+                            <!-- <div class="col"> -->
+                            <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+                            <!-- </div> -->
+                        </div>
+                        <div class="row d-flex justify-content-center p-3">
+                            <!-- <div class="col"> -->
+                            <p style="text-align: center;">Permohonan baharu anda telah berjaya dihantar dan akan
+                                diproses.</p>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    <div class="row p-3 d-flex justify-content-around" style="text-align: center;">
+                        <button type="button" class="btn btn-default font-white" (click)="closeModal2()"
+                            style="background-color: #2e095f;">OK!</button>
+                    </div>
+                </div>
+            </ng-template>
+        </form>
+    </div>
+</div>
+<div class="wrapper pt-0" [ngClass]="fontSize" *ngIf="type == p2">
+    <div class="p-2"
+        style="text-align: center; background-color: #e0bbfe; width: 90%; max-width: 1000px; height:100px;">
+        <h3 class="h1 text-white mt-3"><strong>PERMOHONAN PEMBAHARUAN</strong></h3>
+    </div>
+
+    <div class="p-2 m-2" style="text-align: center; max-width:1000px; width:90%">
+        <div class="container-fluid mt-1">
+            <div class="card m-2">
+                <div class="card-body d-flex align-items-center justify-content-center p-3 pt-0" style="height: 180px;">
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+                    <div class="progress pb-2"
+                        style="background-color: white; box-shadow:none; height:100%; width:100%; justify-content:center; align-items:center;">
+
+                        <div class="circle done"> <span class="label">1</span>
+                            <span class="title pl-4" style="width: fit-content;">Isi Maklumat Permohonan</span>
+                        </div>
+
+                        <span class="bar active"></span>
+
+                        <div class="circle"> <span class="label">2</span>
+                            <span class="title pl-4" style="width: fit-content;">Hantar Permohonan</span>
+                        </div>
+
+                        <span class="bar"></span>
+
+                        <div class="circle"> <span class="label">3</span>
+                            <span class="title pl-4" style="width: fit-content;">Pembayaran</span>
+                        </div>
+
+                        <span class="bar"></span>
+
+                        <div class="circle"> <span class="label">4</span>
+                            <span class="title pl-4" style="width: fit-content;">Kutipan Permit</span>
+                        </div>
+
+                        <span class="bar"></span>
+
+                        <div class="circle"> <span class="label">5</span>
+                            <span class="title" style="width: fit-content; padding-left:43px;">Selesai</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="formContent" [ngClass]="fontColor">
+        <form class="d-flex justify-content-center font-black" style="width: 100%;"
+            (ngSubmit)="confirmSubmit(confirmSubmit)">
+            <div class="d-flex justify-content-center flex-wrap" fxLayout="column" fxLayoutAlign="space-evenly stretch"
+                style="width: 100%;">
+
+                <div class="p-2 " style="width: 100%; background-color:#2e095f; border-radius: 10px 10px 0px 0px;">
+                    <h3 class="text-white m-0">Bahagian I : Maklumat Pemohon</h3>
+                </div>
+
+                <div class="p-3" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 90%;">
+
+
+
+                    <div class="row form-group p-3 d-flex justify-content-center">
+
+                        <div class="image-upload">
+                            <label for="file-input" class="d-flex justify-content-center">
+                                <img class="user-profile"
+                                src="http://yogesh.hikayatmelayu.com/api/downloadPhoto?token={{token}}"
+                                id="user-profile" alt="user-profile" />
+                            </label>
+
+                          
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap pb-2">
+                        <div class="col-7 form-group p-0">
+                            <label for="name">
+                                <i class="fas fa-user"></i><strong> Nama</strong>
+                            </label>
+                            <div class="d-flex flex-nowrap align-items-center">
+                                <input type="text" class="form-control col-9" id="name" aria-describedby="name"
+                                [value]="userdata.nama" disabled>
+                            </div>
+                        </div>
+                        <div class="col form-group pr-0">
+
+                            <label for="permitNumber"><i class="fas fa-id-card"></i><strong> No. Permit</strong></label>
+                            <input type="text" class="form-control" id="ic" aria-describedby="permitNumber"
+                                placeholder="17201" disabled>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap pb-2">
+                        <fieldset class="col-7 form-group p-0">
+                            <label for="gender"> <i class="fas fa-venus-mars"></i><strong> Jantina</strong></label>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="gender" id="male"
+                                        [checked]="userdata.jantina == 0" value="male" disabled>
+                                    Lelaki
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input disabled type="radio" class="form-check-input"
+                                        [checked]="userdata.jantina == 1" name="gender" id="female" value="female">
+                                    Perempuan
+                                </label>
+                            </div>
+                        </fieldset>
+                        <div class="col form-group pr-0">
+                            <label for="ic"><i class="fas fa-id-card"></i><strong> No Kad Pengenalan</strong></label>
+                            <input type="text" class="form-control" id="ic" aria-describedby="ic"
+                                [value]="userdata.no_kp" disabled>
+                            
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap pb-2">
+                        <div class="col-7 form-group p-0">
+                            <label for="phone">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                                </svg>
+                                <strong> No. Telefon</strong>
+                            </label>
+                            <div class="d-flex flex-nowrap align-items-center">
+                                <div class="d-flex flex-nowrap align-items-center">
+                                    <input type="number" class="form-control col-3 " id="phone1" name="notelefonori"
+                                        aria-describedby="phone" [(ngModel)]=" this.notelefonori">
+                                    <p class="mt-0 mb-0 p-2"> - </p>
+                                    <input type="number" class="form-control col-6" id="phone2" name="notelefonori2"
+                                        [(ngModel)]=" this.notelefonori2" aria-describedby="phone" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="age"><i class="fas fa-calendar-alt"></i><strong> Umur</strong></label>
+                            <input type="text" class="form-control" id="age" aria-describedby="age"
+                                [value]="userdata.umur" disabled>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap pb-2">
+                        <div class="col-7 form-group p-0">
+                            <label for="address"><i class="fas fa-map-marker-alt"></i><strong> Alamat</strong></label>
+                            <input type="text" class="col-9 form-control" name="alamat1ori" id="address1"
+                                aria-describedby="address" [(ngModel)]="this.alamat1ori">
+                            <input type="text" class="col-9 form-control" name="alamat2ori" id="address2"
+                                aria-describedby="address" [(ngModel)]="this.alamat2ori">
+                        </div>
+                        <div class="col pr-0">
+                            <div class="form-group">
+                                <label for="email">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-signpost-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M7.293.707A1 1 0 0 0 7 1.414V4H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v6h2v-6h3.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H9V1.414A1 1 0 0 0 7.293.707z" />
+                                    </svg>
+                                    <strong> Poskod</strong></label>
+                                <input type="number" class="form-control" id="poskod" aria-describedby="poskod"
+                                    name="poskod" [(ngModel)]="poskodori">
+                            </div>
+                            <div class="form-group">
+                                <label for="state"><i class="fas fa-map"></i><strong> Negeri</strong></label>
+                                <select class="form-control" aria-label="Default select example" name="negeri"
+                                    [(ngModel)]="negeriori">
+                                    <option selected>--Pilih Negeri--</option>
+                                    <option value="Perlis">Perlis</option>
+                                    <option value="Kedah">Kedah</option>
+                                    <option value="Pulau Pinang">Pulau Pinang</option>
+                                    <option value="Perak">Perak</option>
+                                    <option value="Selangor">Selangor</option>
+                                    <option value="WP Kuala Lumpur">W. P. Kuala Lumpur</option>
+                                    <option value="WP Putrajaya">W. P. Putrajaya</option>
+                                    <option value="Melaka">Melaka</option>
+                                    <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                    <option value="Johor">Johor</option>
+                                    <option value="Pahang">Pahang</option>
+                                    <option value="Terengganu">Terengganu</option>
+                                    <option value="Kelantan">Kelantan</option>
+                                    <option value="Sabah">Sabah</option>
+                                    <option value="Sarawak">Sarawak</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap pb-2">
+                        <div class="col-7 form-group p-0">
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="email"><i class="fas fa-envelope"></i><strong> E-mel</strong></label>
+                            <input type="email" name="emelori" class="form-control" id="email" aria-describedby="email"
+                            [(ngModel)]="this.emelori">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group pb-2">
+                        <label for="EPSworkStatus"><i class="fas fa-briefcase"></i><strong> Status Pekerjaan
+                                EPS</strong></label>
+                        <div>
+                            <input type="radio" name="EPSworkStatus" id="fullTime" [(ngModel)]="status_pekerjaan" [value]="1" (click)="epsActiveDate()">
+                            <label class="pl-2" for="EPSworkStatus">Sepenuh Masa</label>
+                            <br>
+                            <div class="row pl-4">
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label for="date" class="col-sm-2 col-form-label">Dari Tahun: </label>
+                                        <div class="col-sm-10">
+                                            <input type="date" class="form-control col-5" name="date" id="date" value=""
+                                                [disabled]="epsWorkStatusDate" [(ngModel)]="dari_tahun">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="radio" name="EPSworkStatus" id="partTime"  [(ngModel)]="status_pekerjaan" [value]="2" (click)="epsActiveOccu()">
+                            <label class="pl-2" for="EPSworkStatus">Pekerjaan Sampingan</label>
+                            <div class="row pl-4">
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label for="occupation" class="col-sm-2 col-form-label">Sila nyatakan pekerjaan
+                                            tetap anda: </label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control col-5" id="occupation"
+                                                name="occupation" value="" [disabled]="epsWorkStatusOccu" [(ngModel)]="p_sampingan">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group pb-2">
+                        <label for="education"><i class="fas fa-graduation-cap"></i><strong> Tahap Pendidikan
+                            Tertinggi</strong></label>
+                    <br>
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" [(ngModel)]="tahap_pen"
+                                     name="education"  [value]="0">
+                                <label class="form-check-label" for="inlineCheckbox1">Tiada</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" [(ngModel)]="tahap_pen"
+                                     name="education" [value]="1">
+                                <label class="form-check-label" for="inlineCheckbox1">Darjah 6</label>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-check ">
+                                <input class="form-check-input" type="radio" [(ngModel)]="tahap_pen"
+                                     name="education" [value]="2">
+                                <label class="form-check-label" for="inlineCheckbox1">PMR</label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="radio" [(ngModel)]="tahap_pen"
+                                     name="education" [value]="3">
+                                <label class="form-check-label" for="inlineCheckbox1">SPM</label>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-check ">
+                                <input class="form-check-input" type="radio" [(ngModel)]="tahap_pen"
+                                     name="education" [value]="4">
+                                <label class="form-check-label" for="inlineCheckbox1">Diploma</label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="radio" [(ngModel)]="tahap_pen"
+                                    name="education" [value]="5">
+                                <label class="form-check-label" for="inlineCheckbox1">Ijazah/Master</label>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group pb-2">
+                        <label for="education"><i class="fas fa-car"></i><strong> Lesen Memandu Yang
+                            Sah</strong></label>
+                    <br>
+                    <div class="row">
+                        <div class="col-3" *ngFor="let ticket of tickets">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="lesen"
+                                    id="inlineCheckbox{{ticket.id}}" value={{ticket.name}} (change)="onCheck(ticket.name)">
+                                <label class="form-check-label" for={{ticket.id}} >{{ticket.name}}</label>
+                            </div>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for=""><strong>Adakah anda bekerja sebagai panel bank/syarikat sewa beli</strong></label>
+                        <div>
+                            <input type="radio" name="panellInfo" id="yes" [checked]="!formCheck" (click)="formActive()">
+                            <label class="pl-2" for="panelInfo">Ya</label>
+                            <br>
+
+                            <div *ngIf="showPanel">
+                                <label class="pl-4"><strong>Sila nyatakan panel yang anda ikuti dan isi maklumat panel
+                                        seperti
+                                        berikut</strong>
+                                    :</label>
+                                <div class="row pl-4">
+                                    <div class="col-5">
+                                        <div class="form-group row">
+                                            <label for="bank" class="col-sm-2 col-form-label">Bank: </label>
+                                            <div class="col-sm-10">
+                                                <select name="panelBank" class="col-7 form-control"
+                                                    aria-label="Default select example" [disabled]="formCheck"
+                                                    [(ngModel)]="panel_bank">
+                                                    <option selected>--Sila Pilih--</option>
+                                                    <option value="1">Maybank</option>
+                                                    <option value="2">Bank Rakyat</option>
+                                                    <option value="3">RHB Bank</option>
+                                                    <option value="4">HSBC Bank Malaysia</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label for="phoneNumber" class="col-sm-3 col-form-label pt-0">No. Telefon
+                                                (bank):</label>
+                                            <div class="col-sm-8">
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <input type="text" name="phoneNumber" id="phoneNumber"
+                                                            class="form-control" placeholder="" [disabled]="formCheck"
+                                                            [(ngModel)]="left_bank_num">
+                                                    </div>
+                                                    <span class="col-form-label">-</span>
+                                                    <div class="col-8">
+                                                        <input type="text" name="phoneNumber2" id="phoneNumber2"
+                                                            class="form-control col-9" placeholder=""
+                                                            [disabled]="formCheck" [(ngModel)]="right_bank_num">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row pl-4">
+                                    <label for="panelName" class="col-sm-2 col-form-label"><span
+                                            style="color: red;">*</span>Nama Panel: </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="namapanel" [(ngModel)]="panel_name"
+                                            class="form-control col-10" id="panelName" [disabled]="formCheck" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row pl-4">
+                                    <label for="icNumber" class="col-sm-2 col-form-label"><span
+                                            style="color: red;">*</span>No Kad Pengenalan: </label>
+                                    <div class="col-sm-10">
+                                        <div class="row">
+                                            <div class="col col-3">
+                                                <input type="text" id="icNumber" class="form-control " placeholder=""
+                                                    [disabled]="formCheck" name="icNumber1" [(ngModel)]="icNumber1">
+                                            </div>
+                                            <span class="col-form-label">-</span>
+                                            <div class="col col-2">
+                                                <input type="text" id="icNumber" class="form-control " placeholder=""
+                                                    [disabled]="formCheck" name="icNumber2" [(ngModel)]="icNumber2">
+                                            </div>
+                                            <span class="col-form-label ">-</span>
+                                            <div class="col col-3">
+                                                <input type="text" id="icNumber" class="form-control " placeholder=""
+                                                    [disabled]="formCheck" name="icNumber3" [(ngModel)]="icNumber3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row pl-4">
+                                    <label for="permitNumber" class="col-sm-2 col-form-label"><span
+                                            style="color: red;">*</span>No Permit: </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control col-10" id="permitNumber"
+                                            [disabled]="formCheck" name="no_permit" [(ngModel)]="no_permit">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row pl-4">
+                                    <label for="phoneNumber" class="col-sm-2 col-form-label"><span
+                                            style="color: red;">*</span>No. Telefon: </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control col-10" id="phoneNumber"
+                                            [disabled]="formCheck" name="no_telPanel" [(ngModel)]="no_telPanel">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <input type="radio" name="panellInfo" id="no" [checked]="formCheck" (click)="formDeactive()">
+                            <label class="pl-2" for="panelInfo">Tidak</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group pb-2">
+                        <label for=""><strong> Adakah anda pernah menghadiri kursus EPS yang dianjurkan oleh
+                                KPDNHEP?</strong></label>
+                        <div>
+                            <input type="radio" name="panelInfo" id="yes" [checked]="!yearAttend" (click)="yearAttendActive()">
+                            <label class="pl-2" for="panelInfo">Ya</label>
+                            <div class="row pl-4">
+                                <div class="col-5">
+                                    <div class="form-group row">
+                                        <label for="yearAttend" class="col-sm col-form-label">Tahun Dihadiri: </label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control" name="expiryMonth" [disabled]="yearAttend" [(ngModel)]="tahun_h">
+                                                <option value="">Pilih Tahun</option>
+                                                <option *ngFor="let year of years" value="{{year}}">{{year}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <input type="radio" name="panelInfo" id="no" [checked]="yearAttend" (click)="yearAttendDeactive()">
+                            <label class="pl-2" for="panelInfo">Tidak</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group pb-2">
+                        <div class="row form-group">
+                            <span class=""><strong> Muat Naik Dokumen</strong></span>
+                        </div>
+
+                        <div class="form-group d-flex flex-nowrap">
+                            <label class="col-3 p-2" for="licence">Lesen Memandu</label>
+                            <div class="form-control col-6" id="fileList">Pilih Fail (format jpeg, png dan
+                                pdf
+                                sahaja)</div>
+                            <label class="btn form-control col-2" style="background-color: #1d1da1; color:white"
+                            (change)="handleFileInput($event.target.files)">
+                                <i class="fa fa-upload" aria-hidden="true"></i> Muat Naik<input type="file"
+                                    style="display: none;" name="licence">
+                            </label>
+
+                        </div>
+
+                        <div class="form-group d-flex flex-nowrap">
+                            <label class="col-3 p-2" for="supportingLetter">Surat Sokongan
+                                (Bank/Syarikat Sewa
+                                Beli)</label>
+                            <div class="form-control col-6" id="fileList2">Pilih Fail (format jpeg, png dan
+                                pdf
+                                sahaja)</div>
+                            <label class="btn form-control col-2" style="background-color: #1d1da1; color:white"
+                            (change)="handleFileInput2($event.target.files)">
+                                <i class="fa fa-upload" aria-hidden="true"></i> Muat Naik<input type="file"
+                                    style="display: none;" name="supportingLetter">
+                            </label>
+                        </div>
+                    </div>
+
+                    <span><span style="color: red;">*</span>WAJIB diisi</span>
+                </div>
+
+                <div class="p-2 " style="width: 100%; background-color:#2e095f;">
+                    <h3 class="text-white m-0">Bahagian II : Akuan Permohonan</h3>
+                </div>
+
+                <div class="p-3" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 90%;">
+
+                    <div class="form-check ">
+                        <input class="form-check-input" type="checkbox" (click)="toggleAg()" id="applicationStatement"
+                            name="applicationStatement" value="Agree">
+                        <label class="form-check-label" for="applicationStatement">Dengan ini saya mengaku dan
+                            Dengan ini saya mengaku dan mengesahkan bahawa semua maklumat dan butir-butir yang
+                            dicatatkan dalam borang permohonan adalah benar.
+                            Saya juga faham bahawa, jika mana-mana maklumat yang berkaitan permohonan ini didapati tidak
+                            benar akan menyebabkan permohonan ini
+                            ditolak.
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="p-3 d-flex justify-content-center">
+                    <input type="button" class="fadeIn fourth btn" value="BATAL" style="background-color: #1d1da1;"
+                        [routerLink]="['/user/user-portal']">
+                    <input type="button" class="fadeIn fourth btn btn-outline-primary"
+                        style="background-color: #2dce89;" value="SIMPAN" (click)="onSave(save)">
+                    <input type="button" class="fadeIn fourth btn btn-outline-primary"
+                        style="background-color: #ec1a22;" value="HANTAR" [disabled]="!agreeTick" (click)="onSubmit(submit)">
+                </div>
+
+            </div>
+
+            <ng-template #save>
+                <div class="modal-header" style="background-color: #1d1da1; justify-content:center !important;"
+                    [ngClass]="fontColor">
+                    <h4 class="modal-title pull-left font-white">Notifikasi</h4>
+                </div>
+                <div class="modal-body font-black" [ngClass]="fontColor">
+                    <div class="row p-2" style="text-align: center; justify-content:center">
+                        <p class="font-black">
+                            Permohonan baharu anda akan disimpan.<br>
+                            Adakah anda pasti mahu menyimpan?
+                        </p>
+                    </div>
+                    <div class="row p-3 d-flex justify-content-center" style="text-align: center;">
+                        <button type="button" class="btn font-white" (click)="modalRef.hide()"
+                            style="background-color: #ec1a22;">Batal</button>
+                        <button type="button" class="btn font-white" style="background-color: #2dce89;"
+                        (click)="simpan(confirmSave)">Ya</button>
+                    </div>
+                </div>
+            </ng-template>
+
+            <ng-template #confirmSave>
+                <div class="modal-body font-black" [ngClass]="fontColor">
+                    <div class="container">
+                        <div class="row d-flex justify-content-center p-3">
+                            <!-- <div class="col"> -->
+                            <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+                            <!-- </div> -->
+                        </div>
+                        <div class="row d-flex justify-content-center p-3">
+                            <!-- <div class="col"> -->
+                            <p style="text-align: center;">Permohonan baharu anda telah berjaya disimpan.</p>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    <div class="row p-3 d-flex justify-content-around" style="text-align: center;">
+                        <button type="button" class="btn btn-default font-white" (click)="closeModal2()"
+                            style="background-color: #2e095f;">OK!</button>
+                    </div>
+                </div>
+            </ng-template>
+
+            <ng-template #submit>
+                <div class="modal-header" style="background-color: #1d1da1;" [ngClass]="fontColor">
+                    <h4 class="modal-title pull-left font-white">Notifikasi</h4>
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body font-black" [ngClass]="fontColor">
+                    <div class="row p-2" style="text-align: center; justify-content:center">
+                        <p class="font-black">
+                            Permohonan Pembaharuan permit anda akan dihantar. <br>
+                            Adakah anda pasti mahu menghantar?
+                        </p>
+                    </div>
+                    <div class="row p-3 d-flex justify-content-center" style="text-align: center;">
+                        <button type="button" class="btn font-white" (click)="modalRef.hide()"
+                            style="background-color: #ec1a22;">Batal</button>
+                        <button type="button" class="btn font-white" style="background-color: #2dce89;"
+                        (click)="ConfirmSubmit2(confirmSubmit)">Ya</button>
+                    </div>
+                </div>
+            </ng-template>
+
+            <ng-template #confirmSubmit>
+                <div class="modal-body font-black" [ngClass]="fontColor">
+                    <div class="container">
+                        <div class="row d-flex justify-content-center p-3">
+                            <!-- <div class="col"> -->
+                            <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+                            <!-- </div> -->
+                        </div>
+                        <div class="row d-flex justify-content-center p-3">
+                            <!-- <div class="col"> -->
+                            <p style="text-align: center;">Permohonan Pembaharuan permit anda telah berjaya dihantar
+                                dan akan diproses.</p>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    <div class="row p-3 d-flex justify-content-center" style="text-align: center;">
+                        <button type="button" class="btn font-white" (click)="closeModal2()"
+                            style="background-color: #2e095f;">OK!</button>
+                    </div>
+                </div>
+            </ng-template>
+        </form>
+    </div>
+</div>
+<div class="wrapper pt-0" [ngClass]="fontSize" *ngId="p3">
+
+    <div class="p-2"
+        style="text-align: center; background-color: #e0bbfe; width: 90%; max-width: 1000px; height:100px;">
+        <h3 class="h1 text-white mt-3"><strong>PERMOHONAN PENDUA</strong></h3>
+    </div>
+
+    <div class="p-2 m-2" style="text-align: center; max-width:1000px; width:90%">
+        <div class="container-fluid mt-1">
+            <div class="card m-2">
+                <div class="card-body d-flex align-items-center justify-content-center p-3 pt-0" style="height: 180px;">
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+                    <div class="progress pb-2"
+                        style="background-color: white; box-shadow:none; height:100%; width:100%; justify-content:center; align-items:center;">
+
+                        <div class="circle done"> <span class="label">1</span>
+                            <span class="title pl-4" style="width: fit-content;">Isi Maklumat Permohonan</span>
+                        </div>
+
+                        <span class="bar active"></span>
+
+                        <div class="circle"> <span class="label">2</span>
+                            <span class="title pl-4" style="width: fit-content;">Hantar Permohonan</span>
+                        </div>
+
+                        <span class="bar"></span>
+
+                        <div class="circle"> <span class="label">3</span>
+                            <span class="title pl-4" style="width: fit-content;">Pembayaran</span>
+                        </div>
+
+                        <span class="bar"></span>
+
+                        <div class="circle"> <span class="label">4</span>
+                            <span class="title pl-4" style="width: fit-content;">Kutipan Permit</span>
+                        </div>
+
+                        <span class="bar"></span>
+
+                        <div class="circle"> <span class="label">5</span>
+                            <span class="title" style="width: fit-content; padding-left:43px;">Selesai</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="formContent" [ngClass]="fontColor">
+
+
+
+        <form class="d-flex justify-content-center font-black" style="width: 100%;"
+            (ngSubmit)="confirmSubmit(confirmSubmit)">
+            <div class="d-flex justify-content-center flex-wrap" fxLayout="column" fxLayoutAlign="space-evenly stretch"
+                style="width: 100%;">
+
+                <div class="p-2 " style="width: 100%; background-color:#2e095f; border-radius: 10px 10px 0px 0px;">
+                    <h3 class="text-white m-0">Bahagian I : Maklumat Pemohon</h3>
+                </div>
+
+                <div class="p-3" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 90%;">
+
+
+
+                    <div class="row form-group p-3 d-flex justify-content-center">
+
+                        <div class="image-upload">
+                            <label for="file-input" class="d-flex justify-content-center">
+                                <img class="user-profile" src="http://yogesh.hikayatmelayu.com/api/downloadPhoto?token={{token}}" id="user-profile"
+                                    alt="user-profile" />
+                            </label>
+
+                            <input id="file-input" type="file" />
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap pb-2">
+                        <div class="col-7 form-group p-0">
+                            <label for="name">
+                                <i class="fas fa-user"></i><strong> Nama</strong>
+                            </label>
+                            <div class="d-flex flex-nowrap align-items-center">
+                                <input type="text" class="form-control col-9" id="name" aria-describedby="name"
+                                [value]="userdata.nama" disabled>
+                            </div>
+                        </div>
+                        <div class="col form-group pr-0">
+
+                            <label for="permitNumber"><i class="fas fa-id-card"></i><strong> No. Permit</strong></label>
+                            <input type="text" class="form-control" id="ic" aria-describedby="permitNumber"
+                                placeholder="17201" disabled>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap pb-2">
+                        <fieldset class="col-7 form-group p-0">
+                            <label for="gender"> <i class="fas fa-venus-mars"></i><strong> Jantina</strong></label>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="gender" id="male"
+                                        [checked]="userdata.jantina == 0" value="male" disabled>
+                                    Lelaki
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input disabled type="radio" class="form-check-input"
+                                        [checked]="userdata.jantina == 1" name="gender" id="female" value="female">
+                                    Perempuan
+                                </label>
+                            </div>
+                        </fieldset>
+                        <div class="col form-group pr-0">
+                            <label for="ic"><i class="fas fa-id-card"></i><strong> No Kad Pengenalan</strong></label>
+                            <input type="text" class="form-control" id="ic" aria-describedby="ic"
+                                [value]="userdata.no_kp" disabled>
+                            
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap pb-2">
+                        <div class="col-7 form-group p-0">
+                            <label for="phone">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                                </svg>
+                                <strong> No. Telefon</strong>
+                            </label>
+                            <div class="d-flex flex-nowrap align-items-center">
+                                <div class="d-flex flex-nowrap align-items-center">
+                                    <input type="number" class="form-control col-3 " id="phone1" name="notelefonori"
+                                        aria-describedby="phone" [(ngModel)]=" this.notelefonori" disabled>
+                                    <p class="mt-0 mb-0 p-2"> - </p>
+                                    <input type="number" class="form-control col-6" id="phone2" name="notelefonori2"
+                                        [(ngModel)]=" this.notelefonori2" aria-describedby="phone" placeholder="" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="age"><i class="fas fa-calendar-alt"></i><strong> Umur</strong></label>
+                            <input type="text" class="form-control" id="age" aria-describedby="age"
+                                [value]="userdata.umur" disabled>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap pb-2">
+                        <div class="col-7 form-group p-0">
+                            <label for="address"><i class="fas fa-map-marker-alt"></i><strong> Alamat</strong></label>
+                            <input type="text" class="col-9 form-control" name="alamat1ori" id="address1"
+                                aria-describedby="address" [(ngModel)]="this.alamat1ori" disabled>
+                            <input type="text" class="col-9 form-control" name="alamat2ori" id="address2"
+                                aria-describedby="address" [(ngModel)]="this.alamat2ori" disabled>
+                        </div>
+                        <div class="col pr-0">
+                            <div class="form-group">
+                                <label for="email">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-signpost-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M7.293.707A1 1 0 0 0 7 1.414V4H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v6h2v-6h3.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H9V1.414A1 1 0 0 0 7.293.707z" />
+                                    </svg>
+                                    <strong> Poskod</strong></label>
+                                <input type="number" class="form-control" id="poskod" aria-describedby="poskod"
+                                    name="poskod" [(ngModel)]="poskodori" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="state"><i class="fas fa-map"></i><strong> Negeri</strong></label>
+                                <select class="form-control" aria-label="Default select example" name="negeri"
+                                    [(ngModel)]="negeriori" disabled>
+                                    <option selected>--Pilih Negeri--</option>
+                                    <option value="Perlis">Perlis</option>
+                                    <option value="Kedah">Kedah</option>
+                                    <option value="Pulau Pinang">Pulau Pinang</option>
+                                    <option value="Perak">Perak</option>
+                                    <option value="Selangor">Selangor</option>
+                                    <option value="WP Kuala Lumpur">W. P. Kuala Lumpur</option>
+                                    <option value="WP Putrajaya">W. P. Putrajaya</option>
+                                    <option value="Melaka">Melaka</option>
+                                    <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                    <option value="Johor">Johor</option>
+                                    <option value="Pahang">Pahang</option>
+                                    <option value="Terengganu">Terengganu</option>
+                                    <option value="Kelantan">Kelantan</option>
+                                    <option value="Sabah">Sabah</option>
+                                    <option value="Sarawak">Sarawak</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap pb-2">
+                        <div class="col-7 form-group p-0">
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="email"><i class="fas fa-envelope"></i><strong> E-mel</strong></label>
+                            <input type="email" name="emelori" class="form-control" id="email" aria-describedby="email"
+                            [(ngModel)]="this.emelori" disabled>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="p-2 " style="width: 100%; background-color:#2e095f;">
+                    <h3 class="text-white m-0">Bahagian II : Maklumat Permohonan</h3>
+                </div>
+
+                <div class="p-3" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 90%;">
+
+                    <div class="form-group pb-2 pt-4">
+                        <label for="resonTolose"><strong class=""> Alasan Kehilangan</strong></label>
+                        <br>
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox1" name="resonTolose"
+                                        [value]="1"
+                                        [(ngModel)]="alasan_kehilangan" (click)="otherReasonDeactive()">
+                                    <label class="form-check-label" for="inlineCheckbox1">Kecurian</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox1" name="resonTolose"
+                                    [value]="2"
+                                    [(ngModel)]="alasan_kehilangan" (click)="otherReasonDeactive()">
+                                    <label class="form-check-label" for="inlineCheckbox1">Kebakaran</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox1" name="resonTolose"
+                                    [value]="3"
+                                    [(ngModel)]="alasan_kehilangan" (click)="otherReasonDeactive()">
+                                    <label class="form-check-label" for="inlineCheckbox1">Keciciran</label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox1" name="resonTolose"
+                                    [value]="4"
+                                    [(ngModel)]="alasan_kehilangan" (click)="otherReasonActive()">
+                                    <label class="form-check-label" for="inlineCheckbox1">Lain-lain</label>
+                                    <br>
+                                    <label for="other_reason">Nyatakan alasan anda: </label>
+                                    <input type="text" class="form-control col-6" name="other_reason"
+                                    [(ngModel)]="lain_alasan"
+                                        [disabled]="otherReason" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group pb-2">
+                        <label for=""><strong> Permohonan Penggantian Kali Ke</strong></label>
+                        <!-- <input type="text" class="form-control" id="education" aria-describedby="education" placeholder=""> -->
+                        <br>
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" name="coun"
+                                        [value]="1" [(ngModel)]="no_penggantian">
+                                    <label class="form-check-label" for="inlineCheckbox1">1</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox3" name="coun"
+                                        [value]="2" [(ngModel)]="no_penggantian">
+                                    <label class="form-check-label" for="inlineCheckbox1">2</label>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox4" name="coun"
+                                        [value]="3"  [(ngModel)]="no_penggantian">
+                                    <label class="form-check-label" for="inlineCheckbox1">3</label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox5" name="coun"
+                                        [value]="4"  [(ngModel)]="no_penggantian">
+                                    <label class="form-check-label" for="inlineCheckbox1">4</label>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox6" name="coun"
+                                        [value]="5"  [(ngModel)]="no_penggantian">
+                                    <label class="form-check-label" for="inlineCheckbox1">5</label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox7" name="coun"
+                                        [value]="6"  [(ngModel)]="no_penggantian">
+                                    <label class="form-check-label" for="inlineCheckbox1">Lebih daripada 5</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group pb-2">
+                        <label for="permitCollectionState"><strong> Negeri Laporan Polis Dibuat</strong></label>
+                        <!-- <input type="email" class="form-control" id="permitCollectionState"
+                            aria-describedby="permitCollectionState" placeholder=""> -->
+                        <select class="form-control col-5" aria-label="Default select example" name="negeri_laporan" [(ngModel)]="negeri_laporan">
+                            <option selected>--Pilih Negeri--</option>
+                            <option value="Perlis">Perlis</option>
+                            <option value="Kedah">Kedah</option>
+                            <option value="PulauPinang">Pulau Pinang</option>
+                            <option value="Perak">Perak</option>
+                            <option value="Selangor">Selangor</option>
+                            <option value="WPKualaLumpur">W. P. Kuala Lumpur</option>
+                            <option value="WPPutrajaya">W. P. Putrajaya</option>
+                            <option value="Melaka">Melaka</option>
+                            <option value="NegeriSembilan">Negeri Sembilan</option>
+                            <option value="Johor">Johor</option>
+                            <option value="Pahang">Pahang</option>
+                            <option value="Terengganu">Terengganu</option>
+                            <option value="Kelantan">Kelantan</option>
+                            <option value="Sabah">Sabah</option>
+                            <option value="Sarawak">Sarawak</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group pb-2">
+                        <label for="reportNumber"><strong> No. Laporan Polis</strong></label>
+                        <input type="text" name="no_lpr_polis" class="form-control col-4" id="reportNumber" aria-describedby="reportNumber"
+                            placeholder="" [(ngModel)]="no_laporan">
+                    </div>
+
+                    <div class="form-group pb-2">
+                        <div class="row form-group">
+                            <span class="pb-2 "><strong> Muat Naik Dokumen</strong></span>
+                        </div>
+                        <div class="form-group d-flex flex-nowrap">
+                            <label class="col-3 p-2" for="licence">Salinan Laporan Polis</label>
+                            <div class="form-control col-6" id="fileList">Pilih Fail (format jpeg, png dan
+                                pdf
+                                sahaja)</div>
+                            <label class="btn form-control col-2" style="background-color: #1d1da1; color:white"
+                            (change)="handleFileInput($event.target.files)">
+                                <i class="fa fa-upload" aria-hidden="true"></i> Muat Naik<input type="file"
+                                    style="display: none;" name="licence">
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <span><span style="color: red;">*</span>WAJIB diisi</span>
+                </div>
+
+                <div class="p-2 " style="width: 100%; background-color:#2e095f;">
+                    <h3 class="text-white m-0">Bahagian III : Akuan Permohonan</h3>
+                </div>
+
+                <div class="p-3" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 90%;">
+
+                    <div class="form-check ">
+                        <input class="form-check-input" type="checkbox" (click)="toggleAg()" id="applicationStatement"
+                            name="applicationStatement" value="Agree">
+                        <label class="form-check-label" for="applicationStatement">Dengan ini saya mengaku dan
+                            Dengan ini saya mengaku dan mengesahkan bahawa semua maklumat dan butir-butir yang
+                            dicatatkan dalam borang permohonan adalah benar.
+                            Saya juga faham bahawa, jika mana-mana maklumat yang berkaitan permohonan ini didapati tidak
+                            benar akan menyebabkan permohonan ini
+                            ditolak.
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="p-3 d-flex justify-content-center">
+                    <input type="button" class="fadeIn fourth btn" value="BATAL" style="background-color: #1d1da1;"
+                        [routerLink]="['/user/user-portal']">
+                    <input type="button" class="fadeIn fourth btn btn-outline-primary"
+                        style="background-color: #2dce89;" value="SIMPAN" (click)="onSave(save)">
+                    <input type="button" class="fadeIn fourth btn btn-outline-primary"
+                        style="background-color: #ec1a22;" value="HANTAR" [disabled]="!agreeTick" (click)="onSubmit(submit)">
+                </div>
+
+            </div>
+
+            <ng-template #save>
+                <div class="modal-header" style="background-color: #1d1da1; justify-content:center !important;"
+                    [ngClass]="fontColor">
+                    <h4 class="modal-title pull-left font-white">Notifikasi</h4>
+                </div>
+                <div class="modal-body font-black" [ngClass]="fontColor">
+                    <div class="row p-2" style="text-align: center; justify-content:center">
+                        <p class="font-black">
+                            Permohonan baharu anda akan disimpan.<br>
+                            Adakah anda pasti mahu menyimpan?
+                        </p>
+                    </div>
+                    <div class="row p-3 d-flex justify-content-center" style="text-align: center;">
+                        <button type="button" class="btn font-white" (click)="modalRef.hide()"
+                            style="background-color: #ec1a22;">Batal</button>
+                        <button type="button" class="btn font-white" style="background-color: #2dce89;"
+                        (click)="simpan(confirmSave)">Ya</button>
+                    </div>
+                </div>
+            </ng-template>
+
+            <ng-template #confirmSave>
+                <div class="modal-body font-black" [ngClass]="fontColor">
+                    <div class="container">
+                        <div class="row d-flex justify-content-center p-3">
+                            <!-- <div class="col"> -->
+                            <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+                            <!-- </div> -->
+                        </div>
+                        <div class="row d-flex justify-content-center p-3">
+                            <!-- <div class="col"> -->
+                            <p style="text-align: center;">Permohonan baharu anda telah berjaya disimpan.</p>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    <div class="row p-3 d-flex justify-content-around" style="text-align: center;">
+                        <button type="button" class="btn btn-default font-white" (click)="closeModal2()"
+                            style="background-color: #2e095f;">OK!</button>
+                    </div>
+                </div>
+            </ng-template>
+
+            <ng-template #submit>
+                <div class="modal-header" style="background-color: #1d1da1;" [ngClass]="fontColor">
+                    <h4 class="modal-title pull-left font-white">Notifikasi</h4>
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body font-black" [ngClass]="fontColor">
+                    <div class="row p-2" style="text-align: center; justify-content:center">
+                        <p class="font-black">
+                            Permohonan Pembaharuan permit anda akan dihantar. <br>
+                            Adakah anda pasti mahu menghantar?
+                        </p>
+                    </div>
+                    <div class="row p-3 d-flex justify-content-center" style="text-align: center;">
+                        <button type="button" class="btn font-white" (click)="modalRef.hide()"
+                            style="background-color: #ec1a22;">Batal</button>
+                        <button type="button" class="btn font-white" style="background-color: #2dce89;"
+                        (click)="ConfirmSubmit2(confirmSubmit)">Ya</button>
+                    </div>
+                </div>
+            </ng-template>
+
+            <ng-template #confirmSubmit>
+                <div class="modal-body font-black" [ngClass]="fontColor">
+                    <div class="container">
+                        <div class="row d-flex justify-content-center p-3">
+                            <!-- <div class="col"> -->
+                            <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+                            <!-- </div> -->
+                        </div>
+                        <div class="row d-flex justify-content-center p-3">
+                            <!-- <div class="col"> -->
+                            <p style="text-align: center;">Permohonan Pembaharuan permit anda telah berjaya dihantar
+                                dan akan diproses.</p>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    <div class="row p-3 d-flex justify-content-center" style="text-align: center;">
+                        <button type="button" class="btn font-white" (click)="closeModal2()"
+                            style="background-color: #2e095f;">OK!</button>
+                    </div>
+                </div>
+            </ng-template>
+        </form>
+    </div>
+</div>
+<div *ngIf="p4">
+    <div class="wrapper pt-0" [ngClass]="fontSize" >
+
+        <div class="p-2"
+            style="text-align: center; background-color: #e0bbfe; width: 90%; max-width: 1000px; height:100px;">
+            <h3 class="h1 text-white mt-3"><strong>PERMOHONAN RAYUAN</strong></h3>
+        </div>
+    
+        <div class="p-2 m-2" style="text-align: center; max-width:1000px; width:90%">
+            <div class="container-fluid mt-1">
+                <div class="card m-2">
+                    <div class="card-body d-flex align-items-center justify-content-center p-3 pt-0" style="height: 180px;">
+    
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+                        <div class="progress pb-2"
+                            style="background-color: white; box-shadow:none; height:100%; width:100%; justify-content:center; align-items:center;">
+    
+                            <div class="circle done"> <span class="label">1</span>
+                                <span class="title pl-4" style="width: fit-content;">Isi Maklumat Permohonan</span>
+                            </div>
+    
+                            <span class="bar active"></span>
+    
+                            <div class="circle"> <span class="label">2</span>
+                                <span class="title pl-4" style="width: fit-content;">Hantar Permohonan</span>
+                            </div>
+    
+                            <span class="bar"></span>
+    
+                            <div class="circle"> <span class="label">3</span>
+                                <span class="title pl-4" style="width: fit-content;">Pembayaran</span>
+                            </div>
+    
+                            <span class="bar"></span>
+    
+                            <div class="circle"> <span class="label">4</span>
+                                <span class="title pl-4" style="width: fit-content;">Kutipan Permit</span>
+                            </div>
+    
+                            <span class="bar"></span>
+    
+                            <div class="circle"> <span class="label">5</span>
+                                <span class="title" style="width: fit-content; padding-left:43px;">Selesai</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+    
+        <div id="formContent" [ngClass]="fontColor">
+    
+            <form class="d-flex justify-content-center font-black" style="width: 100%;"
+                (ngSubmit)="confirmSubmit(confirmSubmit)">
+                <div class="d-flex justify-content-center flex-wrap" fxLayout="column" fxLayoutAlign="space-evenly stretch"
+                    style="width: 100%;">
+    
+                    <div class="p-2 " style="width: 100%; background-color:#2e095f; border-radius: 10px 10px 0px 0px;">
+                        <h3 class="text-white m-0">Bahagian I : Maklumat Pemohon</h3>
+                    </div>
+    
+                    <div class="p-3" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 90%;">
+    
+                        <div class="row form-group p-3 d-flex justify-content-center">
+    
+                            <div class="image-upload">
+                                <label for="file-input" class="d-flex justify-content-center">
+                                    <img class="user-profile" src="assets/img/icons/user-profile.jpg" id="user-profile"
+                                        alt="user-profile" />
+                                </label>
+    
+                                <input id="file-input" type="file" />
+                            </div>
+    
+                            <!-- <img class="user-profile" src="assets/img/icons/user-profile.jpg" id="user-profile"
+                            alt="user-profile" /> -->
+                        </div>
+    
+                        <div class="d-flex flex-nowrap">
+                            <div class="col-7 form-group p-0">
+                                <label for="name">
+                                    <i class="fas fa-user"></i> <strong> Nama</strong>
+                                </label>
+                                <div class="d-flex flex-nowrap align-items-center">
+                                    <input type="text" class="form-control col-9" id="name" aria-describedby="name"
+                                    [value]="userdata.nama" disabled>
+                                </div>
+                            </div>
+                            <div class="col form-group pr-0">
+                                <label for="permitNumber"><i class="fas fa-id-card"></i><strong> NO PERMIT</strong></label>
+                                <input type="text" class="form-control" id="permitNumber" aria-describedby="ic"
+                                    placeholder="permit number" disabled>
+                            </div>
+                        </div>
+    
+                        <div class="d-flex flex-nowrap">
+                            <fieldset class="col-7 form-group p-0">
+                                <label for="gender"> <i class="fas fa-venus-mars"></i><strong> Jantina</strong></label>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="gender" id="male" value="male"
+                                            disabled>
+                                        Lelaki
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="gender" id="female"
+                                            value="female" checked disabled>
+                                        Perempuan
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <div class="col form-group pr-0">
+                                <label for="ic"><i class="fas fa-id-card"></i><strong> No Kad Pengenalan</strong></label>
+                                <input type="text" class="form-control" id="ic" aria-describedby="ic"
+                                    [value]="userdata.no_kp" disabled>
+                            </div>
+                        </div>
+    
+                        <div class="d-flex flex-nowrap">
+                            <div class="col-7 form-group p-0">
+                                <label for="phone">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                                    </svg>
+                                    <strong> No Telefon</strong>
+                                </label>
+                                <div class="d-flex flex-nowrap align-items-center">
+                                    <input type="text" class="form-control col-2 " id="phone1" aria-describedby="phone"
+                                        [value]=" this.notelefonori">
+                                    <p class="mt-0 mb-0 p-2"> - </p>
+                                    <input type="text" class="form-control col-6" id="phone2" aria-describedby="phone"
+                                        placeholder="" [value]=" this.notelefonori2">
+                                </div>
+                            </div>
+                            <div class="col form-group pr-0">
+                                <label for="age"><i class="fas fa-calendar"></i><strong> Umur</strong></label>
+                                <input type="text" class="form-control" id="age" aria-describedby="age" placeholder=""
+                                    [value]="userdata.umur" disabled>
+                            </div>
+                        </div>
+    
+                        <div class="d-flex flex-nowrap">
+                            <div class="col-7 form-group p-0">
+                                <label for="address"><i class="fas fa-map-marker-alt"></i><strong> Alamat</strong></label>
+                                <input type="text" class="col-9 form-control" id="address1" aria-describedby="address"
+                                    [value]="this.alamat1ori" disabled>
+                                <input type="text" class="col-9 form-control" id="address2" aria-describedby="address"
+                                    [value]="this.alamat2ori" disabled>
+                                <!-- <input type="text" class="col-9 form-control" id="address3" aria-describedby="address"
+                                    placeholder="" disabled> -->
+                            </div>
+                            <div class="col pr-0">
+                                <div class="form-group">
+                                    <label for="poskod"><i class="fas fa-envelope"></i><strong> Poskod</strong></label>
+                                    <input type="text" class="form-control" id="poskod" aria-describedby="poskod"
+                                        [value]="poskodori" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state"><i class="fas fa-map"></i><strong> Negeri</strong></label>
+                                    <input type="text" class="form-control" id="state" aria-describedby="state"
+                                        [value]="negeriori" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-nowrap">
+                            <div class="col-7 form-group p-0">
+                                <!-- <label for="name">
+                                    <i class="fas fa-user"></i> NAMA
+                                </label>
+                                <div class="d-flex flex-nowrap align-items-center">
+                                    <input type="text" class="form-control col-9" id="name" aria-describedby="name"
+                                        placeholder="ali" disabled>
+                                </div> -->
+                            </div>
+                            <div class="col form-group pr-0">
+                                <label for="email"><i class="fas fa-envelope"></i><strong> E-mel</strong></label>
+                                <input type="email" class="form-control" id="email" aria-describedby="email" [value]="emelori"
+                                    disabled>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <div class="p-2 " style="width: 100%; background-color:#2e095f;">
+                        <h3 class="text-white m-0">Bahagian II : Maklumat Permohonan</h3>
+                    </div>
+    
+                    <div class="p-3 mt-4" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 90%;">
+    
+                        <div class="form-group">
+                            <label for="resonTolose"><strong> Sebab Permohonan Ditolak</strong></label>
+                            <!-- <input type="text" class="form-control" id="education" aria-describedby="education" placeholder=""> -->
+                            <br>
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="inlineCheckbox1k" name="resonTolose"
+                                        [value]="1"
+                                        [(ngModel)]="sebab_ditolak" (click)="otherReasonDeactive()">
+                                        <label class="form-check-label" for="inlineCheckbox1">Gagal tapisan
+                                            keselamatan</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="inlineCheckbox2k" name="resonTolose"
+                                        [value]="2"
+                                        [(ngModel)]="sebab_ditolak" (click)="otherReasonDeactive()">
+                                        <label class="form-check-label" for="inlineCheckbox1">Tiada surat sokongan</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-check ">
+                                        <input class="form-check-input" type="radio" id="inlineCheckbox3k" name="resonTolose"
+                                        [value]="3"
+                                        [(ngModel)]="sebab_ditolak" (click)="otherReasonActive()">
+                                        <label class="form-check-label" for="inlineCheckbox1">Lain-lain</label>
+                                        <br>
+                                        <label for="other_reason">Nyatakan alasan anda: </label>
+                                        <input type="text" class="form-control col-6" name="other_reason"
+                                        [(ngModel)]="lain_alasan" [disabled]="otherReason" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="resonTolose"><strong> Permohonan Penggantian Kali Ke</strong></label>
+                            <!-- <input type="text" class="form-control" id="education" aria-describedby="education" placeholder=""> -->
+                            <br>
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="inlineCheckbox2" name="coun"
+                                            value="1" [(ngModel)]="no_gantian">
+                                        <label class="form-check-label" for="inlineCheckbox1">1</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="inlineCheckbox3" name="coun"
+                                            value="2" [(ngModel)]="no_gantian">
+                                        <label class="form-check-label" for="inlineCheckbox1">2</label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-check ">
+                                        <input class="form-check-input" type="radio" id="inlineCheckbox4" name="coun"
+                                            value="3" [(ngModel)]="no_gantian">
+                                        <label class="form-check-label" for="inlineCheckbox1">3</label>
+                                    </div>
+                                    <div class="form-check ">
+                                        <input class="form-check-input" type="radio" id="inlineCheckbox5" name="coun"
+                                            value="4" [(ngModel)]="no_gantian">
+                                        <label class="form-check-label" for="inlineCheckbox1">4</label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-check ">
+                                        <input class="form-check-input" type="radio" id="inlineCheckbox6" name="coun"
+                                            value="5" [(ngModel)]="no_gantian">
+                                        <label class="form-check-label" for="inlineCheckbox1">5</label>
+                                    </div>
+                                    <div class="form-check ">
+                                        <input class="form-check-input" type="radio" id="inlineCheckbox7" name="coun"
+                                            value="6" [(ngModel)]="no_gantian">
+                                        <label class="form-check-label" for="inlineCheckbox1">Lebih daripada 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="alasanRayuan"> <strong> Alasan Rayuan Dikemukakan</strong></label>
+                            <textarea class="form-control col-7" id="alasanRayuan" aria-describedby="alasanRayuan"
+                                placeholder="" [(ngModel)]="alasan_rayuan" rows="3"></textarea>
+                        </div>
+    
+                        <div class="form-group">
+                            <div class="row form-group p-3">
+                                <span class=""><strong> Muat Naik Dokumen</strong></span>
+                            </div>
+                            <!-- <br> -->
+                            <!-- <input type="file" class="form-control" id="licence" aria-describedby="licence" placeholder=""> -->
+    
+                            <div class="form-group d-flex flex-nowrap">
+                                <label class="form-check-label col-3 pr-3 pb-0 pl-0" for="supportingLetter"><span style="color: #ec1a22;">*</span>Surat
+                                    Tapisan Rekod Jenayah daripada PDRM Bukit Aman
+                                    </label>
+                                <div class="form-control col-6" id="fileList">Pilih Fail (format jpeg, png dan
+                                    pdf
+                                    sahaja)</div>
+                                <label class="btn form-control col-2" style="background-color: #1d1da1; color:white"
+                                    (change)="handleFileInput($event.target.files)">
+                                    <i class="fa fa-upload" aria-hidden="true"></i> Muat Naik<input type="file"
+                                        style="display: none;" name="supportingLetter">
+                                </label>
+    
+                            </div>
+    
+                            <div class="form-group d-flex flex-nowrap">
+                                <label class="form-check-label col-3 pr-3 pb-0 pl-0" for="supportingLetter"><span style="color: #ec1a22;">*</span>
+                                    Surat Sokongan daripada Institusi Kewangan
+                                    </label>
+                                <div class="form-control col-6" id="fileList2">Pilih Fail (format jpeg, png dan
+                                    pdf
+                                    sahaja)</div>
+                                <label class="btn form-control col-2" style="background-color: #1d1da1; color:white"
+                                    (change)="handleFileInput2($event.target.files)">
+                                    <i class="fa fa-upload" aria-hidden="true"></i> Muat Naik<input type="file"
+                                        style="display: none;" name="supportingLetter">
+                                </label>
+    
+                            </div>
+    
+                            <div class="form-group d-flex flex-nowrap">
+                                <label class="form-check-label col-3 pr-3 pb-0 pl-0" for="supportingLetter"><span style="color: #ec1a22;">*</span>
+                                    Dokumen Sokongan Lain 1 <br> (Jika Ada)
+                                    </label>
+                                <div class="form-control col-6" id="fileList3">Pilih Fail (format jpeg, png dan
+                                    pdf
+                                    sahaja)</div>
+                                <label class="btn form-control col-2" style="background-color: #1d1da1; color:white"
+                                    (change)="handleFileInput3($event.target.files)">
+                                    <i class="fa fa-upload" aria-hidden="true"></i> Muat Naik<input type="file"
+                                        style="display: none;" name="supportingLetter">
+                                </label>
+    
+                            </div>
+    
+                            <div class="form-group d-flex flex-nowrap">
+                                <label class="form-check-label col-3 pr-3 pb-0 pl-0" for="supportingLetter"><span style="color: #ec1a22;">*</span>
+                                    Dokumen Sokongan Lain 2 <br> (Jika Ada)
+                                    </label>
+                                <div class="form-control col-6" id="fileList4">Pilih Fail (format jpeg, png dan
+                                    pdf
+                                    sahaja)</div>
+                                <label class="btn form-control col-2" style="background-color: #1d1da1; color:white"
+                                    (change)="handleFileInput4($event.target.files)">
+                                    <i class="fa fa-upload" aria-hidden="true"></i> Muat Naik<input type="file"
+                                        style="display: none;" name="supportingLetter">
+                                </label>
+    
+                            </div>
+                           
+    
+                            <div class="form-group d-flex flex-nowrap">
+                                <label class="form-check-label col-3 pr-3 pb-0 pl-0" for="supportingLetter"><span style="color: #ec1a22;">*</span>
+                                    Dokumen Sokongan Lain 3 <br> (Jika Ada)
+                                    </label>
+                                <div class="form-control col-6" id="fileList5">Pilih Fail (format jpeg, png dan
+                                    pdf
+                                    sahaja)</div>
+                                <label class="btn form-control col-2" style="background-color: #1d1da1; color:white"
+                                    (change)="handleFileInput5($event.target.files)">
+                                    <i class="fa fa-upload" aria-hidden="true"></i> Muat Naik<input type="file"
+                                        style="display: none;" name="supportingLetter">
+                                </label>
+    
+                            </div>
+                        </div>
+    
+                        <span><span style="color: red;">*</span>WAJIB diisi</span>
+    
+                    </div>
+    
+    
+                    <div class="p-2 " style="width: 100%; background-color:#2e095f;">
+                        <h3 class="text-white m-0">Bahagian III : Akuan Permohonan</h3>
+                    </div>
+    
+                    <div class="p-3" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 90%;">
+    
+                        <div class="form-check ">
+                            <input class="form-check-input" type="checkbox" id="applicationStatement"
+                                name="applicationStatement" value="Agree" required>
+                            <label class="form-check-label" for="applicationStatement">Dengan ini saya mengaku dan
+                                mengesahkan bahawa semua maklumat dan butir-butir yang dicatatkan dalam
+                                borang permohonan adalah benar.
+                                Saya juga faham bahawa, jika mana-mana maklumat yang berkaitan permohonan ini didapati tidak
+                                benar
+                                akan menyebabkan permohonan ini
+                                ditolak.
+                            </label>
+                        </div>
+    
+                    </div>
+    
+                    <div class="p-3 d-flex justify-content-center">
+                        <input type="button" class="fadeIn fourth btn btn-outline-primary" value="BATAL"
+                        [routerLink]="['/user/user-portal']">
+                        <input type="button" class="fadeIn fourth btn btn-outline-primary"
+                            style="background-color: #2dce89;" value="SIMPAN" (click)="onSave(save)">
+                        <input type="button" class="fadeIn fourth btn btn-outline-primary"
+                            style="background-color: #ec1a22;" value="HANTAR" (click)="onSubmit(submit)">
+                        <!-- <input type="button" class="fadeIn fourth btn" style="background-color: #ec1a22;"
+                            value="BUAT RAYUAN" (click)="OpenAppealForm(appealForm)"> -->
+                    </div>
+    
+                </div>
+            </form>
+    
+    
+        </div>
+    </div>
+    
+    
+    <ng-template #save>
+        <div class="modal-header" style="background-color: #1d1da1; justify-content:center !important;"
+            [ngClass]="fontColor">
+            <h4 class="modal-title pull-left font-white">Notifikasi</h4>
+        </div>
+        <div class="modal-body font-black" [ngClass]="fontColor">
+            <div class="row p-2" style="text-align: center; justify-content:center">
+                <p class="font-black">
+                    Permohonan baharu anda akan disimpan.<br>
+                    Adakah anda pasti mahu menyimpan?
+                </p>
+            </div>
+            <div class="row p-3 d-flex justify-content-center" style="text-align: center;">
+                <button type="button" class="btn font-white" (click)="modalRef.hide()"
+                    style="background-color: #ec1a22;">Batal</button>
+                <button type="button" class="btn font-white" style="background-color: #2dce89;"
+                    (click)="simpan(confirmSave)">Ya</button>
+            </div>
+        </div>
+    </ng-template>
+    
+    <ng-template #confirmSave>
+        <div class="modal-body font-black" [ngClass]="fontColor">
+            <div class="container">
+                <div class="row d-flex justify-content-center p-3">
+                    <!-- <div class="col"> -->
+                    <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+                    <!-- </div> -->
+                </div>
+                <div class="row d-flex justify-content-center p-3">
+                    <!-- <div class="col"> -->
+                    <p style="text-align: center;">Permohonan baharu anda telah berjaya disimpan.</p>
+                    <!-- </div> -->
+                </div>
+            </div>
+            <div class="row p-3 d-flex justify-content-around" style="text-align: center;">
+                <button type="button" class="btn btn-default font-white" (click)="closeModal3()"
+                    style="background-color: #2e095f;">OK!</button>
+            </div>
+        </div>
+    </ng-template>
+    
+    
+    <ng-template #submit>
+        <div class="modal-header" style="background-color: #1d1da1;" [ngClass]="fontColor">
+            <h4 class="modal-title pull-left font-white">Notifikasi</h4>
+        </div>
+        <div class="modal-body font-black d-flex justify-content-center flex-wrap" [ngClass]="fontColor">
+            <div class="row p-2">
+                <p class="font-black">
+                    Permohonan Rayuan anda akan dihantar.
+                    Adakah anda pasti mahu menghantar?
+                </p>
+            </div>
+            <div class="row p-3 d-flex justify-content-around" style="text-align: center;">
+                <button type="button" class="btn btn-default font-white" (click)="modalRef.hide()"
+                    style="background-color: #ec1a22;">Batal</button>
+                <button type="submit" class="btn btn-primary font-white" style="background-color: #2dce89;"
+                    (click)="hantar(confirmSubmit)">Ya</button>
+            </div>
+        </div>
+    </ng-template>
+    
+    <ng-template #confirmSubmit>
+        <div class="modal-body font-black" [ngClass]="fontColor">
+            <div class="container">
+                <div class="row d-flex justify-content-center p-3">
+                    <!-- <div class="col"> -->
+                    <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+                    <!-- </div> -->
+                </div>
+                <div class="row d-flex justify-content-center p-3">
+                    <!-- <div class="col"> -->
+                    <p style="text-align: center;">Permohonan rayuan anda telah berjaya dihantar dan akan
+                        diproses.</p>
+                    <!-- </div> -->
+                </div>
+            </div>
+            <div class="row p-3 d-flex justify-content-around" style="text-align: center;">
+                <button type="button" class="btn btn-default font-white" (click)="closeModal3()"
+                    style="background-color: #2e095f;">OK!</button>
+            </div>
+        </div>
+    </ng-template>
+</div>

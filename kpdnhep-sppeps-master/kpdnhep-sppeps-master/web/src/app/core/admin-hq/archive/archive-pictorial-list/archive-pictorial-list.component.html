@@ -1,0 +1,419 @@
+<div class="wrapper">
+    <div id="formContent">
+
+        <div class="p-3">
+
+            <div>
+                <h4>Arkib Bergambar</h4>
+            </div>
+            <div class="row d-flex flex-nowrap">
+                <div class="col">
+                    <h5>Senarai Arkib Bergambar</h5>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <button class="btn text-white" style="background-color: #1d1da1;"
+                        (click)="addDocument(AddDocument)"> <i class="fas fa-plus-circle"></i> Tambah</button>
+                    <!-- <button class="btn btn-outline-primary mb-2 mr-2" (click)="openLg(content)">Large modal</button> -->
+                </div>
+            </div>
+
+            <div class="row p-3 mb-0">
+                <div class="col form-group d-flex justify-content-start align-items-center p-0 mb-0">
+                    <label class="d-flex flex-nowrap mb-0">
+                        <span class="pl-0 pt-2 pr-2">papar</span>
+                        <select name="datatable_length" aria-controls="datatable" class="col form-control text-dark"
+                            (change)="entriesChange($event)">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="-1">All</option>
+                        </select>
+                        <span class="p-2">rekod</span>
+                    </label>
+                </div>
+                <div class="col form-group d-flex justify-content-end mb-0 p-0" id="datatable_search">
+                    <label class="col-form-label pr-2" for="search">Cari Rekod: </label>
+                    <input class="col-6 form-control" type="text" name="search"
+                        placeholder="Type to filter the name column..." (keyup)="updateFilter($event)" />
+                </div>
+            </div>
+
+            <!-- <ngx-datatable #mydatatable class="material selection-cell" [headerHeight]="50" [limit]="5"
+                [columnMode]="ColumnMode.force" [footerHeight]="50" rowHeight="auto" [rows]="archiveList"
+                [limit]="tableEntries != -1 ? tableEntries : undefined" (activate)="onActivate($event)">
+
+                <ngx-datatable-column name="NO" [sortable]="false" [width]="70">
+                    <ng-template let-rowIndex="rowIndex" let-row="row" ngx-datatable-cell-template>
+                        <strong>{{ rowIndex + 1 }}</strong>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="title">
+                    <ng-template ngx-datatable-header-template>
+                        <span>TAJUK</span>
+                    </ng-template>
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        {{ value }}
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="information">
+                    <ng-template ngx-datatable-header-template>
+                        <span>KETERANGAN</span>
+                    </ng-template>
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                        <i class="{{value}}"></i>
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="date">
+                    <ng-template ngx-datatable-header-template>
+                        <span>TARIKH CIPTA</span>
+                    </ng-template>
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                        {{ value }}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Status">
+                    <ng-template ngx-datatable-header-template>
+                        <span>STATUS</span>
+                    </ng-template>
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                        <span *ngIf="row.status == 'Aktif'" class="badge badge-success">{{ value }}</span>
+                        <span *ngIf="row.status == 'Tidak Aktif'" class="badge badge-danger">{{ value }}</span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column>
+                    <ng-template ngx-datatable-header-template>
+                        <span>TINDAKAN</span>
+                    </ng-template>
+                    <ng-template ngx-datatable-cell-template>
+                        <a class="p-2" (click)="openEdit(edit)" style="cursor: pointer;">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a class="p-2" (click)="deleteDoc(delete)" style="cursor: pointer;">
+                            <i class="far fa-trash-alt" style="color: #f75858;"></i>
+                        </a>
+                    </ng-template>
+                </ngx-datatable-column>
+
+            </ngx-datatable> -->
+            <!-- <button type="button" class="btn btn-primary" (click)="openModal(template)">Open first modal</button> -->
+
+
+            <small>
+                <a href="javascript:void(0)" (click)="table.rowDetail.expandAllRows()">Expand All</a>
+                |
+                <a href="javascript:void(0)" (click)="table.rowDetail.collapseAllRows()">Collapse All</a>
+            </small>
+
+            <ngx-datatable #myTable class="material expandable" [columnMode]="ColumnMode.force" [headerHeight]="50"
+                [footerHeight]="50" [rowHeight]="50" [scrollbarV]="true" [rows]="archiveList" (page)="onPage($event)">
+
+                <!-- Row Detail Template -->
+                <ngx-datatable-row-detail [rowHeight]="200" #myDetailRow (toggle)="onDetailToggle($event)">
+                    <ng-template let-row="row" let-expanded="expanded" ngx-datatable-row-detail-template>
+                        <div style="padding-left:35px;">
+                            <div><strong></strong></div>
+                            <div class="row">
+                                <div class="col-2" *ngFor="let address of row.address">
+                                    <img src='{{ address }}' style="width:100px;">
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngx-datatable-row-detail>
+
+                <!-- Column Templates -->
+                <ngx-datatable-column [width]="50" [resizeable]="false" [sortable]="false" [draggable]="false"
+                    [canAutoResize]="false">
+                    <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                        <a href="javascript:void(0)" [class.datatable-icon-right]="!expanded"
+                            [class.datatable-icon-down]="expanded" title="Expand/Collapse Row"
+                            (click)="toggleExpandRow(row)">
+                        </a>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="NO" [sortable]="false" [width]="70">
+                    <ng-template let-rowIndex="rowIndex" let-row="row" ngx-datatable-cell-template>
+                        <strong>{{ rowIndex + 1 }}</strong>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="title">
+                    <ng-template ngx-datatable-header-template>
+                        <span>TAJUK</span>
+                    </ng-template>
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        {{ value }}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="information">
+                    <ng-template ngx-datatable-header-template>
+                        <span>KETERANGAN</span>
+                    </ng-template>
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                        <i class="{{value}}"></i>
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="date">
+                    <ng-template ngx-datatable-header-template>
+                        <span>TARIKH CIPTA</span>
+                    </ng-template>
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                        {{ value }}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Status">
+                    <ng-template ngx-datatable-header-template>
+                        <span>STATUS</span>
+                    </ng-template>
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                        <span *ngIf="row.status == 'Aktif'" class="badge badge-success">{{ value }}</span>
+                        <span *ngIf="row.status == 'Tidak Aktif'" class="badge badge-danger">{{ value }}</span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column>
+                    <ng-template ngx-datatable-header-template>
+                        <span>TINDAKAN</span>
+                    </ng-template>
+                    <ng-template ngx-datatable-cell-template>
+                        <a class="p-2" (click)="openEdit(edit)" style="cursor: pointer;">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a class="p-2" (click)="deleteDoc(delete)" style="cursor: pointer;">
+                            <i class="far fa-trash-alt" style="color: #f75858;"></i>
+                        </a>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <!-- <ngx-datatable-column name="Expanded" [width]="80">
+                    <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                        <strong>{{ expanded === 1 }}</strong>
+                    </ng-template>
+                </ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="Name" [width]="200">
+                    <ng-template let-value="value" ngx-datatable-cell-template>
+                        <strong>{{ value }}</strong>
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Gender" [width]="300">
+                    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                        <i [innerHTML]="row['name']"></i> and <i>{{ value }}</i>
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Age"></ngx-datatable-column> -->
+            </ngx-datatable>
+
+        </div>
+    </div>
+</div>
+
+<ng-template #AddDocument>
+    <div class="modal-header" style="background-color: #1d1da1; height:70px">
+        <h4 class="modal-title text-white">Tambah</h4>
+    </div>
+    <div class="modal-body">
+        <form class="p-3 d-flex justify-content-center font-black" style="width: 100%;"
+            (ngSubmit)="addSuccess(AddSuccess)">
+            <div class="" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 100%;">
+
+                <div class="form-group">
+                    <label for="title">Tajuk</label>
+                    <input type="text" class="form-control" id="title" aria-describedby="title" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="content">Keterangan</label>
+                    <!-- <input type="text" class="form-control" id="content" aria-describedby="content" placeholder=""> -->
+                    <form>
+                        <quill-editor [modules]="modules" id="quill" data-toggle="quill"></quill-editor>
+                    </form>
+                </div>
+                <div class="form-group">
+                    <label for="Date">Tarikh</label>
+                    <br>
+                    <input type="date" id="date" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="image">Gambar</label>
+                    <br>
+                    <label class="btn btn-primary form-control col-4" (change)="updateName($event)">
+                        <i class="fa fa-image"></i> Pilih Gambar<input type="file" style="display: none;" name="image"
+                            multiple>
+                    </label>
+
+                    <div id="fileList">Tiada Gambar Dipilih</div>
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="active">
+                        <label class="form-check-label pl-1 pr-2" for="inlineRadio1">Aktif</label>
+
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="notActive">
+                        <label class="form-check-label pl-1 pr-2" for="inlineRadio1">Tidak Aktif</label>
+                    </div>
+                </div>
+                <div class="form-group d-flex justify-content-end">
+                    <button type="button" class="btn btn-light text-white" (click)="closeModal()"
+                        style="background-color: #ec1a22;">Batal</button>
+                    <button type="submit" class="btn btn-light text-white"
+                        style="background-color: #2dce89;">Simpan</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+<ng-template #AddSuccess>
+    <div class="modal-body">
+        <div class="container">
+            <div class="row d-flex justify-content-center p-3">
+                <!-- <div class="col"> -->
+                <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+                <!-- </div> -->
+            </div>
+            <div class="row d-flex justify-content-center p-3">
+                <!-- <div class="col"> -->
+                <p>Data Anda Telah Berjaya Ditambah</p>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-light text-white " (click)="closeModal()"
+            style="background-color: #2e095f;">OK!</button>
+    </div>
+</ng-template>
+
+<ng-template #edit>
+    <div class="modal-header" style="background-color: #1d1da1; height:70px">
+        <h4 class="modal-title text-white">Ubah Suai</h4>
+    </div>
+    <div class="modal-body">
+        <form class="p-3 d-flex justify-content-center font-black" style="width: 100%;"
+            (ngSubmit)="editSuccess(EditSuccess)">
+            <div class="" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 100%;">
+
+                <div class="form-group">
+                    <label for="title">Tajuk Dokumen</label>
+                    <input type="text" class="form-control" id="title" aria-describedby="title" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="content">Kandungan</label>
+                    <!-- <input type="text" class="form-control" id="content" aria-describedby="content" placeholder=""> -->
+                    <form>
+                        <quill-editor [modules]="modules" id="quill" data-toggle="quill"></quill-editor>
+                    </form>
+                </div>
+                <div class="form-group">
+                    <label for="Date">Tarikh</label>
+                    <br>
+                    <input type="date" id="date" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="image">Gambar</label>
+                    <br>
+                    <label class="btn btn-primary form-control col-4" (change)="updateName($event)">
+                        <i class="fa fa-image"></i> Pilih Gambar<input type="file" style="display: none;" name="image"
+                            multiple>
+                    </label>
+
+                    <div id="fileList">Tiada Gambar Dipilih</div>
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="active">
+                        <label class="form-check-label pl-1 pr-2" for="inlineRadio1">Aktif</label>
+
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="notActive">
+                        <label class="form-check-label pl-1 pr-2" for="inlineRadio1">Tidak Aktif</label>
+                    </div>
+                </div>
+                <div class="form-group d-flex justify-content-end">
+                    <button type="button" class="btn btn-light text-white" (click)="closeModal()"
+                        style="background-color: #ec1a22;">Batal</button>
+                    <button type="submit" class="btn btn-light text-white"
+                        style="background-color: #2dce89;">Simpan</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+<ng-template #EditSuccess>
+    <div class="modal-body">
+        <div class="container">
+            <div class="row d-flex justify-content-center p-3">
+                <!-- <div class="col"> -->
+                <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+                <!-- </div> -->
+            </div>
+            <div class="row d-flex justify-content-center p-3">
+                <!-- <div class="col"> -->
+                <p>Data anda telah berjaya dikemaskini.</p>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-light text-white " (click)="closeModal()"
+            style="background-color: #2e095f;">OK!</button>
+    </div>
+</ng-template>
+
+<ng-template #delete>
+    <div class="modal-body d-flex justify-content-center">
+        <div class="container">
+            <div class="row d-flex justify-content-center p-3">
+                <i class="fas fa-exclamation-circle fa-5x" style="color: #ec1a22;"></i>
+            </div>
+            <div class="row d-flex justify-content-center p-3">
+                <h5>Hapus Data</h5>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <p>Adakah anda ingin menghapuskan data ini?</p>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <button type="button" class="btn btn-light text-white" (click)="confirmDelete()"
+                    style="background-color: #2dce89;">YA</button>
+                <button type="button" class="btn btn-light text-white" (click)="closeModal()"
+                    style="background-color: #ec1a22;">BATAL</button>
+            </div>
+        </div>
+
+    </div>
+</ng-template>
+
+<ng-template #AddFile>
+    <div class="modal-header" style="background-color: #1d1da1; height:70px">
+        <h4 class="modal-title text-white">Fail</h4>
+    </div>
+    <div class="modal-body d-flex justify-content-center">
+        <div class="container">
+            <div class="form-group">
+                <label for="doc">Pilih Fail</label>
+                <br>
+                <input type="file" id="doc" aria-describedby="doc" placeholder="">
+            </div>
+            <div class="row d-flex justify-content-center">
+                <button type="button" class="btn btn-light text-white" (click)="confirmDelete()"
+                    style="background-color: #2dce89;">Simpan</button>
+                <button type="button" class="btn btn-light text-white" (click)="closeModal()"
+                    style="background-color: #ec1a22;">BATAL</button>
+            </div>
+        </div>
+
+    </div>
+</ng-template>

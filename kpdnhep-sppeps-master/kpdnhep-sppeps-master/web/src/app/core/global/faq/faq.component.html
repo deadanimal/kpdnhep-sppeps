@@ -1,0 +1,54 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first p-2" style="text-align: center; background-color: #e0bbfe;">
+            <h3 class="h3 text-white">Soalan Lazim (FAQ)</h3>
+        </div>
+
+        <div class="p-2 m-0">
+            <accordion [isAnimated]="true" class="mb-0 p-0 m-0" [closeOthers]="oneAtATime">
+                <accordion-group [isOpen]="false" #myGroup1 *ngFor="let row of rows">
+                    <div class="p-2 pl-3" accordion-heading>
+                        <div class="row m-0">
+                            <div class="col p-2 m-0" style="font-weight: 400;" *ngIf = "row.kategori_id">
+                                <h5 class="h3 text-Capitalize">{{row.jenis_kategori}}</h5>
+                            </div>
+                            <div class="float-right p-2">
+                                {{ myGroup1?.isOpen ? '' : '' }}
+                                <i class="fas"
+                                    [ngClass]="{'fa-caret-down': myGroup1?.isOpen, 'fa-caret-right': !myGroup1?.isOpen}"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <accordion [isAnimated]="true" class="mb-0 p-0" [closeOthers]="oneAtATime">
+                        <accordion-group class="pt-0 pl-3 pb-0 pr-3" [isOpen]="false" #myGroup2  *ngFor="let row of rows">
+                            <div accordion-heading>
+                                <!-- Apakah syarat-syarat untuk menjadi Ejen Pemilikan Semula? -->
+                                {{ row.tajuk_ms}}
+                                <div class="float-right">
+                                    {{ myGroup2?.isOpen ? '' : '' }}
+                                    <i class="fas"
+                                        [ngClass]="{'fa-caret-down': myGroup2?.isOpen, 'fa-caret-right': !myGroup2?.isOpen}"></i>
+                                </div>
+                            </div>
+                            <p class="p-3">
+                                {{row.kandungan_ms}}
+                                <!-- Mana-mana orang yang ingin memohon permit untuk menjalankan pemilikan semula barangan
+                                yang
+                                terkandung dalam perjanjian sewa beli hendaklah memenuhi keperluan yang berikut: -->
+                            </p>
+                            <!-- <ol>
+                                <li>Telah mencapai umur dua puluh satu tahun</li>
+                                <li>Seorang warganegara Malaysia:dan</li>
+                                <li>Apa-apa keperluan lain yang boleh ditentukan oleh Pengawal</li>
+                            </ol> -->
+                        </accordion-group>
+                    </accordion>
+                </accordion-group>       
+            </accordion>
+        </div>
+    </div>
+</div>

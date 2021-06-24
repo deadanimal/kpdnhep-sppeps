@@ -1,0 +1,236 @@
+<!-- <p>applicants-logs works!</p> -->
+<div class="wrapper">
+    <div id="formContent">
+
+        <div class="p-3">
+
+            <div>
+                <h4>Audit Trails</h4>
+            </div>
+
+            <div class="container-fluid mt-4" *ngIf="showSearch">
+                <div class="card m-2">
+
+                    <div class="card-header" style="background-color: #f7e8ff;">
+                        <h5>Carian Log Pemohon</h5>
+                    </div>
+
+                    <div class="card-body p-3">
+                        <div class="row p-3 pl-0 mb-0 d-flex justify-content-center">
+                            <form style="width: 90%;" (ngSubmit)="toggleShowUserLogList()">
+                                <div class="form-row pb-3">
+                                    <div class="col">
+                                        <!-- <label>Tarikh Mula</label> -->
+                                        <input type="text" class="form-control" placeholder="No Kad Pengenalan">
+                                    </div>
+                                    <div class="col">
+                                       <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Cari</button>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="form-row pt-3">
+                                    <div class="col">
+                                        <input type="submit" class="btn text-uppercase m-0" value="papar">
+                                    </div>
+                                </div> -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid mt-4" *ngIf="showApplicantLogList">
+                <div class="card m-2">
+
+                    <div class="card-header" style="background-color: #f7e8ff;">
+                        <h5> Senarai Pemohon</h5>
+                    </div>
+
+                    <div class="card-body p-3">
+
+                        <!-- <div class="row pt-0 pb-0 pr-3 mb-0 d-flex justify-content-end">
+                            <select class="btn btn-sm btn-dark dropdown-toggle"
+                                style="background-color: black; color: white" id="selectid"
+                                (change)="exportPdf($event.target.value)">
+                                <option disabled selected hidden><b>Cetak</b></option>
+                                <option class="dropdown-item" value="PDF" style="color: white;">Pdf</option>
+                                <option class="dropdown-item" value="XLSX" style="color: white;">Excel</option>
+                            </select>
+                        </div> -->
+                        <div class="row p-3 mb-0">
+                            <div class="col form-group d-flex justify-content-start align-items-center p-0 mb-0">
+                                <label class="d-flex flex-nowrap mb-0">
+                                    <span class="pl-0 pt-2 pr-2">papar</span>
+                                    <select name="datatable_length" aria-controls="datatable" class="col form-control"
+                                        (change)="entriesChange($event)">
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="-1">All</option>
+                                    </select>
+                                    <span class="p-2">rekod</span>
+                                </label>
+                            </div>
+                            <div class="col form-group d-flex justify-content-end mb-0 p-0" id="datatable_search">
+                                <label class="col-form-label pr-2" for="search">Cari Rekod: </label>
+                                <input class="col-6 form-control" type="text" name="search"
+                                    placeholder="" (keyup)="updateFilter($event)" />
+                            </div>
+                        </div>
+
+                        <ngx-datatable #mydatatable class="material selection-cell" [headerHeight]="50" [limit]="5"
+                            [columnMode]="ColumnMode.force" [footerHeight]="50" rowHeight="auto" [rows]="applicantList"
+                            [limit]="tableEntries != -1 ? tableEntries : undefined" (activate)="onActivate($event)"
+                            [scrollbarH]="true">
+
+                            <ngx-datatable-column name="No" [sortable]="false" [width]="100">
+                                <ng-template let-rowIndex="rowIndex" let-row="row" ngx-datatable-cell-template>
+                                    <strong>{{ rowIndex + 1 }}</strong>
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                            <ngx-datatable-column name="name">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>NAMA PEMOHON</span>
+                                </ng-template>
+                                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row"
+                                    let-value="value">
+                                    {{ value }}
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                            <ngx-datatable-column name="nric">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>NO KAD PENGENALAN</span>
+                                </ng-template>
+                                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value"
+                                    let-row="row">
+                                    {{ value }}
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                            <ngx-datatable-column name="state">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>NEGERI</span>
+                                </ng-template>
+                                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value"
+                                    let-row="row">
+                                    {{ value }}
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                            <ngx-datatable-column name="email">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>TINDAKAN</span>
+                                </ng-template>
+                                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value"
+                                    let-row="row">
+                                    <!-- {{ value }} -->
+                                    <button class="btn btn-sm btn-primary" (click)="toggleShowApplicantLog()">Lihat Log</button>
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                        </ngx-datatable>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container-fluid mt-4" *ngIf="showApplicantLog">
+                <div class="card m-2">
+
+                    <div class="card-header" style="background-color: #f7e8ff;">
+                        <div class="row">
+                            <div class="col">
+                                <h5>Log Pemohon</h5>
+                            </div>
+                            <div class="col d-flex justify-content-end">
+                                <select class="btn btn-sm btn-dark dropdown-toggle"
+                                    style="background-color: black; color: white" id="selectid"
+                                    (change)="exportPdf($event.target.value)">
+                                    <option disabled selected hidden><b>Cetak</b></option>
+                                    <option class="dropdown-item" value="PDF" style="color: white;">Pdf</option>
+                                    <option class="dropdown-item" value="XLSX" style="color: white;">Excel</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="card-body p-3">
+                        <!-- <button class="btn btn-sm btn-primary">Kembali</button> -->
+                        <p class="pt-2">Name Pemohon :  Nurashikin bin Ahmad</p>
+                        <p>No. Kad Pengenalan : 950214019628</p>
+                        <p>Negeri : Perak</p>
+
+                        <div class="row p-3 mb-0">
+                            <div class="col form-group d-flex justify-content-start align-items-center p-0 mb-0">
+                                <label class="d-flex flex-nowrap mb-0">
+                                    <span class="pl-0 pt-2 pr-2">papar</span>
+                                    <select name="datatable_length" aria-controls="datatable" class="col form-control"
+                                        (change)="entriesChange($event)">
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="-1">All</option>
+                                    </select>
+                                    <span class="p-2">rekod</span>
+                                </label>
+                            </div>
+                            <div class="col form-group d-flex justify-content-end mb-0 p-0" id="datatable_search">
+                                <label class="col-form-label pr-2" for="search">Cari Rekod: </label>
+                                <input class="col-6 form-control" type="text" name="search" placeholder=""
+                                    (keyup)="updateFilter($event)" />
+                            </div>
+                        </div>
+
+                        <ngx-datatable #mydatatable class="material selection-cell" [headerHeight]="50" [limit]="5"
+                            [columnMode]="ColumnMode.force" [footerHeight]="50" rowHeight="auto" [rows]="applicantLogs"
+                            [limit]="tableEntries != -1 ? tableEntries : undefined" (activate)="onActivate($event)">
+
+                            <ngx-datatable-column name="No" [sortable]="false" [width]="100">
+                                <ng-template let-rowIndex="rowIndex" let-row="row" ngx-datatable-cell-template>
+                                    <strong>{{ rowIndex + 1 }}</strong>
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                            <ngx-datatable-column name="date">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>TARIKH</span>
+                                </ng-template>
+                                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row"
+                                    let-value="value">
+                                    {{ value }}
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                            <ngx-datatable-column name="officerName">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>NAMA PEGAWAI</span>
+                                </ng-template>
+                                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row"
+                                    let-value="value">
+                                    {{ value }}
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                            <ngx-datatable-column name="description">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>DESKRIPSI</span>
+                                </ng-template>
+                                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value"
+                                    let-row="row">
+                                    {{ value }}
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                        </ngx-datatable>
+                    </div>
+
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</div>

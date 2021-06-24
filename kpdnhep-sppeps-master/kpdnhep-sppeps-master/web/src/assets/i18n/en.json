@@ -1,0 +1,100 @@
+{
+    "navigationBar":{
+        "selamatDatang":"Welcome",
+        "Kemaskini":"updated",
+        "home": "HOME",
+        "info": "INFO",
+        "archive": "ARCHIVE",
+        "EpsStatusCheck": "EPS STATUS CHECK",
+        "applicationStatus": "APPLICATION STATUS",
+        "faq":"FAQ",
+        "registerAccount":"SIGN UP",
+        "login": "LOGIN",
+        "logout": "LOGOUT",
+        "SemakanStatusPermohonan":"APPLICATION STATUS",
+        "ArkibDokumen":"Document Archive",
+        "ArkibBergambar":"Pictorial Archive"
+    },
+
+    "footer":{
+        "Aduan&Maklumbalas": "Complaint & Feedback",
+        "HubungiKami": "Contact Us"
+    },
+
+    "frontPage":{
+        "annoucement":"ANNOUCEMENT"
+    },
+    "validation":{
+        "File":"Please Upload",
+        "Field": "Not Valid",
+        "Radio": "Please Choose"
+    },
+    "w3cs":{
+        "Tutup":"Close",
+        "SaizTulisan":"Font Size",
+        "TemaWarna":"Theme Color",
+        "WarnaTulisan":"Font Color",
+        "Fontyangbolehdibaca":"Readable Font",
+        "GambarSkalaKelabu":"Images Grayscale",
+        "WarnaTerbalik":"Invert Colors"
+    },
+
+    "icCheck":{
+        "SemakanNoKadPengenalan": "IDENTIFICATION CARD EVALUATION",
+        "NoKadPengenalan": "IDENTIFICATION CARD NUMBER",
+        "SEMAK":"SUBMIT",
+        "ErrorCaptcha": "Invalid Captcha,Please Try Again!",
+        "ErrorIC": "Invalid IC",
+        "form2email": "Invalid Email,Please Try Again!",
+        "form2pass1": "Invalid Password,Please Try Again!",
+        "form2pass2": "Invalid Confirm Password,Please Try Again!",
+        "form2passnotsame": "Both Password And Confirm Password Didnt Match!",
+        "notifikasi":"Notification",
+        "HarapMaafNoKadPengenalanTiadaDiDalamRekod":"Sorry! Your Identity Card Number is not on the record.",
+        "KEMBALI":"BACK",
+        "pemakluman":"Notification",
+        "HarapMaafWarganegaraBerumur21TahunKeBawah":"Sorry! The citizen aged under 21 cannot apply for a valid ownership agent permit.",
+        "DaftarAkaun":"SIGN UP"
+    },
+
+    "login":{
+        "KataLaluan":"Password",
+        "OrangAwam": "Civilian",
+        "IngatSaya": "Remember Me",
+        "LupaKataLaluan": "Forgot Password?",
+        "LogMasuk": "Login",
+
+        "Pegawai&Admin":"Admin & Officers"
+    },
+
+    "register":{
+        "Emel":"Email",
+        "KataLaluan":"Password",
+        "PengesahanKataLaluan": "Confirm Password",
+        "DaftarAkaun":"Register"
+    },
+
+    "register2":{
+        "DaftarAkaun":"ACCOUNT REGISTER",
+        "NamaPenuh":"FULL NAME",
+        "NoKadPengenalan":"IDENTIFICATION CARD NUMBER",
+        "emel": "EMAIL",
+        "jantina":"GENDER",
+        "lelaki":"Man",
+        "perempuan":"Woman",
+        "alamat":"ADDRESS",
+        "alamat1":"Address 1",
+        "alamat2":"Address 2",
+        "poskod":"POSTCODE",
+        "negeri":"STATE",
+        "noTelefon":"PHONE NUMBER",
+        "NegeriKutipanPermit":"BRANCH OF PERMIT COLLECTION",
+        "SalinanKadPengenalan":"PHOTOCOPY OF IC",
+        "GambarProfil":"PROFILE PICTURE",
+        "hantar":"SUBMIT",
+
+        "Notifikasi": "Notification",
+        "akaunAndaTelahBerjayaDicipta":"Your account has been successfully created. Click the login button to apply for a valid ownership agent permit.",
+        "logMasuk": "LOGIN"
+    }
+}

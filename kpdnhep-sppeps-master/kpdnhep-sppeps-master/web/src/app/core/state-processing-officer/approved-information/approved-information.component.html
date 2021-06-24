@@ -1,0 +1,513 @@
+<div class="wrapper">
+
+    <div class="p-2 text-uppercase"
+        style="text-align: center; background-color: #e0bbfe; width: 90%; max-width: 1000px;">
+        <h3>Semakan Permohonan</h3>
+    </div>
+
+    <div class="container-fluid mt-4 mb-4 p-0" style="width: 90%; max-width: 1500px;">
+        <div class="card">
+            <div class="card-body d-flex align-items-center justify-content-center p-3 pt-0" style="height: 180px;">
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+                <div class="progress pb-2" style="background-color: white; box-shadow:none; height:100%; width:100%; justify-content:center; align-items:center;">
+                    <div class="circle done"> <span class="label">1</span>
+                        <span class="title pl-4" style="width: fit-content;">Penerimaan Permohonan</span>
+
+                    </div> <span class="bar done"></span>
+
+                    <div class="circle done"> <span class="label">2</span>
+                        <span class="title pl-4" style="width: fit-content;">Pengesahan Permohonan</span>
+
+                    </div> <span class="bar done"></span>
+
+                    <div class="circle done"> <span class="label">3</span>
+                        <span class="title pl-4" style="width: fit-content;">Tapisan PDRM</span>
+
+                    </div> <span class="bar done"></span>
+                    <div class="circle done"> <span class="label">4</span>
+                        <span class="title pl-5" style="width: fit-content;"> Syor </span>
+                    </div> 
+                    
+                    <span class="bar done"></span>
+
+                    <div class="circle done"> 
+                        <span class="label">5</span>
+                        <span class="title" style="width: fit-content; padding-left:35px;">Kelulusan</span>
+                    </div>
+
+                    <span class="bar done"></span>
+
+                    <div class="circle done"> 
+                        <span class="label">6</span>
+                        <span class="title" style="width: fit-content; padding-left:40px;">Bayaran</span>
+                    </div>
+
+                    <span class="bar active"></span>
+
+                    <div class="circle "> 
+                        <span class="label">7</span>
+                        <span class="title pl-4" style="width: fit-content;">Kutipan Permit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="formContent">
+
+        <form class="d-flex justify-content-center font-black" style="width: 100%;">
+            <div class="d-flex justify-content-center flex-wrap" fxLayout="column" fxLayoutAlign="space-evenly stretch"
+                style="width: 100%;">
+
+                <div class="p-3 text-uppercase"
+                    style="width: 100%; background-color:#f5e7f2; border-radius: 10px 10px 0px 0px;">
+                    <h5 class="h5 text-dark m-0">maklumat permohonan</h5>
+                </div>
+
+                <div class="p-3" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 90%;">
+
+                    <div class="row form-group p-3 d-flex justify-content-center">
+
+
+                        <!-- <label for="file-input" class="d-flex justify-content-center">
+                            <img class="user-profile" src="assets/img/icons/user-profile.jpg" id="user-profile"
+                                alt="user-profile" />
+                        </label> -->
+
+                        <img class="user-profile" src="assets/img/icons/user-profile.jpg" id="user-profile"
+                            alt="user-profile" />
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="name">
+                                <strong>NAMA</strong>
+                            </label>
+                            <div class="d-flex flex-nowrap align-items-center">
+                                <input type="text" class="form-control col-9" id="name" aria-describedby="name"
+                                    placeholder="ali" disabled>
+                            </div>
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="ic"><i class="fas fa-id-card"></i><strong> NO KAD PENGENALAN</strong></label>
+                            <input type="text" class="form-control" id="ic" aria-describedby="ic"
+                                placeholder="950323-08-5626" disabled>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="age"><strong> UMUR</strong></label>
+                            <input type="text" class="form-control col-9" id="age" aria-describedby="age" placeholder=""
+                                value="25 Tahun" disabled>
+
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="gender"><strong> JANTINA</strong></label>
+                            <input type="text" class="form-control" id="age" aria-describedby="age" placeholder=""
+                                value="Perempuan" disabled>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+
+                            <label for="address"><strong> ALAMAT</strong></label>
+                            <input type="text" class="col-9 form-control" id="address1" aria-describedby="address"
+                                placeholder="" disabled>
+                            <input type="text" class="col-9 form-control" id="address2" aria-describedby="address"
+                                placeholder="" disabled>
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="email"><strong> EMEL</strong></label>
+                            <input type="email" class="form-control" id="email" aria-describedby="email" placeholder=""
+                                disabled>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="state"><strong>Negeri</strong></label>
+                            <input type="text" class="form-control col-9" id="state" aria-describedby="state"
+                                placeholder="" value="Selangor" disabled>
+
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="phoneNumber"><strong>No Telefon</strong></label>
+                            <input type="text" class="form-control" id="phoneNumber" aria-describedby="phoneNumber"
+                                placeholder="" value="01234567890" disabled>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="occupation"><strong>Pekerjaan Sekarang</strong></label>
+                            <input type="text" class="form-control col-9" id="occupation" aria-describedby="occupation"
+                                placeholder="" value="Kontraktor" disabled>
+
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="licence"><strong>Lesen Memandu yang Sah</strong></label>
+                            <input type="text" class="form-control" id="licence" aria-describedby="licence"
+                                placeholder="" value="B2, D" disabled>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="education"><strong>Tahap Pendidikan Tertinggi</strong></label>
+                            <input type="text" class="form-control col-9" id="education" aria-describedby="education"
+                                placeholder="" value="Ijazah" disabled>
+
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="question1"><strong>Adakah anda akan bekerja sebagai panel bank/syarikat sewa
+                                    beli?</strong></label>
+                            <input type="text" class="form-control col-9" id="question1" aria-describedby="question1"
+                                placeholder="" value="Ya" disabled>
+
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for=""><strong>Adakah anda tahu tentang aktviti pemilikan semula barangan di bawah
+                                    Akta Sewa Beli 1967?</strong></label>
+                            <!-- <input type="text" class="form-control" id="question2" aria-describedby="question2" placeholder=""
+                                value="Ya" disabled> -->
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="panelBank"><strong>Nama Panel Bank</strong></label>
+                            <input type="text" class="form-control col-9" id="panelBank" aria-describedby="panelBank"
+                                placeholder="" value="Maybank Berhad" disabled>
+
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="jobScope"><strong>Skop Tugas EPS</strong></label>
+                            <input type="text" class="form-control" id="jobScope" aria-describedby="jobScope"
+                                placeholder="" value="Ya" disabled>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="bankPhoneNumber"><strong>No. Telefon Bank</strong></label>
+                            <input type="text" class="form-control col-9" id="bankPhoneNumber"
+                                aria-describedby="bankPhoneNumber" placeholder="" value="03-60001911" disabled>
+
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="procedure"><strong>Prosedur dan Peraturan EPS</strong></label>
+                            <input type="text" class="form-control" id="procedure" aria-describedby="procedure"
+                                placeholder="" value="Tidak" disabled>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <div class="col form-group p-0">
+                                <label for="panelName"><strong>Nama Panel</strong></label>
+                                <input type="text" class="form-control col-9" id="panelName"
+                                    aria-describedby="panelName" placeholder="" value="Hafiz bin Roslan" disabled>
+
+                            </div>
+
+                            <div class="col form-group p-0">
+                                <label for="panelIcNumber"><strong>No. Kad Pengenalan</strong></label>
+                                <input type="text" class="form-control col-9" id="panelIcNumber"
+                                    aria-describedby="panelIcNumber" placeholder="" value="931109034589" disabled>
+
+                            </div>
+
+                            <div class="col form-group p-0">
+                                <label for="permitNumber"><strong>No. Permit</strong></label>
+                                <input type="text" class="form-control col-9" id="permitNumber"
+                                    aria-describedby="permitNumber" placeholder="" value="07201" disabled>
+
+                            </div>
+
+                        </div>
+                        <div class="col form-group pr-0">
+                            <span><strong>Lampiran Dokumen</strong></span>
+
+                            <ol>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <li>Salinan Lesen Memandu</li>
+                                    </div>
+                                    <div class="col">
+                                        <button class="btn btn-sm text-white" style="background-color: #1d1da1;"><i
+                                                class="fas fa-file-alt"></i> Lihat
+                                            Lampiran</button>
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <li> Salinan Kad Pengenalan</li>
+                                    </div>
+                                    <div class="col">
+                                        <button class="btn btn-sm text-white" style="background-color: #1d1da1;"><i
+                                                class="fas fa-file-alt"></i> Lihat
+                                            Lampiran</button>
+                                    </div>
+                                </div>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3 d-flex justify-content-center">
+                    <input type="button" class="btn text-uppercase"
+                        style="background-color: #1d1da1; border-radius:25px" value="Status Pembayaran"
+                        (click)="toggle()">
+
+                    <!-- <input type="button" class="btn" style="background-color: #47bc83;" value="tiada rekod jenayah"
+                        (click)="NoRecord(noRecord)"> -->
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="formContent" style="margin-top: 50px;" *ngIf="show">
+        <form class="d-flex justify-content-center font-black" style="width: 100%;"
+            (ngSubmit)="onSubmit(printPermit,UpdatePayment)">
+            <div class="d-flex justify-content-center flex-wrap" fxLayout="column" fxLayoutAlign="space-evenly stretch"
+                style="width: 100%;">
+
+                <div class="p-3 text-uppercase"
+                    style="width: 100%; background-color:#f5e7f2; border-radius: 10px 10px 0px 0px;">
+                    <h5 class="h5 text-dark m-0 text-uppercase">Pengesahan Pembayaran</h5>
+                </div>
+
+                <div class="p-3" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 90%;">
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="form-group row d-flex flex-nowrap" style="width: 100%;">
+                            <label for="action" class="col-sm-3 col-form-label">Status Pembayaran</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="status" value="Telah Dibayar" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-nowrap">
+                        <div class="form-group row d-flex flex-nowrap" style="width: 100%;">
+                            <label for="action" class="col-sm-3 col-form-label">Cara Pembayaran</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="status" value="Atas Talian" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-nowrap">
+                        <div class="form-group row d-flex flex-nowrap" style="width: 100%;">
+                            <label for="comment" class="col-sm-3 col-form-label">Tindakan</label>
+                            <div class="col-sm-5">
+                                <!-- <textarea class="form-control" id="comment" rows="3"></textarea> -->
+                                <select class="form-control" id="action">
+                                    <option>--Sila Pilih--</option>
+                                    <option>Cetak Permit</option>
+                                    <option>Kemaskini Bayaran</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-3 d-flex justify-content-center">
+                        <input type="Submit" class="btn text-uppercase" style="background-color: #1d1da1; "
+                            value="hantar">
+
+                        <!-- <button type="submit" class="btn text-uppercase"
+                            style="background-color: #ec1a22; " value="cetak permit">cetak permit</button> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<ng-template #printPermit>
+    <div class="modal-header" style="background-color: #1d1da1; justify-content:center !important;">
+        <h4 class="modal-title pull-left text-white">Notifikasi</h4>
+    </div>
+    <div class="modal-body font-black">
+        <div class="row p-2" style="justify-content:center;">
+            <p class="text-dark" style="text-align: center;">
+                Permit akan dicetak. Adakah anda pasti?
+            </p>
+        </div>
+        <div class="row p-3 d-flex justify-content-center" style="text-align: center;">
+            <button type="button" class="btn btn-default font-white m-2" (click)="modalRef.hide()"
+                style="background-color: #ec1a22;">Batal</button>
+            <button type="submit" class="btn btn-primary font-white m-2" style="background-color: #2dce89;"
+                (click)="ConfirmPrint(confirmPrint)">Ya</button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #confirmPrint>
+    <div class="modal-body">
+        <div class="container">
+            <div class="row d-flex justify-content-center p-3">
+                <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+            </div>
+            <div class="row d-flex justify-content-center p-3" style="text-align: center;">
+                <p>Permit anda sedang dicetak</p>
+            </div>
+            <div class="row d-flex justify-content-around" style="text-align: center;">
+                <!-- <button type="button" class="btn btn-default font-white" (click)="modalRef.hide()"
+                    style="background-color: #ec1a22;">Batal</button> -->
+                <button type="submit" class="btn btn-primary font-white" style="background-color: #2dce89;"
+                    (click)="closeModal2()">OK</button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #UpdatePayment>
+    <div class="modal-header" style="background-color: #1d1da1; justify-content:center !important;">
+        <h4 class="modal-title pull-left text-white">Kemaskini Bayaran</h4>
+    </div>
+    <div class="modal-body font-black">
+        <form class=" font-black" style="width: 100%;" (ngSubmit)="Pay(pay)">
+            <div class="form-group row d-flex flex-nowrap" style="width: 100%;">
+                <span><strong>Maklumat Pembayaran</strong></span>
+            </div>
+            <div class="d-flex flex-nowrap">
+                <div class="form-group row d-flex flex-nowrap" style="width: 100%;">
+                    <label for="action" class="col-sm-4 col-form-label">No Kad Pengenalan</label>
+                    <div class="col-sm">
+                        <input type="text" class="form-control" id="nric" value="980203879702" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-nowrap">
+                <div class="form-group row d-flex flex-nowrap" style="width: 100%;">
+                    <label for="action" class="col-sm-4 col-form-label">Subjek</label>
+                    <div class="col-sm">
+                        <input type="text" class="form-control" id="subject" value="Bayaran Permit" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-nowrap">
+                <div class="form-group row d-flex flex-nowrap" style="width: 100%;">
+                    <label for="comment" class="col-sm-4 col-form-label">Jumlah (RM)</label>
+                    <div class="col-sm">
+                        <input type="text" class="form-control" id="total" value="20" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-nowrap">
+                <div class="form-group row d-flex flex-nowrap" style="width: 100%;">
+                    <label for="comment" class="col-sm-4 col-form-label">Nama Pemohon</label>
+                    <div class="col-sm">
+                        <input type="text" class="form-control" id="name" value="Ali" disabled>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="width: 100%;">
+
+            <div class="d-flex flex-nowrap">
+                <div class="form-group row d-flex flex-nowrap" style="width: 100%;">
+                    <label for="ResitNumber" class="col-sm-4 col-form-label">N0. Resit</label>
+                    <div class="col-sm">
+                        <input type="text" class="form-control" id="ResitNumber" value="17207" disabled>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex flex-nowrap">
+                <div class="form-group row d-flex flex-nowrap" style="width: 100%;">
+                    <label for="paymentDate" class="col-sm-4 col-form-label">Tarikh Bayar</label>
+                    <div class="col-sm">
+                        <input type="text" class="form-control" id="paymentDate" value="27/2/2021" disabled>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex flex-nowrap">
+                <div class="form-group row d-flex flex-nowrap" style="width: 100%;">
+                    <label for="paymentTime" class="col-sm-4 col-form-label">Masa Bayar</label>
+                    <div class="col-sm">
+                        <input type="text" class="form-control" id="paymentTime" value="14.23.31" disabled>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex flex-nowrap">
+                <div class="form-group row d-flex flex-nowrap" style="width: 100%;">
+                    <label for="paymentType" class="col-sm-4 col-form-label">Jenis Bayaran</label>
+                    <div class="col-sm">
+                        <input type="text" class="form-control" id="paymentTime" value="Tunai" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-nowrap">
+                <div class="form-group row d-flex flex-nowrap" style="width: 100%;">
+                    <label for="total" class="col-sm-4 col-form-label">Jumlah (RM)</label>
+                    <div class="col-sm">
+                        <input type="text" class="form-control" id="total" value="20" >
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-3 d-flex justify-content-center">
+                <input type="button" class="btn text-uppercase" style="background-color: #ee4c4c; " value="batal" (click)="closeModal()">
+
+                <input type="Submit" class="btn text-uppercase" style="background-color: #39ce6b; " value="simpan">
+
+                <!-- <button type="submit" class="btn text-uppercase"
+                            style="background-color: #ec1a22; " value="cetak permit">cetak permit</button> -->
+            </div>
+
+        </form>
+    </div>
+</ng-template>
+
+<ng-template #pay>
+    <div class="modal-header" style="background-color: #1d1da1; justify-content:center !important;">
+        <h4 class="modal-title pull-left text-white">Notifikasi</h4>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <!-- <div class="row d-flex justify-content-center p-3">
+                <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+            </div> -->
+
+            <div class="row d-flex justify-content-center p-3" style="text-align: center;">
+                Permohonan akan dibayar. <br>
+                Adakah anda pasti
+            </div>
+            <div class="row d-flex justify-content-center" style="text-align: center;">
+                <button type="button" class="btn btn-default font-white" (click)="modalRef.hide()"
+                    style="background-color: #ec1a22;">Batal</button>
+                <button type="button" class="btn btn-primary font-white" style="background-color: #2dce89;"
+                    (click)="confirmPay(ConfirmPay)">YA</button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #ConfirmPay>
+    <div class="modal-header" style="background-color: #1d1da1; justify-content:center !important;">
+        <h4 class="modal-title pull-left text-white">Notifikasi</h4>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <div class="row d-flex justify-content-center p-3">
+                <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+            </div>
+
+            <div class="row d-flex justify-content-center p-3" style="text-align: center;">
+                Permohonan telah berjaya dibayar.
+            </div>
+            <div class="row d-flex justify-content-center" style="text-align: center;">
+                <button type="button" class="btn btn-primary font-white" style="background-color: #1d1da1;"
+                    (click)="closeModal4()">Cetak Permit</button>
+            </div>
+        </div>
+    </div>
+</ng-template>

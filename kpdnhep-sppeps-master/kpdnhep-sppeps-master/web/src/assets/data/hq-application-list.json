@@ -1,0 +1,202 @@
+[
+    {
+        "type":"Permohonan Baharu",
+        "name":"Mustafa bin Ali",
+        "id":"PB202102001",
+        "date":"15/02/2021 10:39:12",
+        "area":"Petaling Jaya",
+        "state":"Selangor",
+        "officer":"Suraya bin Abdullah",
+        "status":"Telah Disemak PDRM"
+    },
+    {
+        "type":"Permohonan Baharu",
+        "name":"Roslan bin Dahlan",
+        "id":"PB202102002",
+        "date":"06/01/2021 14:36:50",
+        "area":"Sungai Petani",
+        "state":"Kedah",
+        "officer":"Rosnah binti Yahya",
+        "status":"Belum Disemak"
+    },
+    {
+        "type":"Permohonan Rayuan",
+        "name":"Nora binti Arshad",
+        "id":"PR202102002",
+        "date":"23/12/2020 15:41:02",
+        "area":"Ipoh",
+        "state":"Perak",
+        "officer":"Megat Zakaria",
+        "status":"Belum Disemak"
+    },
+    {
+        "type":"Permohonan Pendua",
+        "name":"Aliya binti Harun",
+        "id":"PD202102002",
+        "date":"20/12/2020 18:21:13",
+        "area":"Ipoh",
+        "state":"Perak",
+        "officer":"Dahlia Rossa",
+        "status":"Belum Disemak"
+    },
+    {
+        "type":"Permohonan Pembaharuan",
+        "name":"Amin bin Redzuan",
+        "id":"PP202102002",
+        "date":"05/12/2020 11:11:11",
+        "area":"Shah Alam",
+        "state":"Selangor",
+        "officer":"Dahlia Rossa",
+        "status":"Belum Disemak"
+    },
+    {
+        "type":"Permohonan Pembaharuan",
+        "name":"Yusuf bin Rahman",
+        "id":"PB202102003",
+        "date":"05/12/2020 08:24:59",
+        "area":"Kuantan",
+        "state":"Pahang",
+        "officer":"Suraya bin Abdullah",
+        "status":"Belum Disemak"
+    },
+    {
+        "type":"Permohonan Rayuan",
+        "name":"Rahimah binti Abu",
+        "id":"PB202102004",
+        "date":"22/11/2020 15:33:12",
+        "area":"Kuantan",
+        "state":"Pahang",
+        "officer":"Rosnah binti Yahya",
+        "status":"Belum Disemak"
+    },
+    {
+        "type":"Permohonan Rayuan",
+        "name":"Yuslina binti Abdullah",
+        "id":"PB202102005",
+        "date":"22/11/2020 15:01:48",
+        "area":"Seremban",
+        "state":"Negeri Sembilan",
+        "officer":"Megat Zakaria",
+        "status":"Telah Disemak PDRM"
+    },
+    {
+        "type":"Permohonan Pendua",
+        "name":"Maryam bin Abu Bakar",
+        "id":"PB202102006",
+        "date":"22/11/2020 11:39:52",
+        "area":"Seremban",
+        "state":"Negeri Sembilan",
+        "officer":"Megat Zakaria",
+        "status":"Belum Disemak"
+    },
+    {
+        "type":"Permohonan Pendua",
+        "name":"Nurlina binti Alias",
+        "id":"PB202102007",
+        "date":"22/11/2020 11:39:52",
+        "area":"Seremban",
+        "state":"Negeri Sembilan",
+        "officer":"Megat Zakaria",
+        "status":"Belum Disemak"
+    },
+    {
+        "type":"Permohonan Baharu",
+        "name":"Mustafa bin Ali",
+        "id":"PB202102001",
+        "date":"15/02/2021 10:39:12",
+        "area":"Petaling Jaya",
+        "state":"Selangor",
+        "officer":"Suraya bin Abdullah",
+        "status":"Belum Disemak"
+    },
+    {
+        "type":"Permohonan Baharu",
+        "name":"Roslan bin Dahlan",
+        "id":"PB202102002",
+        "date":"06/01/2021 14:36:50",
+        "area":"Sungai Petani",
+        "state":"Kedah",
+        "officer":"Rosnah binti Yahya",
+        "status":"Belum Disemak"
+    },
+    {
+        "type":"Permohonan Rayuan",
+        "name":"Nora binti Arshad",
+        "id":"PR202102002",
+        "date":"23/12/2020 15:41:02",
+        "area":"Ipoh",
+        "state":"Perak",
+        "officer":"Megat Zakaria",
+        "status":"Belum Disemak"
+    },
+    {
+        "type":"Permohonan Pendua",
+        "name":"Aliya binti Harun",
+        "id":"PD202102002",
+        "date":"20/12/2020 18:21:13",
+        "area":"Ipoh",
+        "state":"Perak",
+        "officer":"Dahlia Rossa",
+        "status":"Belum Disemak"
+    },
+    {
+        "type":"Permohonan Pembaharuan",
+        "name":"Amin bin Redzuan",
+        "id":"PP202102002",
+        "date":"05/12/2020 11:11:11",
+        "area":"Shah Alam",
+        "state":"Selangor",
+        "officer":"Dahlia Rossa",
+        "status":"Belum Disemak"
+    },
+    {
+        "type":"Permohonan Pembaharuan",
+        "name":"Yusuf bin Rahman",
+        "id":"PB202102003",
+        "date":"05/12/2020 08:24:59",
+        "area":"Kuantan",
+        "state":"Pahang",
+        "officer":"Suraya bin Abdullah",
+        "status":"Belum Disemak"
+    },
+    {
+        "type":"Permohonan Rayuan",
+        "name":"Rahimah binti Abu",
+        "id":"PB202102004",
+        "date":"22/11/2020 15:33:12",
+        "area":"Kuantan",
+        "state":"Pahang",
+        "officer":"Rosnah binti Yahya",
+        "status":"Belum Disemak"
+    },
+    {
+        "type":"Permohonan Rayuan",
+        "name":"Yuslina binti Abdullah",
+        "id":"PB202102005",
+        "date":"22/11/2020 15:01:48",
+        "area":"Seremban",
+        "state":"Negeri Sembilan",
+        "officer":"Megat Zakaria",
+        "status":"Belum Disemak"
+    },
+    {
+        "type":"Permohonan Pendua",
+        "name":"Maryam bin Abu Bakar",
+        "id":"PB202102006",
+        "date":"22/11/2020 11:39:52",
+        "area":"Seremban",
+        "state":"Negeri Sembilan",
+        "officer":"Megat Zakaria",
+        "status":"Telah Disemak PDRM"
+    },
+    {
+        "type":"Permohonan Pendua",
+        "name":"Nurlina binti Alias",
+        "id":"PB202102007",
+        "date":"22/11/2020 11:39:52",
+        "area":"Seremban",
+        "state":"Negeri Sembilan",
+        "officer":"Megat Zakaria",
+        "status":"Telah Disemak PDRM"
+    }
+]

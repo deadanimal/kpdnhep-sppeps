@@ -1,0 +1,528 @@
+<div class="wrapper pt-0" [ngClass]="fontSize">
+
+    <div class="p-2" style="text-align: center; background-color: #e0bbfe; width: 90%; max-width: 1000px;">
+        <h3 class="h3 text-white mt-3"><strong>Semakan Status Permohonan</strong></h3>
+    </div>
+
+    <div class="p-2 m-2" style="text-align: center; max-width:1000px; width:90%">
+        <div class="container-fluid mt-1">
+            <div class="card m-2">
+                <div class="card-body d-flex align-items-center justify-content-center p-3 pt-0" style="height: 180px;">
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+                    <div class="progress pb-2"
+                        style="background-color: white; box-shadow:none; height:100%; width:100%; justify-content:center; align-items:center;">
+                        
+                        <div class="circle done"> <span class="label">1</span>
+                            <span class="title pl-4" style="width: fit-content;">Isi Maklumat Permohonan</span>
+                        </div> 
+                        
+                        <span class="bar done"></span>
+
+                        <div class="circle done"> <span class="label">2</span>
+                            <span class="title pl-4" style="width: fit-content;">Hantar Permohonan</span>
+                        </div> 
+
+                        <span class="bar done"></span>
+
+                        <div class="circle done"> <span class="label">3</span>
+                            <span class="title pl-4" style="width: fit-content;">Pembayaran</span>
+                        </div> 
+
+                        <span class="bar active"></span>
+
+                        <div class="circle"> <span class="label">4</span>
+                            <span class="title pl-4" style="width: fit-content;">Kutipan Permit</span>
+                        </div> 
+                        
+                        <span class="bar"></span>
+
+                        <div class="circle"> <span class="label">5</span>
+                            <span class="title" style="width: fit-content; padding-left:43px;">Selesai</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="formContent" [ngClass]="fontColor">
+
+
+
+        <form class="d-flex justify-content-center font-black" style="width: 100%;">
+            <div class="d-flex justify-content-center flex-wrap" fxLayout="column" fxLayoutAlign="space-evenly stretch"
+                style="width: 100%;">
+
+                <div class="p-2 mt-4" style="width: 100%; background-color:#2e095f;">
+                    <h6 class="text-white m-0">BAHAGIAN I : MAKLUMAT PEMOHON</h6>
+                </div>
+
+                <div class="p-3" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 90%;">
+
+
+
+                    <div class="row form-group p-3 d-flex justify-content-center">
+
+                        <div class="image-upload">
+                            <label for="file-input" class="d-flex justify-content-center">
+                                <img class="user-profile" src="assets/img/icons/user-profile.jpg" id="user-profile"
+                                    alt="user-profile" />
+                            </label>
+
+                            <input id="file-input" type="file" />
+                        </div>
+
+                        <!-- <img class="user-profile" src="assets/img/icons/user-profile.jpg" id="user-profile"
+                        alt="user-profile" /> -->
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="name">
+                                <i class="fas fa-user"></i><strong> NAMA</strong>
+                            </label>
+                            <div class="d-flex flex-nowrap align-items-center">
+                                <input type="text" class="form-control col-9" id="name" aria-describedby="name"
+                                    placeholder="ali" disabled>
+                            </div>
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="ic"><i class="fas fa-id-card"></i><strong> NO KAD PENGENALAN</strong></label>
+                            <input type="text" class="form-control" id="ic" aria-describedby="ic"
+                                placeholder="950323-08-5626" disabled>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <fieldset class="col-7 form-group p-0">
+                            <label for="gender"> <i class="fas fa-venus-mars"></i><strong> JANTINA</strong></label>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="gender" id="male" value="male">
+                                    Lelaki
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="gender" id="female"
+                                        value="female">
+                                    Perempuan
+                                </label>
+                            </div>
+                        </fieldset>
+                        <div class="col form-group pr-0">
+                            <label for="age"><i class="fas fa-calendar-alt"></i><strong> UMUR</strong></label>
+                            <input type="text" class="form-control" id="age" aria-describedby="age" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="phone">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                                </svg>
+                                <strong> NO TELEFON</strong>
+                            </label>
+                            <div class="d-flex flex-nowrap align-items-center">
+                                <input type="text" class="form-control col-2 " id="phone1" aria-describedby="phone"
+                                    placeholder="">
+                                <p class="mt-0 mb-0 p-2"> - </p>
+                                <input type="text" class="form-control col-6" id="phone2" aria-describedby="phone"
+                                    placeholder="">
+                            </div>
+                        </div>
+                        <div class="col form-group pr-0">
+                            <label for="email"><i class="fas fa-envelope"></i><strong> EMEL</strong></label>
+                            <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-nowrap">
+                        <div class="col-7 form-group p-0">
+                            <label for="address"><i class="fas fa-map-marker-alt"></i><strong> ALAMAT</strong></label>
+                            <input type="text" class="col-9 form-control" id="address1" aria-describedby="address"
+                                placeholder="">
+                            <input type="text" class="col-9 form-control" id="address2" aria-describedby="address"
+                                placeholder="">
+                            <input type="text" class="col-9 form-control" id="address3" aria-describedby="address"
+                                placeholder="">
+                        </div>
+                        <div class="col pr-0">
+                            <div class="form-group">
+                                <label for="email">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-signpost-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M7.293.707A1 1 0 0 0 7 1.414V4H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v6h2v-6h3.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H9V1.414A1 1 0 0 0 7.293.707z" />
+                                    </svg>
+                                    <strong> POSKOD</strong></label>
+                                <input type="email" class="form-control" id="email" aria-describedby="email"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="state"><i class="fas fa-map"></i><strong> NEGERI</strong></label>
+                                <input type="text" class="form-control" id="state" aria-describedby="state"
+                                    placeholder="">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="occupation"><i class="fas fa-briefcase"></i><strong> PEKERJAAN
+                                SEKARANG</strong></label>
+                        <input type="text" class="col-5 form-control" id="occupation" aria-describedby="occupation"
+                            placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="education"><i class="fas fa-graduation-cap"></i><strong> TAHAP PENDIDIKAN
+                                TERTINGGI</strong></label>
+                        <!-- <input type="text" class="form-control" id="education" aria-describedby="education" placeholder=""> -->
+                        <br>
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox1" name="education"
+                                        value="Tiada">
+                                    <label class="form-check-label" for="inlineCheckbox1">Tiada</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox1" name="education"
+                                        value="Darjah6">
+                                    <label class="form-check-label" for="inlineCheckbox1">Darjah 6</label>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox1" name="education"
+                                        value="PMR">
+                                    <label class="form-check-label" for="inlineCheckbox1">PMR</label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox1" name="education"
+                                        value="SPM">
+                                    <label class="form-check-label" for="inlineCheckbox1">SPM</label>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox1" name="education"
+                                        value="Diploma">
+                                    <label class="form-check-label" for="inlineCheckbox1">Diploma</label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox1" name="education"
+                                        value="Ijazah/Master">
+                                    <label class="form-check-label" for="inlineCheckbox1">Ijazah/Maste</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="education"><i class="fas fa-car"></i><strong> LESEN MEMANDU YANG
+                                SAH</strong></label>
+                        <!-- <input type="text" class="form-control" id="education" aria-describedby="education" placeholder=""> -->
+                        <br>
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="B1">
+                                    <label class="form-check-label" for="inlineCheckbox1">B1</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="B2">
+                                    <label class="form-check-label" for="inlineCheckbox1">B2</label>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="D">
+                                    <label class="form-check-label" for="inlineCheckbox1">D</label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="E">
+                                    <label class="form-check-label" for="inlineCheckbox1">E</label>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="F">
+                                    <label class="form-check-label" for="inlineCheckbox1">F</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for=""><strong>Adakah anda bekerja sebagai panel bank/syarikat sewa beli</strong></label>
+                        <!-- <input type="text" class="form-control" id="state" aria-describedby="state" placeholder=""> -->
+                        <div>
+                            <input type="radio" name="panelInfo" id="yes" (click)="formActive()">
+                            <label class="pl-2" for="panelInfo">Ya</label>
+                            <br>
+                            <label class="pl-4"><strong>Sila nyatakan panel yang anda ikuti dan isi maklumat panel
+                                    seperti
+                                    berikut</strong>
+                                :</label>
+                            <div class="row pl-4">
+                                <div class="col-5">
+                                    <div class="form-group row">
+                                        <label for="bank" class="col-sm-2 col-form-label">Bank: </label>
+                                        <div class="col-sm-10">
+                                            <!-- <input type="text" class="form-control" id="staticEmail" value="email@example.com"> -->
+                                            <select class="col-7 form-control" aria-label="Default select example"
+                                                [disabled]="formCheck">
+                                                <option selected>--Sila Pilih--</option>
+                                                <option value="maybank">Maybank</option>
+                                                <option value="bankRakyat">Bank Rakyat</option>
+                                                <option value="rhbBank">RHB Bank</option>
+                                                <option value="hsbc">HSBC Bank Malaysia</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label for="phoneNumber" class="col-sm-2 col-form-label">No.Telefon: </label>
+                                        <div class="col-sm-10">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <input type="text" id="phoneNumber" class="form-control"
+                                                        placeholder="" [disabled]="formCheck">
+                                                </div>
+                                                <span class="col-form-label">-</span>
+                                                <div class="col-8">
+                                                    <input type="text" id="phoneNumber" class="form-control col-9"
+                                                        placeholder="" [disabled]="formCheck">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row pl-4">
+                                <label for="panelName" class="col-sm-2 col-form-label"><span
+                                        style="color: red;">*</span>Nama Panel: </label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control col-10" id="panelName" [disabled]="formCheck"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row pl-4">
+                                <label for="icNumber" class="col-sm-2 col-form-label"><span
+                                        style="color: red;">*</span>No Kad Pengenalan: </label>
+                                <!-- <div class="col-sm-10"> -->
+                                <!-- <input type="text" class="form-control col-10" id="icNumber" [disabled]="formCheck"> -->
+                                <div class="col-sm-10">
+                                    <div class="row">
+                                        <div class="col col-3">
+                                            <input type="text" id="icNumber" class="form-control " placeholder=""
+                                                [disabled]="formCheck">
+                                        </div>
+                                        <span class="col-form-label">-</span>
+                                        <div class="col col-2">
+                                            <input type="text" id="icNumber" class="form-control " placeholder=""
+                                                [disabled]="formCheck">
+                                        </div>
+                                        <span class="col-form-label ">-</span>
+                                        <div class="col col-3">
+                                            <input type="text" id="icNumber" class="form-control " placeholder=""
+                                                [disabled]="formCheck">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- </div> -->
+                            </div>
+
+                            <div class="form-group row pl-4">
+                                <label for="permitNumber" class="col-sm-2 col-form-label"><span
+                                        style="color: red;">*</span>No Permit: </label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control col-10" id="permitNumber"
+                                        [disabled]="formCheck">
+                                </div>
+                            </div>
+
+                            <div class="form-group row pl-4">
+                                <label for="phoneNumber" class="col-sm-2 col-form-label"><span
+                                        style="color: red;">*</span>No. Telephone: </label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control col-10" id="phoneNumber"
+                                        [disabled]="formCheck">
+                                </div>
+                            </div>
+
+                            <input type="radio" name="panelInfo" id="no" (click)="formDeactive()">
+                            <label class="pl-2" for="panelInfo">Tidak</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activityInfo"><strong> Adakah anda tahu tentang aktiviti pemilikan semula barangan
+                                di bawah
+                                Akta
+                                Sewa Beli 1967?</strong></label>
+                        <!-- <input type="text" class="col-5 form-control" id="occupation" aria-describedby="occupation"
+                        placeholder=""> -->
+                        <div class="row">
+                            <div class="col">
+                                <span>Skop Tugas</span>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="yes" name="jobScope" value="yes">
+                                    <label class="form-check-label" for="inlineCheckbox1">Ya</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="no" name="jobScope" value="no">
+                                    <label class="form-check-label" for="jobScope">Tidak</label>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <span>Prosedur dan Peraturan EPS:</span>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="yes" name="procedure" value="yes">
+                                    <label class="form-check-label" for="procedure">Ya</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="no" name="procedure" value="no">
+                                    <label class="form-check-label" for="procedure">Tidak</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="pb-2"><strong> Muat Naik Dokumen</strong></span>
+                        <!-- <br> -->
+                        <!-- <input type="file" class="form-control" id="licence" aria-describedby="licence" placeholder=""> -->
+                        <div class="row form-group">
+
+                            <div class="inputfile-box" style="width: 63%;">
+                                <span class="form-check-label pl-3 pr-3">Lesen Memandu: </span>
+                                <input type="file" id="file" class="inputfile" onchange='uploadFile(this)'>
+                                <label for="file">
+                                    <span id="file-name" class="file-box">Pilih Fail (format jpeg, png dan pdf
+                                        sahaja)</span>
+                                    <span class="file-button text-white">
+                                        <i class="fa fa-upload" aria-hidden="true"></i>
+                                        MUAT NAIK
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span><span style="color: red;">*</span>WAJIB diisi</span>
+                </div>
+
+                <div class="p-2" style="width: 100%; background-color:#2e095f;">
+                    <h6 class="text-white m-0">BAHAGIAN II : AKUAN PERMOHONAN</h6>
+                </div>
+
+                <div class="p-3" fxLayout="column" fxLayoutAlign="space-evenly stretch" style="width: 90%;">
+
+                    <div class="form-check ">
+                        <input class="form-check-input" type="checkbox" id="applicationStatement"
+                            name="applicationStatement" value="Agree" checked disabled>
+                        <label class="form-check-label" for="applicationStatement">Dengan ini saya mengaku dan
+                            mengesahkan bahawa semua maklumat dan butir-butir yang dicatatkan dalam
+                            borang permohonan adalah benar.
+                            Saya juga faham bahawa, jika mana-mana maklumat yang berkaitan permohonan ini didapati tidak
+                            benar
+                            akan menyebabkan permohonan ini
+                            ditolak.
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="p-3 d-flex justify-content-center">
+                    <input type="button" class="fadeIn fourth btn btn-outline-primary" value="BUAT BAYARAN"
+                        (click)="onSubmit(paymentType)" style="background-color: #2dce89; border-radius:25px">
+                    <!-- <input type="button" class="fadeIn fourth btn btn-outline-primary"
+                        style="background-color: #ec1a22;" value="HANTAR" (click)="onSubmit(submit)"> -->
+                </div>
+
+            </div>
+
+            <ng-template #paymentType>
+                <div class="modal-header" style="background-color: #1d1da1; justify-content:start !important;"
+                    [ngClass]="fontColor">
+                    <h4 class="modal-title pull-left font-white">Sila pilih cara pembayaran</h4>
+                </div>
+                <div class="modal-body font-black" [ngClass]="fontColor">
+                    <a class="nav-link text-white" [routerLink]="['/core/user/payment-onilne']" (click)="closeModal()">
+                        <div class="d-flex justify-content-center m-2">
+                            <div class="row p-2 d-flex justify-content-center" style="border-style: solid;
+                        border-color: black; width:60%; border-radius: 25px;">
+                                <p class="font-black m-0">
+                                    Bayaran atas Talian
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="d-flex justify-content-center m-2">
+                        <div class="row p-2 d-flex justify-content-center" style="border-style: solid;
+                        border-color: black; width:60%; border-radius: 25px;" (click)="manualPayment(ManualPayment)">
+                            <p class="font-black m-0">
+                                Bayar di Kaunter KPDNHEP
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+
+            <ng-template #ManualPayment>
+                <div class="modal-header" style="background-color: #1d1da1; justify-content:center !important;" [ngClass]="fontColor">
+                    <h4 class="modal-title pull-left font-white">Notifikasi</h4>
+                </div>
+                <div class="modal-body font-black" [ngClass]="fontColor">
+                    <div class="row p-2 d-flex justify-content-center">
+                        <p class="font-black text-center">
+                            Anda memilih utk melakukan pembayaran di kaunter. <br>
+                            Adakah anda pasti mahu menghantar?
+                        </p>
+                    </div>
+                    <div class="row p-3 d-flex justify-content-center" style="text-align: center;">
+                        <button type="button" class="btn font-white" (click)="modalRef.hide()"
+                            style="background-color: #ec1a22;">Batal</button>
+                        <button type="button" class="btn font-white" style="background-color: #2dce89;"
+                            (click)="ConfirmManual(confirmManual)">Ya</button>
+                    </div>
+                </div>
+            </ng-template>
+
+            <ng-template #confirmManual>
+                <div class="modal-body font-black" [ngClass]="fontColor">
+                    <div class="container">
+                        <div class="row d-flex justify-content-center p-3">
+                            <!-- <div class="col"> -->
+                            <i class="far fa-check-circle fa-5x" style="color: #2dce89;"></i>
+                            <!-- </div> -->
+                        </div>
+                        <div class="row d-flex justify-content-center p-3">
+                            <!-- <div class="col"> -->
+                            <p style="text-align: center;">
+                                Notifikasi pembayaran di kaunter telah dihantar ke email anda.<br>
+                                sila semak email anda dan bawa bersama notifikasi kelulusan permohonan ketika melakukan pembayaran di cawangan.</p>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    <div class="row p-3 d-flex justify-content-around" style="text-align: center;">
+                        <button type="button" class="btn btn-default font-white" (click)="closeModal3()"
+                            style="background-color: #2e095f;">OK!</button>
+                    </div>
+                </div>
+            </ng-template>
+        </form>
+    </div>
+</div>

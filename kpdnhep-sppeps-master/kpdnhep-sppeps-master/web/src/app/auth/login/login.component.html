@@ -1,0 +1,63 @@
+<div class="wrapper fadeInDown" [ngClass]="fontSize">
+    <div id="formContent">
+
+
+        <div [ngClass]=fontColor>
+            <tabset [justified]="true" class="fadeIn second font-black">
+                <tab heading="{{'login.OrangAwam' | translate }}" id="user" name="user">
+                    <!-- Icon -->
+                    <div class="fadeIn first p-2">
+                        <i class="fas fa-user-circle fa-5x text-dark"></i>
+                    </div>
+                    <form class="p-2 font-black" (ngSubmit)="onSubmitUser()" >
+                        <input type="text" id="user-id" class="fadeIn first" name="id" placeholder="No. Kad Pengenalan">
+                        <input type="password" id="user-password" class="fadeIn first" name="password" placeholder="{{'login.KataLaluan' | translate }}">
+                        <div class="row">
+                            <div class="col">
+                                <label class="fadeIn first">
+                                    <input  type="checkbox" checked="checked" name="remember"> {{ 'login.IngatSaya' | translate }}
+                                </label>
+                            </div>
+                            <div class="col">
+                                <a class="fadeIn first"[routerLink]="['/auth/forgot-password']"><span class="font-black">{{ 'login.LupaKataLaluan' | translate }}</span></a>
+                            </div>
+                        </div>
+                        <input type="submit" class="fadeIn first" value="{{ 'login.LogMasuk' | translate }}">
+                    </form>
+                </tab>
+                <tab heading="{{ 'login.Pegawai&Admin' | translate }}" id="admin" name="admin">
+                    <!-- Icon -->
+                    <div class="fadeIn first p-2">
+                        <!-- <i class="fas fa-user-tie fa-5x"></i> -->
+                        <!-- <i class="fas fa-user-circle fa-5x"></i> -->
+                        <i class="fas fa-users fa-5x text-dark"></i>
+                        <!-- <img src="assets/img/icons/admin.png" alt="admin-icon" style="height: 100px;"> -->
+                    </div>
+                    <form class="p-2" (ngSubmit)="onSubmitAdmin()">
+                        <input type="text" id="admin-id" class="fadeIn first" name="login" placeholder="Emal">
+                        <input type="password" id="admin-password" class="fadeIn first" name="login" placeholder="{{'login.KataLaluan' | translate }}">
+                        <div class="row">
+                            <div class="col">
+                                <label class="fadeIn first">
+                                    <input  type="checkbox" checked="checked" name="remember"> {{ 'login.IngatSaya' | translate }}
+                                </label>
+                            </div>
+                            <div class="col">   
+                            </div>
+                        </div>
+                        <input type="submit" class="fadeIn first" value="{{ 'login.LogMasuk' | translate }}">
+                    </form>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+</div>
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-fussion"
+  [fullScreen]="true"
+>
+  <p style="color: white">Loading...</p>
+</ngx-spinner>
